@@ -1,11 +1,11 @@
 ﻿
-  @-ms-viewport{
-            width:device-width;
-        }
-        @-o-viewport{
-            width:device-width
-        }
-        @viewport {width:device-width}
+@-ms-viewport{
+width:device-width;
+}
+@-o-viewport{
+width:device-width
+}
+@viewport {width:device-width}
 
 
 .mob{
@@ -117,7 +117,7 @@
       }
 
       .close_box input[type=checkbox]:checked ~ .check{
-          background:url(/common/image/masterpage/banner/check_btn_m.png)  no-repeat   ;
+          background:url(https://violeta429.github.io/portfolio/common/image/masterpage/banner/check_btn_m.png)  no-repeat   ;
           background-size:12px;
           background-position:2px 4px; 
 
@@ -228,3 +228,31 @@
 
 }
 
+
+
+
+@media screen  and (max-width:768px ){
+    .content{
+        width:100%;
+        padding: 0 3%;
+    }
+}
+
+@media screen and ( max-width:1023px ){
+    .content{
+    width:98%;
+    }
+}
+
+
+@media screen  and (min-width:1024px){
+    .content{
+     width:90%;
+    }
+}
+
+@media screen  and (min-width:1440px){
+    .content{
+     width:1100px;
+    }
+}

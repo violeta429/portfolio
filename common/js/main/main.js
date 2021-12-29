@@ -1,25 +1,16 @@
-﻿// var targetUrl = "/common/component/main/AjaxMain.aspx";
-
-
+﻿
 $(document).ready(function () {
 
 
     //  메인 화면에서 배너영역 넘지않는 사이드메뉴
     var bnHeight = $('.mainBanner').height();
     $("#slidemenu").css({ "top": bnHeight });
-
     var currentPosition = parseInt($("#slidemenu").css("top"));
     $(window).scroll(function () {
-
         var position = $(window).scrollTop(); // 현재 스크롤바의 위치값을 반환.
-
-
-
-        if (position < bnHeight) { position = bnHeight; }    //현재 스크롤의 위치가 배너 영역보다 작을 시에 슬라이드 top 을  배너 크기만큼 
-
+    if (position < bnHeight) { position = bnHeight; }    //현재 스크롤의 위치가 배너 영역보다 작을 시에 슬라이드 top 을  배너 크기만큼 
         $("#slidemenu").stop().animate({ "top": position + 20 + "px" }, 1000);
-
-    })
+    });
 
 
     //상단 배너   PC
@@ -81,51 +72,75 @@ $(document).ready(function () {
 
     //section 1에 캐로셀 이미지 옵션 
 
-    // $('.sec1_cont').slick({
+    // $('.pd_carousel').slick({
     //     slide: 'div',
     //     autoplay: true,
     //     autoplaySpeed: 6000,
-    //     dots: true,
-    //     dotsClass: "slick-dots",
-    //     slidesToShow: 1,
+    //     arrows: true,
+    //     prevArrow: $('.left_prev'),
+    //     nextArrow: $('.right_next'),
+    //     slidesToShow: 4,
+    //     responsive: [ // 반응형 웹 구현 옵션
+
+    //         {
+    //             breakpoint: 768, //화면 사이즈 768px
+    //             settings: {
+    //                 slidesToShow: 3
+    //             },
+    //             draggable: true,
+    //         },
+
+
+    //         {
+    //             breakpoint: 580, //화면 사이즈 768px
+    //             settings: {
+    //                 slidesToShow: 2
+    //             },
+    //             draggable: true,
+    //         }
+    //     ]
     // });
 
-    var swiper2 = new Swiper('.sec1_cont', {
-        spaceBetween: 6,
+    // $('.sec2_Wrap .sec2cont').bxSlider();
+
+
+
+    //4번쨰 section   sec4_cont
+
+    var swiper2 = new Swiper('.sec4_inner', {
+        spaceBetween: 50,
         centeredSlides: true,
-        autoHeight: true,
-        autoplay: {
-            delay: 8000,
-            disableOnInteraction: false,
-        },
+        autoHeight: false,
         loop: true,
         pagination: false,
         resistance: false,
         navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
+            nextEl: '.slide_btn .next',
+            prevEl: '.slide_btn .prev',
+        },
+        autoplay: {
+            delay: 6000,
+            disableOnInteraction: false,
+        },
+        effect: 'fade',
+        fadeEffect: {
+            crossFade: true
         },
 
         watchOverflow: true,  //슬라이드가 한개일때 page ,button숨김 여부 
     });
 
 
+    //fnBestseller(); //베스트셀러
+    // fnMdPick(); //MD PICK
+    // fnNew(); //신상
+    // fnTrend(); //트렌드픽
+    // fnIssue(); //이슈픽
 
-    //썸네일 이미지 자동 재생
-
-    var thumbImg = $('.thumbs div');
-
-
-
-    //4번쨰 section   sec4_cont
-
-
-
-    fnBestseller(); //베스트셀러
-    fnMdPick(); //MD PICK
-    fnNew(); //신상
-    fnTrend(); //트렌드픽
-    fnIssue(); //이슈픽
+    var innerWidth = window.innerWidth;
+    if (innerWidth < 768) {
+        imgresize('.sec3_inner');
+    }
 });//end doc ready
 
 //MD_PICK
@@ -166,582 +181,515 @@ $(document).on('click', '.thumbs a', function (e) {
 
 
 
-//BEST SELLER
-function fnBestseller() {
-    try {
 
-        var hArr = new Array();
-        var hObj = new Object();
-        hObj.type = "01";
-        hArr.push(hObj);
-
-        var bArr = new Array();
-        var bObj = new Object();
-        bArr.push(bObj);
-
-        var totObj = new Object();
-        totObj.header = hArr;
-        totObj.body = bArr;
-        $.ajax({
-            method: "post",
-            url: targetUrl,
-            data: JSON.stringify(totObj),
-            dataType: "json",
-            beforeSend: function () {
-                //로딩 창 출력X
-
-            },
-            success: function (data) {
-                var result = data.RESULT; //통신결과
-
-                if (data == null || data.RESULT == "N" || data.DATA.length == 0) { //에러 또는 데이터 없을때 아무 처리안함
-                    return;
-                }
-                else if (data.RESULT == "ERR") {
-                    alert('장시간 미사용으로 로그인 만료되었습니다.');
-                    location.href = '/view/member/login.aspx';
-                }
-
-
-
-                var allData = data.DATA;
-
-                var sHtml = "";
-                for (var i = 0; i < allData.length; i++) {
-
-                    if (i % 4 == 0) { //섹션시작
-                        sHtml += "<div class='pd_carousel'>";
-                    }
-
-                    sHtml += "  <div class='c_area'>                                               ";
-                    sHtml += "   <a href='/view/product/product_detail.aspx?pid=" + allData[i]["PID"] + "'>";
-                    sHtml += "      <div class='pd_img'>                                           ";
-                    sHtml += "      <img src='" + allData[i]["FILEURL"] + "'/>";
-                    sHtml += "      </div>                                                         ";
-                    sHtml += "      <div class='pd_txt'>                                           ";
-                    sHtml += "      <h4 class='pd_tit'>" + allData[i]["PNM"] + "</h4>";
-                    sHtml += "      <p class='pd_info'>" + allData[i]["SUMMARY"] + "</p>";
-                    sHtml += "         <div class='price'>                                         ";
-
-
-                    if (allData[i]["AMT"] != allData[i]["AMT_CUST"]) {
-                        sHtml += "         <span class='price_del'>" + allData[i]["AMT_CUST"] + "</span>";
-                    }
-                    sHtml += "         <span class='price_n'>" + allData[i]["AMT"] + "</span>";
-                    sHtml += "         </div>                                                      ";
-                    sHtml += "         <div class='icon_area'>                                     ";
-                    sHtml += "             <span class='best'>BEST</span>                          ";
-                    sHtml += "             <span class='new'>NEW</span>                            ";
-                    sHtml += "         </div>                                                      ";
-                    sHtml += "      </div>                                                         ";
-                    sHtml += "    </a>                                                             ";
-                    sHtml += "  </div>                                                             ";
-
-
-                    if (i % 4 == 3) { //섹션끝
-                        sHtml += " </div>";
-                    }
-                }
-
-                if (sHtml != "" && allData.length % 4 != 0) {
-                    sHtml += " </div>";
-                }
-
-                $("#divBestSeller").html(sHtml);
-
-
-                $('.sec1_cont').slick('refresh');
-
-
-
-            },
-            error: function (data, status, err) {
-
-                return;
-            }
-        });
-
-
+window.onresize = function (event) {
+    if (innerWidth < 768) {
+        imgresize('.sec3_inner');
+        imgresize('.sec2_Wrap');
+        
+    } else {
+        return;
     }
-    catch (e) {
-
-    }
-
-
-
-
-}
-
-//MD'S PICK
-function fnMdPick() {
-    try {
-
-        var hArr = new Array();
-        var hObj = new Object();
-        hObj.type = "02";
-        hArr.push(hObj);
-
-        var bArr = new Array();
-        var bObj = new Object();
-        bArr.push(bObj);
-
-        var totObj = new Object();
-        totObj.header = hArr;
-        totObj.body = bArr;
-
-        $.ajax({
-            method: "post",
-            url: targetUrl,
-            data: JSON.stringify(totObj),
-            dataType: "json",
-            beforeSend: function () {
-                //로딩 창 출력X
-
-            },
-            success: function (data) {
-                var result = data.RESULT; //통신결과
-
-                if (data == null || data.RESULT == "N" || data.DATA.length == 0) { //에러 또는 데이터 없을때 아무 처리안함
-                    return;
-                }
-                else if (data.RESULT == "ERR") {
-                    alert('장시간 미사용으로 로그인 만료되었습니다.');
-                    location.href = '/view/member/login.aspx';
-                }
-
-
-
-                var allData = data.DATA;
-
-                var sHtml_list = "";
-                var sHtml_content = "";
-                for (var i = 0; i < allData.length; i++) {
-                    //좌측 이미지리스트
-                    sHtml_list += "<div class='preview'> ";
-                    if (i == 0) {
-                        sHtml_list += "<a href='#' class='selected'  data-full='" + allData[i]["FILEURL"] + "'> <img src='" + allData[i]["FILEURL"] + "'/> </a> ";
-                    }
-                    else {
-                        sHtml_list += "<a href='#' data-full='" + allData[i]["FILEURL"] + "'> <img src='" + allData[i]["FILEURL"] + "'/> </a> ";
-                    }
-
-                    sHtml_list += "</div>";
-
-                    //우측 컨텐츠                    
-                    if (i == 0) {
-                        $("#imgMdPick").attr("src", allData[i]["FILEURL"])
-                        sHtml_content += "   <div class='on cont_area'>";
-                    }
-                    else {
-                        sHtml_content += "   <div class='cont_area'>";
-
-                    }
-                    sHtml_content += "        <div >";
-                    sHtml_content += "           <h2 class='pd_sub_tit'>" + allData[i]["TITLE"] + "</h2>";
-                    sHtml_content += "           <h2 class='pd_tit'>" + allData[i]["PNM"] + "</h2>";
-                    sHtml_content += "           <p class='pd_info'>" + allData[i]["DESCRIPTION"] + "</p>";
-                    sHtml_content += "            <span class='shop_btn'><a href='/view/product/product_detail.aspx?pid=" + allData[i]["PID"] + "'>SHOP NOW</a></span>";
-                    sHtml_content += "        </div>";
-                    sHtml_content += "    </div>";
-
-
-                }
-
-                $("#divMdPick_list").html(sHtml_list);
-                $("#divMdPick_content").html(sHtml_content);
-
-
-            },
-            error: function (data, status, err) {
-
-                return;
-            }
-        });
-
-
-    }
-    catch (e) {
-
-    }
-
-
-
-
 }
 
 
-//NEW ARRIVALS
-function fnNew() {
-    try {
 
-        var hArr = new Array();
-        var hObj = new Object();
-        hObj.type = "03";
-        hArr.push(hObj);
-
-        var bArr = new Array();
-        var bObj = new Object();
-        bArr.push(bObj);
-
-        var totObj = new Object();
-        totObj.header = hArr;
-        totObj.body = bArr;
-
-        $.ajax({
-            method: "post",
-            url: targetUrl,
-            data: JSON.stringify(totObj),
-            dataType: "json",
-            beforeSend: function () {
-                //로딩 창 출력X
-
-            },
-            success: function (data) {
-                var result = data.RESULT; //통신결과
-
-                if (data == null || data.RESULT == "N" || data.DATA.length == 0) { //에러 또는 데이터 없을때 아무 처리안함
-                    return;
-                }
-                else if (data.RESULT == "ERR") {
-                    alert('장시간 미사용으로 로그인 만료되었습니다.');
-                    location.href = '/view/member/login.aspx';
-                }
-
-
-
-                var allData = data.DATA;
-
-                var sHtml = "";
-
-
-                for (var i = 0; i < allData.length; i++) {
-
-
-                    sHtml += "  <div onclick='fnMoveDetail(" + allData[i]["PID"] + ")'>                                                           ";
-                    sHtml += "       <img src='" + allData[i]["FILEURL"] + "'/>            ";
-                    sHtml += "       <div >                                                     ";
-                    sHtml += "           <h4 class='tit_deco pd_tit'>" + allData[i]["PNM"] + "</h4>              ";
-
-                    if (allData[i]["SUMMARY"] != "") {
-                        sHtml += "      <p class='pd_info'>" + allData[i]["SUMMARY"] + "</p>";
-                    }
-                    sHtml += "            <div class='price'>                                   ";
-                    if (allData[i]["AMT"] != allData[i]["AMT_CUST"]) {
-                        sHtml += "         <span class='price_del'>" + allData[i]["AMT_CUST"] + "</span>";
-                    }
-                    sHtml += "         <span class='price_n'>" + allData[i]["AMT"] + "</span>";
-                    sHtml += "            </div>                                                ";
-                    sHtml += "            <div class='icon_area'>                               ";
-                    sHtml += "                 <span class='best'>BEST</span>                   ";
-                    sHtml += "                 <span class='new'>NEW</span>                     ";
-                    sHtml += "            </div>                                                ";
-                    sHtml += "       </div>                                                     ";
-                    sHtml += "   </div>                                                         ";
-
-                    
-                }
-                $("#divNew").html(sHtml);
-
-
-
-                //section3 slick   (한 화면에 보여질 개수 4개)
-
-                $('.sec3_cont').slick({
-                    slide: 'div',
-                    autoplay: true,
-                    autoplaySpeed: 6000,
-                    arrows: true,
-                    slidesToShow: 4,
-                    prevArrow: $('.prev2'),
-                    nextArrow: $('.next2'),
-                    responsive: [ // 반응형 웹 구현 옵션
-                        {
-                            breakpoint: 767, //화면 사이즈 
-                            settings: {
-                                slidesToShow: 2
-                            }
-                        },
-                    ]
-                });
-
-            },
-            error: function (data, status, err) {
-
-                return;
-            }
-        });
-
-
-    }
-    catch (e) {
-
-    }
-
-
-
-
-}
-
-//Trend PICK
-function fnTrend() {
-    try {
-
-        var hArr = new Array();
-        var hObj = new Object();
-        hObj.type = "04";
-        hArr.push(hObj);
-
-        var bArr = new Array();
-        var bObj = new Object();
-        bArr.push(bObj);
-
-        var totObj = new Object();
-        totObj.header = hArr;
-        totObj.body = bArr;
-
-        $.ajax({
-            method: "post",
-            url: targetUrl,
-            data: JSON.stringify(totObj),
-            dataType: "json",
-            beforeSend: function () {
-                //로딩 창 출력X
-
-            },
-            success: function (data) {
-                var result = data.RESULT; //통신결과
-
-
-                if (data == null || data.RESULT == "N" || data.DATA.length == 0) { //에러 또는 데이터 없을때 아무 처리안함
-                    return;
-                }
-                else if (data.RESULT == "ERR") {
-                    alert('장시간 미사용으로 로그인 만료되었습니다.');
-                    location.href = '/view/member/login.aspx';
-                }
-
-
-
-                var allData = data.DATA;
-
-                var sHtml = "";
-                for (var i = 0; i < allData.length; i++) {
-
-                    sHtml += "	<div class='swiper-slide' onclick='fnMoveDetail(" + allData[i]["PID"] + ")'>";
-                    sHtml += "            <div class='sec4_slide'>";
-                    sHtml += "                  <div class='imgarea' style='background:url(" + allData[i]["FILEURL"] + ") no-repeat center center; background-size:cover;'></div>";
-                    sHtml += "                  <div class='txt'>";
-                    sHtml += "                      <div >";
-                    sHtml += "                            <p class='pd_tit'>" + allData[i]["PNM"] + "</p>";
-                    sHtml += "                            <p class='pd_info'>" + allData[i]["DESCRIPTION"] + "</p>";
-                    sHtml += "                      </div>";
-                    sHtml += "                  </div>";
-                    sHtml += "            </div>";
-                    sHtml += "     </div>";
-                }
-                console.log(sHtml)
-                $("#divTrend").html(sHtml);
-
-
-                var swiper2 = new Swiper('.sec4_inner', {
-                    spaceBetween: 50,
-                    centeredSlides: true,
-                    autoHeight: false,
-                    loop: true,
-                    pagination: false,
-                    resistance: false,
-                    navigation: {
-                        nextEl: '.slide_btn .next',
-                        prevEl: '.slide_btn .prev',
-                    },
-                    effect: 'fade',
-                    fadeEffect: {
-                        crossFade: true
-                    },
-
-                    watchOverflow: true,  //슬라이드가 한개일때 page ,button숨김 여부 
-                });
-
-            },
-            error: function (data, status, err) {
-
-                return;
-            }
-        });
-
-
-    }
-    catch (e) {
-
-    }
-
-
-
-
+function imgresize(targetpa) {
+    var imgWrap = $(targetpa).find('.imgWrap');
+    imgWid = imgWrap.width();
+    imgWrap.height(imgWid);
 }
 
 
-//Issue PICK
-function fnIssue() {
-    try {
+// //BEST SELLER
+// function fnBestseller() {
+//     try {
 
-        var hArr = new Array();
-        var hObj = new Object();
-        hObj.type = "05";
-        hArr.push(hObj);
+//         var hArr = new Array();
+//         var hObj = new Object();
+//         hObj.type = "01";
+//         hArr.push(hObj);
 
-        var bArr = new Array();
-        var bObj = new Object();
-        bArr.push(bObj);
+//         var bArr = new Array();
+//         var bObj = new Object();
+//         bArr.push(bObj);
 
-        var totObj = new Object();
-        totObj.header = hArr;
-        totObj.body = bArr;
+//         var totObj = new Object();
+//         totObj.header = hArr;
+//         totObj.body = bArr;
+//         $.ajax({
+//             method: "post",
+//             url: targetUrl,
+//             data: JSON.stringify(totObj),
+//             dataType: "json",
+//             beforeSend: function () {
+//                 //로딩 창 출력X
 
-        $.ajax({
-            method: "post",
-            url: targetUrl,
-            data: JSON.stringify(totObj),
-            dataType: "json",
-            beforeSend: function () {
-                //로딩 창 출력X
+//             },
+//             success: function (data) {
+//                 var result = data.RESULT; //통신결과
 
-            },
-            success: function (data) {
-                var result = data.RESULT; //통신결과
-
-                if (data == null || data.RESULT == "N" || data.DATA.length == 0) { //에러 또는 데이터 없을때 아무 처리안함
-                    return;
-                }
-                else if (data.RESULT == "ERR") {
-                    alert('장시간 미사용으로 로그인 만료되었습니다.');
-                    location.href = '/view/member/login.aspx';
-                }
+//                 if (data == null || data.RESULT == "N" || data.DATA.length == 0) { //에러 또는 데이터 없을때 아무 처리안함
+//                     return;
+//                 }
 
 
+//                 var allData = data.DATA;
 
-                var allData = data.DATA;
+//                 var sHtml = "";
+//                 for (var i = 0; i < allData.length; i++) {
 
-                var sHtml_li = "";
-                var sHtml_content = "";
-                for (var i = 0; i < allData.length; i++) {
-                    //li
-                    if (i == 0) {
-                        sHtml_li += "<li class='active'>" + allData[i]["TITLE"] + "</li>";
-                    }
-                    else {
-                        sHtml_li += "<li>" + allData[i]["TITLE"] + "</li> ";
-                    }
+//                     if (i % 4 == 0) { //섹션시작
+//                         sHtml += "<div class='pd_carousel'>";
+//                     }
+
+//                     sHtml += "<div class='c_area'>";
+//                     sHtml += "   <a href='/view/product/product_detail.aspx?pid=" + allData[i]["PID"] + "'>";
+//                     sHtml += "   <div class='pd_img'>";
+//                     sHtml += "      <img src='" + allData[i]["FILEURL"] + "'/>";
+//                     sHtml += "   </div>";
+//                     sHtml += "   <div class='pd_txt'>";
+//                     sHtml += "      <h4 class='pd_tit'>" + allData[i]["PNM"] + "</h4>";
+//                     sHtml += "      <p class='pd_info'>" + allData[i]["SUMMARY"] + "</p>";
+//                     sHtml += "      <div class='price'>";
+//                     sHtml += "         <span class='price_n'>" + allData[i]["AMT"] + "</span>";
+//                     sHtml += "      </div>";
+//                     sHtml += "      <div class='icon_area'>";
+//                     sHtml += "          <span class='best'>BEST</span>";
+//                     sHtml += "          <span class='new'>NEW</span>";
+//                     sHtml += "      </div>";
+//                     sHtml += "   </div>";
+//                     sHtml += "   </a>";
+//                     sHtml += " </div>";
+
+//                     if (i % 4 == 3) { //섹션끝
+//                         sHtml += " </div>";
+//                     }
+//                 }
+
+//                 if (sHtml != "" && allData.length % 4 != 0) {
+//                     sHtml += " </div>";
+//                 }
+
+//                 $("#divBestSeller").html(sHtml);
 
 
-                    //컨텐츠                    
-                    sHtml_content += "<div class='tabInner'>";
-                    sHtml_content += "	<div class='pdarea fl'>";
-                    sHtml_content += "		<span> <img src='" + allData[i]["FILEURL"] + "'/></span>";
-                    sHtml_content += "		<div class='txtWrap'>";
-                    sHtml_content += "		    <p>" + allData[i]["TITLE"] + "</p>";
-                    sHtml_content += "		    <p>" + allData[i]["DESCRIPTION"] + "</p>";
-                    sHtml_content += "		</div>";
-                    sHtml_content += "	</div>";
-                    sHtml_content += "	<div class='pdarea pdWrap2'>";
 
-                    if (allData[i]["PID1"]["PID"] != "") {
-                        sHtml_content += "		<div onclick='fnMoveDetail("+allData[i]["PID1"]["PID"]+")'>";
-                        sHtml_content += "			<img src='" + allData[i]["PID1"]["FILEURL"] + "'/>";
-                        sHtml_content += "			<div >";
-                        sHtml_content += "				<h4 class='tit_deco pd_tit'>" + allData[i]["PID1"]["PNM"] + "</h4>";
-                        sHtml_content += "				<p class='pd_info'>" + allData[i]["PID1"]["SUMMARY"] + "</p>";
-                        sHtml_content += "				<div class='price'>";
-                        if (allData[i]["PID1"]["AMT_SALE"] != allData[i]["PID1"]["AMT_CUST"]) {
-                            sHtml_content += "         <span class='price_del'>" + allData[i]["PID1"]["AMT_CUST"] + "</span>";
-                        }
-                        sHtml_content += "					<span class='price_n'>" + allData[i]["PID1"]["AMT_SALE"] + "</span>";
-                        sHtml_content += "				</div>";
-                        sHtml_content += "				<div class='icon_area'>";
-                        sHtml_content += "					<span class='best'>BEST</span>";
-                        sHtml_content += "					<span class='new'>NEW</span>";
-                        sHtml_content += "				</div>";
-                        sHtml_content += "			</div>";
-                        sHtml_content += "		</div>";
-                    }
-                    if (allData[i]["PID2"]["PID"] != "") {
-                        sHtml_content += "		<div onclick='fnMoveDetail(" + allData[i]["PID1"]["PID"] + ")'>";
 
-                        sHtml_content += "			<img src='" + allData[i]["PID2"]["FILEURL"] + "'/>";
-                        sHtml_content += "			<div >";
-                        sHtml_content += "				<h4 class='tit_deco pd_tit'>" + allData[i]["PID2"]["PNM"] + "</h4>";
-                        sHtml_content += "				<p class='pd_info'>" + allData[i]["PID2"]["SUMMARY"] + "</p>";
-                        sHtml_content += "				<div class='price'>";
-                        if (allData[i]["PID2"]["AMT_SALE"] != allData[i]["PID2"]["AMT_CUST"]) {
-                            sHtml_content += "         <span class='price_del'>" + allData[i]["PID2"]["AMT_CUST"] + "</span>";
-                        }
-                        sHtml_content += "					<span class='price_n'>" + allData[i]["PID2"]["AMT_SALE"] + "</span>";
-                        sHtml_content += "				</div>";
-                        sHtml_content += "				<div class='icon_area'>";
-                        sHtml_content += "					<span class='best'>BEST</span>";
-                        sHtml_content += "					<span class='new'>NEW</span>";
-                        sHtml_content += "				</div>";
-                        sHtml_content += "			</div>";
-                        sHtml_content += "		</div>";
-                    }
-                    sHtml_content += "	</div>";
-                    sHtml_content += "</div>";
-                }
 
-                $("#ulIssue").html(sHtml_li);
-                $("#divIssue").html(sHtml_content);
+//             },
+//             error: function (data, status, err) {
+
+//                 return;
+//             }
+//         });
+
+
+//     }
+//     catch (e) {
+
+//     }
+
+
+
+
+// }
+
+// //MD'S PICK
+// function fnMdPick() {
+//     try {
+
+//         var hArr = new Array();
+//         var hObj = new Object();
+//         hObj.type = "02";
+//         hArr.push(hObj);
+
+//         var bArr = new Array();
+//         var bObj = new Object();
+//         bArr.push(bObj);
+
+//         var totObj = new Object();
+//         totObj.header = hArr;
+//         totObj.body = bArr;
+
+//         $.ajax({
+//             method: "post",
+//             url: targetUrl,
+//             data: JSON.stringify(totObj),
+//             dataType: "json",
+//             beforeSend: function () {
+//                 //로딩 창 출력X
+
+//             },
+//             success: function (data) {
+//                 var result = data.RESULT; //통신결과
+
+//                 if (data == null || data.RESULT == "N" || data.DATA.length == 0) { //에러 또는 데이터 없을때 아무 처리안함
+//                     return;
+//                 }
+
+
+//                 var allData = data.DATA;
+
+//                 var sHtml_list = "";
+//                 var sHtml_content = "";
+//                 for (var i = 0; i < allData.length; i++) {
+//                     //좌측 이미지리스트
+//                     sHtml_list += "<div class='preview'> ";
+//                     if (i == 0) {
+//                         sHtml_list += "<a href='#' class='selected'  data-full='" + allData[i]["FILEURL"] + "'> <img src='" + allData[i]["FILEURL"] + "'/> </a> ";
+//                     }
+//                     else {
+//                         sHtml_list += "<a href='#' data-full='" + allData[i]["FILEURL"] + "'> <img src='" + allData[i]["FILEURL"] + "'/> </a> ";
+//                     }
+
+//                     sHtml_list += "</div>";
+
+//                     //우측 컨텐츠                    
+//                     if (i == 0) {
+//                         $("#imgMdPick").attr("src", allData[i]["FILEURL"])
+//                         sHtml_content += "   <div class='on cont_area'>";
+//                     }
+//                     else {
+//                         sHtml_content += "   <div class='cont_area'>";
+
+//                     }
+//                     sHtml_content += "        <div >";
+//                     sHtml_content += "           <h2 class='pd_sub_tit'>" + allData[i]["TITLE"] + "</h2>";
+//                     sHtml_content += "           <h2 class='pd_tit'>" + allData[i]["PNM"] + "</h2>";
+//                     sHtml_content += "           <p class='pd_info'>" + allData[i]["DESCRIPTION"] + "</p>";
+//                     sHtml_content += "            <span class='shop_btn'><a href='/view/product/product_detail.aspx?pid=" + allData[i]["PID"] + "'>SHOP NOW</a></span>";
+//                     sHtml_content += "        </div>";
+//                     sHtml_content += "    </div>";
+
+
+//                 }
+
+//                 $("#divMdPick_list").html(sHtml_list);
+//                 $("#divMdPick_content").html(sHtml_content);
+
+
+//             },
+//             error: function (data, status, err) {
+
+//                 return;
+//             }
+//         });
+
+
+//     }
+//     catch (e) {
+
+//     }
+
+
+
+
+// }
+
+
+// //NEW ARRIVALS
+// function fnNew() {
+//     try {
+
+//         var hArr = new Array();
+//         var hObj = new Object();
+//         hObj.type = "03";
+//         hArr.push(hObj);
+
+//         var bArr = new Array();
+//         var bObj = new Object();
+//         bArr.push(bObj);
+
+//         var totObj = new Object();
+//         totObj.header = hArr;
+//         totObj.body = bArr;
+
+//         $.ajax({
+//             method: "post",
+//             url: targetUrl,
+//             data: JSON.stringify(totObj),
+//             dataType: "json",
+//             beforeSend: function () {
+//                 //로딩 창 출력X
+
+//             },
+//             success: function (data) {
+//                 var result = data.RESULT; //통신결과
+
+//                 if (data == null || data.RESULT == "N" || data.DATA.length == 0) { //에러 또는 데이터 없을때 아무 처리안함
+//                     return;
+//                 }
+
+
+//                 var allData = data.DATA;
+
+//                 var sHtml = "";
+
+//                 for (var i = 0; i < allData.length; i++) {
+//                     sHtml += "<div>";
+//                     sHtml += "   <img src='" + allData[i]["FILEURL"] + "'/>";
+//                     sHtml += "   <div >";
+//                     sHtml += "      <h4 class='tit_deco pd_tit'>" + allData[i]["PNM"] + "</h4>";
+//                     sHtml += "      <p class='pd_info'>" + allData[i]["SUMMARY"] + "</p>";
+//                     sHtml += "      <div class='price'>";
+//                     sHtml += "         <span class='price_n'>" + allData[i]["AMT"] + "</span>";
+//                     sHtml += "      </div>";
+//                     sHtml += "      <div class='icon_area'>";
+//                     sHtml += "         <span class='best'>BEST</span>";
+//                     sHtml += "         <span class='new'>NEW</span>";
+//                     sHtml += "      </div>";
+//                     sHtml += "   </div>";
+//                     sHtml += "</div>";
+//                 }
+//                 $("#divNew").html(sHtml);
+
+//             },
+//             error: function (data, status, err) {
+
+//                 return;
+//             }
+//         });
+
+
+//     }
+//     catch (e) {
+
+//     }
+
+
+
+
+// }
+
+// //Trend PICK
+// function fnTrend() {
+//     try {
+
+//         var hArr = new Array();
+//         var hObj = new Object();
+//         hObj.type = "04";
+//         hArr.push(hObj);
+
+//         var bArr = new Array();
+//         var bObj = new Object();
+//         bArr.push(bObj);
+
+//         var totObj = new Object();
+//         totObj.header = hArr;
+//         totObj.body = bArr;
+
+//         $.ajax({
+//             method: "post",
+//             url: targetUrl,
+//             data: JSON.stringify(totObj),
+//             dataType: "json",
+//             beforeSend: function () {
+//                 //로딩 창 출력X
+
+//             },
+//             success: function (data) {
+//                 var result = data.RESULT; //통신결과
+
+//                 console.log(data)
+
+//                 if (data == null || data.RESULT == "N" || data.DATA.length == 0) { //에러 또는 데이터 없을때 아무 처리안함
+//                     return;
+//                 }
+
+
+//                 var allData = data.DATA;
+
+//                 var sHtml = "";
+//                 for (var i = 0; i < allData.length; i++) {
+//                     sHtml += "	<div class='swiper-slide'>";
+//                     sHtml += "          <div class='sec4_slide'>";
+//                     sHtml += "                <div class='imgarea' style='background:url(" + allData[i]["FILEURL"] + ") no-repeat center center; background-size:cover;'></div>";
+//                     sHtml += "                <div class='txt'>";
+//                     sHtml += "                    <div onclick='fnMove(\"sdf\")' >";
+//                     sHtml += "                           <h2 class='title' >TREND PICK</h2>";
+//                     sHtml += "                          <p class='sub_info'>요즘 유행하는 잇템들만 모아모아!</p>";
+//                     sHtml += "                          <p class='pd_tit'>" + allData[i]["PNM"] + "</p>";
+//                     sHtml += "                          <p class='pd_info'>" + allData[i]["DESCRIPTION"] + "</p>";
+//                     sHtml += "                    </div>";
+//                     sHtml += "                </div>";
+//                     sHtml += "          </div>";
+//                     sHtml += "   </div>";
+//                 }
+
+//                 $("#divTrend").html(sHtml);
+
+
+//             },
+//             error: function (data, status, err) {
+
+//                 return;
+//             }
+//         });
+
+
+//     }
+//     catch (e) {
+
+//     }
+
+
+
+
+// }
+
+
+// //Issue PICK
+// function fnIssue() {
+//     try {
+
+//         var hArr = new Array();
+//         var hObj = new Object();
+//         hObj.type = "05";
+//         hArr.push(hObj);
+
+//         var bArr = new Array();
+//         var bObj = new Object();
+//         bArr.push(bObj);
+
+//         var totObj = new Object();
+//         totObj.header = hArr;
+//         totObj.body = bArr;
+
+//         $.ajax({
+//             method: "post",
+//             url: targetUrl,
+//             data: JSON.stringify(totObj),
+//             dataType: "json",
+//             beforeSend: function () {
+//                 //로딩 창 출력X
+
+//             },
+//             success: function (data) {
+//                 var result = data.RESULT; //통신결과
+
+//                 if (data == null || data.RESULT == "N" || data.DATA.length == 0) { //에러 또는 데이터 없을때 아무 처리안함
+//                     return;
+//                 }
+//                 console.log(data);
+
+
+//                 var allData = data.DATA;
+
+//                 var sHtml_li = "";
+//                 var sHtml_content = "";
+//                 for (var i = 0; i < allData.length; i++) {
+//                     //li
+//                     if (i == 0) {
+//                         sHtml_li += "<li class='active'>" + allData[i]["TITLE"] + "</li>";
+//                     }
+//                     else {
+//                         sHtml_li += "<li>" + allData[i]["TITLE"] + "</li> ";
+//                     }
+
+
+//                     //컨텐츠                    
+//                     sHtml_content += "<div class='tabInner'>";
+//                     sHtml_content += "	<div class='pdarea fl'>";
+//                     sHtml_content += "		<span> <img src='" + allData[i]["FILEURL"] + "'/></span>";
+//                     sHtml_content += "		<div class='txtWrap'>";
+//                     sHtml_content += "		    <p>" + allData[i]["TITLE"] + "</p>";
+//                     sHtml_content += "		    <p>" + allData[i]["DESCRIPTION"] + "</p>";
+//                     sHtml_content += "		</div>";
+//                     sHtml_content += "	</div>";
+//                     sHtml_content += "	<div class='pdarea pdWrap2'>";
+
+//                     if (allData[i]["PID1"]["PID"] != "") {
+//                         sHtml_content += "		<div onclick='location.href=\"/view/product/product_detail.aspx?pid=" + allData[i]["PID1"]["PID"] + "\"'>";
+//                         sHtml_content += "			<img src='" + allData[i]["PID1"]["FILEURL"] + "'/>";
+//                         sHtml_content += "			<div >";
+//                         sHtml_content += "				<h4 class='tit_deco pd_tit'>" + allData[i]["PID1"]["PNM"] + "</h4>";
+//                         sHtml_content += "				<p class='pd_info'>" + allData[i]["PID1"]["SUMMARY"] + "</p>";
+//                         sHtml_content += "				<div class='price'>";
+//                         sHtml_content += "					<span class='price_n'>" + allData[i]["PID1"]["AMT_SALE"] + "</span>";
+//                         sHtml_content += "				</div>";
+//                         sHtml_content += "				<div class='icon_area'>";
+//                         sHtml_content += "					<span class='best'>BEST</span>";
+//                         sHtml_content += "					<span class='new'>NEW</span>";
+//                         sHtml_content += "				</div>";
+//                         sHtml_content += "			</div>";
+//                         sHtml_content += "		</div>";
+//                     }
+//                     if (allData[i]["PID2"]["PID"] != "") {
+//                         sHtml_content += "		<div onclick='location.href=\"/view/product/product_detail.aspx?pid=" + allData[i]["PID2"]["PID"] + "\"'>";
+//                         sHtml_content += "			<img src='" + allData[i]["PID2"]["FILEURL"] + "'/>";
+//                         sHtml_content += "			<div >";
+//                         sHtml_content += "				<h4 class='tit_deco pd_tit'>" + allData[i]["PID2"]["PNM"] + "</h4>";
+//                         sHtml_content += "				<p class='pd_info'>" + allData[i]["PID2"]["SUMMARY"] + "</p>";
+//                         sHtml_content += "				<div class='price'>";
+//                         sHtml_content += "					<span class='price_n'>" + allData[i]["PID2"]["AMT_SALE"] + "</span>";
+//                         sHtml_content += "				</div>";
+//                         sHtml_content += "				<div class='icon_area'>";
+//                         sHtml_content += "					<span class='best'>BEST</span>";
+//                         sHtml_content += "					<span class='new'>NEW</span>";
+//                         sHtml_content += "				</div>";
+//                         sHtml_content += "			</div>";
+//                         sHtml_content += "		</div>";
+//                     }
+//                     sHtml_content += "	</div>";
+//                     sHtml_content += "</div>";
+//                 }
+
+//                 console.log(sHtml_li)
+//                 $("#ulIssue").html(sHtml_li);
+//                 $("#divIssue").html(sHtml_content);
                 
 
-                tabshow($("#mainTab"));
+//                 tabshow($("#mainTab"));
 
 
-            },
-            error: function (data, status, err) {
+//             },
+//             error: function (data, status, err) {
 
-                return;
-            }
-        });
+//                 return;
+//             }
+//         });
 
 
-    }
-    catch (e) {
+//     }
+//     catch (e) {
 
-    }
+//     }
 
                     
- ////// tab메뉴   /////
-    function tabshow(target) {
+//  ////// tab메뉴   /////
+//     function tabshow(target) {
         
-        var $wrapper = target;    
+//         var $wrapper = target;    
 
-        $allTabs = $wrapper.find('.tab-content > div'),
-        $tabMenu = $wrapper.find('.tab-menu li');
+//         $allTabs = $wrapper.find('.tab-content > div'),
+//         $tabMenu = $wrapper.find('.tab-menu li');
 
-        $allTabs.not(':first-of-type').hide();
-        $tabMenu.filter(':first-of-type').find(':first').width('100%')
+//         $allTabs.not(':first-of-type').hide();
+//         $tabMenu.filter(':first-of-type').find(':first').width('100%')
 
-        $tabMenu.each(function (i) {
-            $(this).attr('data-tab', 'tab' + i);
-        });
+//         $tabMenu.each(function (i) {
+//             $(this).attr('data-tab', 'tab' + i);
+//         });
 
-        $allTabs.each(function (i) {
-            $(this).attr('data-tab', 'tab' + i);
-        });
+//         $allTabs.each(function (i) {
+//             $(this).attr('data-tab', 'tab' + i);
+//         });
 
-        $tabMenu.on('click', function () {
+//         $tabMenu.on('click', function () {
 
-            var dataTab = $(this).data('tab'),
-                $getWrapper = $(this).closest($wrapper);
+//             var dataTab = $(this).data('tab'),
+//                 $getWrapper = $(this).closest($wrapper);
 
-            $getWrapper.find($tabMenu).removeClass('active');
-            $(this).addClass('active');
+//             $getWrapper.find($tabMenu).removeClass('active');
+//             $(this).addClass('active');
 
-            $getWrapper.find($allTabs).hide();
-            $getWrapper.find($allTabs).filter('[data-tab=' + dataTab + ']').show();
-        });
-    }
-}
+//             $getWrapper.find($allTabs).hide();
+//             $getWrapper.find($allTabs).filter('[data-tab=' + dataTab + ']').show();
+//         });
 
-function fnMoveDetail(pid) {
-    location.href = "/view/product/product_detail.aspx?pid="+pid;
-}
+//     }
+
+
+// }
+

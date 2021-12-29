@@ -1,0 +1,5 @@
+[{"name":"에리카블룸","price":13500,"delprice":12000,"new":"N","best":"Y","popularity":"N","cupon":"N","img":1,"page":1},
+    {"name":"로제까사","price":23000,"delprice":null,"new":"Y","best":"Y","popularity":"N","cupon":"Y","img":2,"page":2},
+    {"name":"이너니티","price":18000,"delprice":null,"new":"N","best":"Y","popularity":"Y","cupon":"N","img":3,"page":3},
+    {"name":"애프리콧","price":56000,"delprice":67000,"new":"Y","best":"N","popularity":"N","cupon":"Y","img":4,"page":4},
+    {"name":"핑크판타지","price":21000,"delprice":25900,"new":"N","best":"N","popularity":"Y","cupon":"N","img":5,"page":5}]
