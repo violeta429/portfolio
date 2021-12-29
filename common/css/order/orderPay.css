@@ -1,0 +1,655 @@
+﻿.payWrap{
+    width:990px!important
+}
+.payWrap .sub-tit{
+    font-size:20px;
+    border-bottom:1.5px solid #333;
+    padding-bottom:20px;
+    margin-top:50px;
+    margin-bottom:0px;
+    font-weight:400;
+    color:#333;
+}
+
+.telWrap{
+    display:flex;
+    display:-webkit-box;
+    display:-moz-box;
+    display:-ms-flexbox;
+    display:-webkit-flex;
+}
+
+.telWrap input{
+    width:89px;
+}
+
+.telWrap span{
+    margin:0 4px;
+   align-self: center;
+}
+
+.cardWrap{
+    display:flex;
+}
+
+.cardWrap > input{
+    width:53px;
+    margin-right:8px;
+}
+
+.imgWrap{
+    display:inline-block;
+    width:80px;
+    height:80px;
+}
+
+.imgWrap img{
+    width:100%;
+    height:100%;
+
+}
+
+.tb-st-1{
+    width:100%;
+}
+
+.orderpdInfo tr{
+    border-bottom:1px solid #eaeaea;
+}
+.orderpdInfo th{
+    font-weight:500;
+    font-size:17px;
+    color:#565656;
+    padding:10px ;
+    border-bottom:1px solid #dadada;
+    background:#fafafa;
+}
+.orderpdInfo td{
+    vertical-align:middle;
+    padding:22px 4px;
+
+}
+
+.orderpdInfo td:not(:nth-of-type(2)){
+   text-align:center;
+
+}
+
+.orderpdInfo td:nth-of-type(2){
+    padding-left:20px;
+}
+.orderpdInfo  .pdtit{
+    font-size:15px;
+
+}
+.orderpdInfo  .optit{
+ font-size:13px;
+ color:#787878 ;
+ margin-top:6px;
+
+}
+
+.orderpdInfo .pdAlprice{
+    font-size:18px;
+    font-weight:600;
+}
+
+.odlay{ border:1px solid #eaeaea ; padding:20px; margin-top:40px;}
+.odlay h3{
+    font-size:16px;
+    margin-bottom:20px;
+    font-weight:400;
+    color:#454545;
+}
+
+ .payOrder .box{
+     border:1px solid #eaeaea;
+     margin-bottom:16px;
+     border-radius:12px;
+
+ }
+
+.odlay:after{
+    content:'';
+    display:block;
+    clear:both;
+}
+
+.odlayleft{
+    width:50%;
+ display:inline-block;
+ float:left;
+}
+
+.odlayright{
+    width:50%;
+    display:inline-block;
+    float:left
+}
+
+.odlay:after{
+    content:'';
+    display:block;
+   clear:both;
+
+}
+
+.paybtn{
+    clear:both;
+    text-align:center;
+}
+
+.paybtn input{
+    width:30%;
+    font-size:20px;
+    height:46px;
+    margin-top:30px;
+    border-radius:5px;
+
+}
+
+.paytab{  
+    border-bottom:1px solid #ddd;
+    background:#fafafa;
+    padding:16px 30px;
+}
+.paytab li{
+  display:inline-block;
+  text-align:center;
+  margin-right:16px;
+}
+
+
+.paytab li label{
+    display:block;
+    width:100%;
+    height:100%;
+    cursor:pointer;
+    padding:36px 20px 10px 20px;
+      width:110px;
+  border: 1px solid #eaeaea;
+    height:70px; 
+  border-radius:8px;
+  background-color:#FFFFFF;
+}
+.paytab li input[type=radio]{
+    visibility:hidden;
+    margin-left:-20px;
+}
+
+.paytab li label span{
+    display:inline-block;
+    font-size:14px;
+    margin-top:6px;
+}
+
+.cardIcon{
+    background:url(/common/image/icon/payicon/card.png) no-repeat;
+    background-size:32px;
+    background-position:37px 8px;
+
+}
+
+.accountIcon{
+     background:url(/common/image/icon/payicon/account.png) no-repeat;
+    background-size:32px;
+    background-position:38px 8px;
+}
+
+
+.cardIcon.on{
+border: 1px solid #4285f4;
+color:#4285f4;
+background:url(/common/image/icon/payicon/cardOn.png) no-repeat;
+background-size:32px;
+background-position:38px 8px;
+ background-color:#FFFFFF;
+}
+
+.accountIcon.on{
+border: 1px solid #4285f4;
+color:#4285f4;
+background:url(/common/image/icon/payicon/accountOn.png) no-repeat;
+background-size:32px;
+background-position:38px 8px;
+ background-color:#FFFFFF;
+}
+
+.paytab{
+    width:100%;
+
+}
+.paytb{
+    width:100%;
+    table-layout:fixed;
+    background:#fafafa;
+}
+.paytb td{
+    padding:16px 6px;
+    vertical-align:middle;
+
+}
+.paytb td:nth-of-type(1){
+    width:150px;
+    padding-left:28px;
+
+}
+
+.cardNum input{
+    width:93px;
+}
+.cardNum span{
+    color:#ccc;
+    margin-left:2px;
+    margin-right:3px;
+}
+
+.payOrder{
+ width:92%;
+ float:right;
+
+}
+.payOrdertit{
+    font-size:20px;
+    margin-bottom:25px;
+}
+
+.payOrder tr td{
+    padding:10px 12px;
+    font-size:16px;
+}
+.payOrder tr td:nth-of-type(1){
+    width:100px !important;
+}
+
+.payOrder tr td:nth-of-type(2){
+    text-align:right;
+
+}
+
+
+.payOrder tr:last-child{
+    border-top:1px dashed #ddd
+}
+
+.payOrder tr:nth-of-type(4) td{
+    padding-bottom:24px;
+}
+.payOrder tr:last-child td{
+    padding-top:13px;
+    padding-bottom:17px;
+    font-size:20px;
+    font-weight:600;
+}
+
+.allprice{
+    font-size:26px;
+    font-weight:600;
+    color:#F44336;
+    margin-right:4px;
+}
+
+.amt {
+    display:block;
+    margin-top:4px;
+    font-size:13px;
+    color:#565656;
+}
+.amt:before{
+    content:'';
+    display:inline-block;
+    width:2px;
+    height:2px;
+    background:#565656;
+    margin-right:3px;
+    vertical-align:middle;
+    position:relative;
+    top:-2px;
+}
+
+.possamt{
+    color:red;
+    display:inline-block;
+    min-width:12px;
+    margin-left:10px;
+}
+
+.inputPay input[type=button]{
+  top:0;
+  height:32px;
+  margin-left:10px;
+}
+
+.resultArea > div{
+    display:none;
+}
+
+.tb-st-1 td:nth-of-type(1){
+    width:150px;
+   padding: 16px 20px;
+   height:50px;
+    font-size:15px;
+    font-weight:500   ;
+    color:#5b5e63;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: auto;
+}
+
+
+
+
+.orderInfo .tb-st-1 td:nth-of-type(2){
+    font-size:14px;
+}
+
+.orderInfo .tb-st-1{
+    border-top:1px solid #eaeaea;
+
+}
+.orderDeli{
+     display:flex;
+    display:-webkit-box;
+    display:-moz-box;
+    display:-ms-flexbox;
+    display:-webkit-flex;
+    padding:16px 0px;
+}
+.orderDeli >p {
+    width: 150px;
+   font-size: 15px;
+    font-weight: 500;
+    color: #5b5e63;
+    padding-left:20px;
+
+}
+.delibtnwrap{
+    display:inline-block;
+
+}
+
+
+
+.delibtnwrap input{
+ top:0;
+ margin-right:6px;
+ border-radius:3px;
+ background:#fafafa;
+ font-size:12px;
+}
+
+
+.orderpdInfo table{
+    width:100%;
+    table-layout:fixed;
+}
+
+.payOrder table{
+    width:100%;
+    table-layout:fixed;
+}
+
+.textbox textarea{
+    border:1px solid #eaeaea;
+    resize:none;
+    width:450px;
+    margin-top:10px;
+    height:80px;
+    margin-bottom:10px;
+    padding:10px;
+
+}
+
+.textbox textarea:focus{
+    outline:1px solid #333;
+}
+
+.orderInfo{
+    margin-bottom:40px;
+}
+/*미디어쿼리*/
+
+@media all and (max-width:767px){
+
+    
+    .payWrap .sub-tit{
+        margin-top:20px;
+    }
+    .paybtn input{
+        width:94%;
+        margin-top:14px;
+        font-size:16px;
+        height:40px;
+    }
+    .payWrap{
+        width:100% !important;
+
+    }
+    .orderInfo{
+        width:100%;
+    }
+    .tb-st-1 tr td:nth-of-type(1){
+        width:28%;
+        word-break:keep-all;
+        vertical-align:top;
+        padding:10px 0px 10px 10px;
+    }
+
+    .orderInfo .tb-st-1 td:nth-of-type(2){
+        padding:10px 0px 10px 10px;
+    }
+    .selectbox{
+        width:100%;
+    }
+    .tb-st-1 td input{
+        width:100%;
+    }
+    .addwrap p:nth-of-type(1) input[type=text]{
+        width:60%;
+
+    }
+    .tb-st-1 td input[type=button]{
+        width:calc(50% - 10px)
+    }
+
+    .orderDeli{
+        display:block;
+        padding:0;
+    }
+
+    .orderDeli >p{
+        width:unset;
+        padding-left:10px;
+        margin-bottom:12px;
+    }
+    .delibtnwrap{
+        width:100%;
+    }
+   .delibtnwrap input{
+       font-size:14px;
+        padding:6px 3px;
+        margin-right:4px;
+   }
+   .orderpdInfo colgroup{
+       display:none;
+
+   }
+  .payWrap .sub-tit{
+      font-size:18px;
+  }
+  .orderpdInfo thead{
+      display:none;
+
+  }
+
+ .orderpdInfo td{
+     padding:0;
+ }
+
+  .orderpdInfo tr{
+          display:flex;
+    display: -webkit-box;
+    display:-moz-box;
+    display:-ms-flexbox;
+    display:-webkit-flex;
+      flex-wrap:wrap;
+      padding:10px  ;
+      justify-content: flex-end;
+  }
+  .orderpdInfo td:nth-of-type(2){
+      width:calc(100% - 80px) ;
+      padding-left:20px;
+  }
+
+    .orderpdInfo td:last-of-type{
+      width:100%  ;
+      margin-top:8px;
+      margin-bottom:8px;
+      text-align:right;
+
+
+  }
+     .pdquant , .deliprice{
+            margin-top:12px;
+     }
+     
+    .orderpdInfo .pdAlprice{
+        font-size:16px;
+        font-weight:600;
+        margin-top:8px;
+    }
+
+    .pdquant:before{
+        content:'수량 :';
+        color:#787878;
+        margin-right:10px;
+    }
+    .deliprice{
+        margin-left:16px;
+    }
+    .deliprice:before{
+        content:'배송비 :';
+          color:#787878;
+        margin-right:10px;
+
+    }
+
+    .orderpdInfo td:nth-of-type(3) ,.orderpdInfo td:nth-of-type(4) {
+      font-size:14px;
+    }
+
+    .odlay{
+        border:none;
+        padding:0;
+    }
+    .odlayleft{
+        width:100%;
+    }
+    
+    .odlayright{
+        width:100%;
+    }
+    .paytb td:nth-of-type(1){
+        padding:10px 0px 10px 10px;
+        width:26%  ;
+        word-break:keep-all;
+    }
+     .paytb td:nth-of-type(2){
+         padding:10px;
+     }
+     .inputPay{
+         display:block;
+     }
+
+     .inputPay input[type=text]{
+         width:calc(100% - 80px)
+
+     }
+     .inputPay input[type=button]{
+         height:36px;
+     }
+     .paytab{
+         padding: 12px 10px;
+     }
+     .paytab:after{
+         content:'';
+         display:block;
+         clear:both;
+     }
+     .payOrder{
+         width:100%;
+     }
+     .paytab li {
+         margin-right:0;
+         width:50%;
+         float:left;
+         box-sizing:border-box;
+     }
+     .paytab li label{
+         width:100%;
+         border-radius:0;
+         height:42px;
+         padding:10px;
+     }
+     .paytab li label span{
+         margin-top:0;
+     }
+     .paytab li input[type=radio]{
+         width:0;
+         height:0;
+     }
+     .cardIcon , .cardIcon.on{
+         background-position:10px 4px;
+     }
+
+     .accountIcon , .accountIcon.on{
+        background-position:10px 5px;
+     }
+     .paytab li label span{
+         position:relative;
+         top:-2px;
+         left:20px
+     }
+
+     .resultArea .paytb input[type=text]{
+         width:100%;
+     }
+     .payOrder{
+         margin-top:20px ;
+         
+         border-radius:0;
+     }
+     .payOrder table{
+         width:100%;
+     }
+
+     .payOrdertit{
+        margin-bottom:10px; 
+        font-size:16px;
+     }
+
+
+    .payOrder tr td:nth-of-type(1){
+        width:30% !important;
+        padding-left:20px;
+    }
+
+    .payOrder tr td:nth-of-type(2){
+        padding-right:20px;
+    }
+
+    .payOrder tr:last-child td{
+        padding-top:10px;
+    }
+    .allprice{
+        font-size:22px;
+    }
+
+   .cardNum input{
+       width:calc(50% - 10px)!important;
+   }
+
+
+   .payOrder tr td{
+       padding:10px 6px;
+   }
+} /*미디어쿼리 e*/

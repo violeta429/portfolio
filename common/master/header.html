@@ -1,0 +1,290 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/common.css">
+</head>
+<body>
+    <header id="header" class="web">
+        <div class="header_top_wrap"> 
+           <div class="header_top content clearfix">
+                 <div class="hdInner_l">
+                     <ul>
+                         <li><a href="#">회사소개</a></li>
+                         <li><a href="/view/cscenter/cscenter.aspx">고객센터</a></li>
+                     </ul>
+                 </div>
+
+                  <div class="hdInner_r">
+                     <div id="divLogOut" runat="server" >
+                         <ul id="ulLogin">
+                             <li><a href="#" onserverclick="fnLogout" runat="server">로그아웃</a></li>
+                             <li><a href="/view/order/orderInfo.aspx">주문배송</a></li>
+                             <li><a href="/view/mypage/mypage.aspx">마이페이지</a></li>
+                         </ul>
+                     </div>
+
+                    <div class="shopwrap">
+
+                        <ul>
+                            <li>
+                                 <a href="/view/mypage/wish.aspx">
+                                      <i class="fas fa-heart"></i>
+                                      <p>관심상품</p>
+                                  </a>
+                            </li>
+                            <li>
+                                  <a href="/view/shop/cart.aspx">
+                                      <i class="fas fa-shopping-basket"></i>
+                                      <p>장바구니</p>
+                                  </a>
+                            </li>
+                        </ul>
+                    </div>
+                  </div>
+             </div>
+          </div> 
+
+          <div class="header_md">
+            <div class="hd_md_wrap content  clearfix">
+                     <a href="/view/main.aspx" class="logoWrap">
+                     <img src="/common/image/masterpage/logo_2.png" alt="로고이미지" />
+                 </a>
+  
+              <div class="topSearch">
+                <div class="searchBox">
+                      <input class="searchtxt" id="txtSearchMaster" type="text" placeholder="검색어를 입력해주세요" onkeypress="javascript:if(event.keyCode == 13){fnSearchMaster('K');}"/>
+                      <input class="searchbtn cp" type="button" value="검색" onclick="fnSearchMaster('K')"/>
+                </div>
+              </div>
+
+
+
+                </div>
+             </div>
+
+
+      <!-- 상단 카테고리 s -->
+      <div class="category-wrap clearfix">
+         <div class="content clearfix">
+             <ul class="cate_inner">
+                    <li><a href="#">인기상품</a></li>
+                 <li><a href="#">신상품</a></li>
+                 <li><a href="#">상품</a></li>
+                 <li><a href="#">이벤트상품</a></li>
+                 <li><a href="#">랭킹</a></li>
+                 <li><a href="#">할인상품</a></li>
+                 <li><a href="#">메뉴7</a></li>--%>
+             </ul>
+             <div class="allCategory">
+                 <a class="cate_btn" href="#"></a>
+
+                 <div class="allCate-list">
+                   <span class="close_btn"></span>
+                <%--메뉴 첫번째 줄--%>
+                     <div class="clearfix">
+                         <ul class="cateOuter clearfix"  id="ulMasterCategory" runat="server">
+                             <%--<li class="cate_wrap">
+                                 <a class="cate_tit" href="#">대분류</a>
+                                 <div class="sub-category2">
+                                          <ul class="child_ul">
+                                              <li>
+                                                   <p><a href="#">중분류</a></p><span class="cate_plus_btn"></span>
+                                                  <ul> 
+                                                       <li>
+                                                           <a href="#none">소분류</a>
+
+                                                       </li> 
+                                                       <li>
+                                                           <a href="#none">소분류</a>
+                                                       </li> 
+
+                                                  </ul> 
+                                              </li> 
+                                              <li>
+                                                  <p><a href="#">중분류</a></p><span class="cate_plus_btn"></span>
+                                                  <ul> 
+                                                       <li>
+                                                           <a href="#none">소분류</a>
+
+                                                       </li> 
+                                                       <li>
+                                                           <a href="#none">소분류</a>
+                                                       </li> 
+
+                                                  </ul> 
+                                              </li> 
+                                              <li>
+                                                  <p><a href="#">중분류</a></p><span class="cate_plus_btn"></span>
+                                              </li> 
+                                          </ul>
+                                 </div>
+                             </li>
+
+                             <li class="cate_wrap">
+                                 <a class="cate_tit" href="#">대분류</a>
+                                 <div class="sub-category2">
+                                          <ul class="child_ul">
+                                              <li>
+                                                  <p><a href="#">중분류</a></p><span class="cate_plus_btn"></span>
+                                                  <ul> 
+                                                       <li>
+                                                           <a href="#none">소분류</a>
+
+                                                       </li> 
+                                                       <li>
+                                                           <a href="#none">소분류</a>
+                                                       </li> 
+
+                                                  </ul> 
+                                              </li> 
+                                              <li>
+                                                  <p><a href="#">중분류</a></p><span class="cate_plus_btn"></span>
+                                                  <ul> 
+                                                       <li>
+                                                           <a href="#none">소분류</a>
+
+                                                       </li> 
+                                                       <li>
+                                                           <a href="#none">소분류</a>
+                                                       </li> 
+
+                                                  </ul> 
+                                              </li> 
+                                              <li>
+                                                  <p><a href="#">중분류</a></p><span class="cate_plus_btn"></span>
+                                              </li> 
+                                          </ul>
+                                 </div>
+                             </li>
+                             <li class="cate_wrap">
+                                 <a class="cate_tit" href="#">대분류</a>
+                                 <div class="sub-category2">
+                                          <ul class="child_ul">
+                                              <li>
+                                                  <p><a href="#">중분류</a></p><span class="cate_plus_btn"></span>
+                                                  <ul> 
+                                                       <li>
+                                                           <a href="#none">소분류</a>
+
+                                                       </li> 
+                                                       <li>
+                                                           <a href="#none">소분류</a>
+                                                       </li> 
+
+                                                  </ul> 
+                                              </li> 
+                                              <li>
+                                                  <p><a href="#">중분류</a></p><span class="cate_plus_btn"></span>
+                                                  <ul> 
+                                                       <li>
+                                                           <a href="#none">소분류</a>
+
+                                                       </li> 
+                                                       <li>
+                                                           <a href="#none">소분류</a>
+                                                       </li> 
+
+                                                  </ul> 
+                                              </li> 
+                                              <li>
+                                                  <p><a href="#">중분류</a></p><span class="cate_plus_btn"></span>
+                                              </li> 
+                                          </ul>
+                                 </div>
+                             </li>
+                             <li class="cate_wrap">
+                                 <a class="cate_tit" href="#">대분류</a>
+                                 <div class="sub-category2">
+                                          <ul class="child_ul">
+                                              <li>
+                                                  <p><a href="#">중분류</a></p><span class="cate_plus_btn"></span>
+                                                  <ul> 
+                                                       <li>
+                                                           <a href="#none">소분류</a>
+
+                                                       </li> 
+                                                       <li>
+                                                           <a href="#none">소분류</a>
+                                                       </li> 
+
+                                                  </ul> 
+                                              </li> 
+                                              <li>
+                                                  <p><a href="#">중분류</a></p><span class="cate_plus_btn"></span>
+                                                  <ul> 
+                                                       <li>
+                                                           <a href="#none">소분류</a>
+
+                                                       </li> 
+                                                       <li>
+                                                           <a href="#none">소분류</a>
+                                                       </li> 
+
+                                                  </ul> 
+                                              </li> 
+                                              <li>
+                                                  <p><a href="#">중분류</a></p><span class="cate_plus_btn"></span>
+                                              </li> 
+                                          </ul>
+                                 </div>
+                             </li>
+                             <li class="cate_wrap">
+                                 <a class="cate_tit" href="#">대분류</a>
+                                 <div class="sub-category2">
+                                          <ul class="child_ul">
+                                              <li>
+                                                  <p><a href="#">중분류</a></p><span class="cate_plus_btn"></span>
+                                                  <ul> 
+                                                       <li>
+                                                           <a href="#none">소분류</a>
+
+                                                       </li> 
+                                                       <li>
+                                                           <a href="#none">소분류</a>
+                                                       </li> 
+
+                                                  </ul> 
+                                              </li> 
+                                              <li>
+                                                  <p><a href="#">중분류</a></p><span class="cate_plus_btn"></span>
+                                                  <ul> 
+                                                       <li>
+                                                           <a href="#none">소분류</a>
+
+                                                       </li> 
+                                                       <li>
+                                                           <a href="#none">소분류</a>
+                                                       </li> 
+
+                                                  </ul> 
+                                              </li> 
+                                              <li>
+                                                  <p><a href="#">중분류</a></p><span class="cate_plus_btn"></span>
+                                              </li> 
+                                          </ul>
+                                 </div>
+                             </li>
+                         </ul>
+                     </div>
+
+
+
+                    
+                                                    
+                 </div>
+             </div>
+         </div>
+
+
+      </div>
+     
+</header>
+</body>
+</html>

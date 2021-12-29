@@ -1,0 +1,263 @@
+﻿input:-webkit-autofill {
+   -webkit-box-shadow: 0 0 0 1000px white inset;
+}
+
+
+body{
+    background:url(/common/image/main/login2.jpg); 
+    background-size:cover
+}
+.logo {text-align:center}
+.logo img{
+    width:130px;
+}
+
+.loginWrap{
+    width:460px;
+    padding:0 20px;
+    margin:0px auto;
+}
+.lg-tit{
+   text-align:left; 
+   font-size:20px;
+}
+
+.info input{
+    width:100%;
+    background:#fff;
+    height:42px;
+    font-size:16px;
+    margin-bottom:10px;
+    padding-left:20px;
+    border-radius:5px;
+    border:1px solid #ccc;
+    
+}
+
+.loginbtn{
+margin-top:20px;
+margin-bottom:40px;
+border-radius:6px;
+background:#F44336;
+}
+.pwid{
+    padding:10px 0px;
+}
+.pwid ul{
+    display:flex;
+    justify-content:space-around;
+}
+ .pwid ul li{
+     font-size:14px;
+     color:#999999;
+     position:relative;
+ }
+
+  .pwid ul a{
+     color:#1e1e1e;
+ }
+.pwid ul li:after{
+    content:'';
+    display:inline-block;
+    width:1px;
+    height:11px;
+    background:#eaeaea;
+    position:absolute;
+    right:-40px;
+    top:4px;
+
+}
+
+.remId{
+    margin-top:10px;
+    display:inline-block;
+    padding-bottom:12px;
+     
+}
+
+.remId input{
+    visibility:hidden;
+}
+.remId span:nth-of-type(1){
+  display:inline-block;
+  width:20px;
+  height:20px;
+  border:1px solid #333;
+  border-radius:2px; 
+  cursor:pointer;
+  position:relative;
+  left:-12px;
+}
+.remId input:checked + span{
+    background-color:#F44336;
+
+    background-repeat:no-repeat;
+    background-size:12px;
+    background-position:3px 5px ;
+    background-image:url(/common/image/masterpage/banner/check_btn_M.png);
+}
+
+
+    /*animation: bruz 1s 1;
+    animation-fill-mode:forwards;*/
+
+@keyframes bruz{
+    from{transform: scale(1, 1);}
+    30%{transform: scale(1.25, 0.75);}
+    40%{transform: scale(0.75, 1.25);}
+    50%{transform: scale(1.15, 0.85);}
+    65%{transform: scale(0.95, 1.05);}
+    75%{transform: scale(1.05, 0.95);}
+    to{transform:scale(1,1);     background-image:url(/common/image/masterpage/banner/check_btn_M.png);}
+}
+
+
+.remId span:nth-of-type(2){ color:#565656 ;font-size:15px; position:relative; top:-4px ; left:-4px;}
+
+ /*url(/common/image/masterpage/banner/check_btn.png)*/
+.line{
+    color:#565656;
+    font-size:15px;
+    text-align:center;
+    margin-top:32px;
+    margin-bottom: 32px;
+}
+
+.line:before{
+    content:'';
+    display:inline-block;
+    height:1px;
+    width:120px;
+    background:#565656 ;
+    margin-right:20px;
+}
+.line:after{
+    content:'';
+    display:inline-block;
+    height:1px;
+    width:120px;
+    background:#565656 ;
+    margin-left:20px;
+   
+}
+
+
+
+.snsLogin ul li{
+    height:36px;
+    width:calc(50% - 20px);
+    display:inline-block;
+   margin-bottom:14px;
+   text-align:center;
+   position:relative;
+   overflow:hidden;
+}
+
+.snsLogin ul li a{
+   display:block;
+   height:100%;
+   border-radius:4px;
+   line-height:36px;
+   font-size:13px;
+   padding-left:28px;
+
+}
+
+
+.snsLogin ul li::before{
+    content:'';
+    display:inline-block;
+    width:36px;
+    height:36px;
+    position:absolute;
+    left:-2px;
+    top:-2px;
+}
+
+
+
+.snsLogin ul li::after{
+content:'';
+display:inline-block;
+width:1px;
+height:78%;
+position:absolute;
+left:36px;
+top:50%;
+transform:translateY(-50%);
+}
+
+.facebook:before{
+    background:url(/common/image/icon/facebook.png) no-repeat;
+    background-size:40px;
+}
+
+
+.facebook:after{
+    background:rgba(255,255,255,0.1);
+}
+
+.google:after{
+    background:rgba(5,5,5,0.1);
+}
+.google:before{
+    background:url(/common/image/icon/google.png) no-repeat;
+    background-size:40px;
+    left:-1px!important;
+    top:-1px !important;
+}
+
+.facebook a{
+    background:#1877F2;
+    color:#FFF;
+}
+.facebook {
+  
+    margin-left:10px;
+}
+.google{
+    margin-left:10px;
+}
+.google a{
+    border: 1px solid #e2e2e2;
+    color:#333;
+    background:#f4f4f4;
+}
+
+.loginWrap{
+    background:rgba(255,255,255,0.9);
+    padding:20px;
+    box-shadow:1px 1px 10px rgba(1, 1, 1,0.2);
+    border-radius:12px;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    
+    transform:translate(-50%,-50%);
+}
+
+.textInfo{
+    margin-bottom:20px;
+    color:red;
+}
+
+@media all and (max-width: 767px) {
+
+  .loginWrap{
+      width:94%;
+      padding:20px 20px;
+  }
+
+  .line:before , .line:after{
+      content:'';
+      width:50px;
+      
+  }
+
+  .pwid ul li:after{
+      content:none
+  }
+}
+
+

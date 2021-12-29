@@ -1,0 +1,222 @@
+﻿.Qicon{
+    display:inline-block;
+    width:40px;
+    height:40px;
+    background:url(/common/image/icon/cscenter/question.png) no-repeat;
+    background-size:40px;
+    border:1px solid #506684;
+    
+    vertical-align:middle;
+}
+
+.Aicon{
+    display:inline-block;
+    width:40px;
+    height:40px;
+    background:url(/common/image/icon/cscenter/answer.png) no-repeat;
+    background-size:40px;
+    border:1px solid #6e4d99;
+    
+    vertical-align:middle;
+}
+
+.Qdetail h4{
+    margin-bottom:20px;
+    font-weight:500;
+    padding-left:20px;
+    border-bottom:1px dashed #ddd;
+    padding-bottom:8px;
+    font-size:18px;
+    
+}
+.circle{
+  position:relative;
+}
+
+.circle:before{
+    content:'';
+    display: inline-block;
+    width: 15px;
+    height: 19px;
+    background: url(/common/image/icon/sprite_img.png) no-repeat;
+    background-size: 251px;
+    background-position: -94px -24px;
+    margin-right: 10px;
+    opacity:0.8;
+}
+.Qheader{
+    text-align:left;
+}
+
+.Qheader th{
+    padding: 0px;
+    background:linear-gradient(to bottom , #f8f8f8 30%,  #f1f1f1);
+    box-shadow:0px 2px #FFF inset;
+    border-top:1px solid #dcdcde;
+    font-weight:400;
+    font-size:15px;
+    color:#1e1e1e;
+    letter-spacing:0.2px;
+}
+
+.Qheader p{
+    width:calc(100% - 70px);
+    display:inline-block;
+    margin-left:10px;
+    vertical-align:middle;
+}
+
+
+.Qdetail table{
+    width:100%;
+             font-family: 'NanumBarunGothic';
+             font-size:14px;
+             
+    letter-spacing:0.3px;
+    border-left:1px solid #eaeaea;
+    border-right:1px solid #eaeaea;
+    border-bottom:1px solid #eaeaea;
+}
+
+
+.Qdetail table tr:not(.Qheader) td{
+    padding:13px 20px;
+    border-top:1px solid #eaeaea;
+}
+
+.qnadetailcont{
+    font-size:16px;
+    font-weight:600;
+    margin-top:2px;
+    display:inline-block;
+}
+.qnadate td span:nth-of-type(1){
+    color:#aaa;
+    font-size:13px;
+    margin-right:20px;
+}
+
+.qnadetail {
+}
+
+.qnadetail p {
+    line-height: 2.1;
+    letter-spacing:0.9px ;
+    font-size:14px;
+    color:#676767;
+    white-space:pre-line;
+    
+    min-height:230px;
+}
+
+.edit{
+    display:inline-block;
+    font-size:13px;
+    font-weight:300;
+    color:#565656;
+    background:url(/common/image/icon/cscenter/edit.png) no-repeat;
+    background-size:20px;
+    padding:3px  10px 3px 32px ;
+    border:1px solid #dadada;
+    background-position:8px 2px  ;
+    border-radius:3px;
+    box-shadow:2px 2px rgba(218, 218, 218, 0.25);
+    float:right;
+    position:relative;
+    top:-2px;
+    
+}
+
+.edit input{
+    border:none;
+    background:none;
+    font-size:12px;
+    color:#787878;
+}           
+
+.Adetail{
+
+}      
+
+
+.Adetail h4{
+    margin-bottom:20px;
+    font-weight:500;
+    padding-left:20px;
+    border-bottom:1px dashed #ddd;
+    padding-bottom:8px;
+    font-size:16px;
+}
+
+.Qheader{
+    text-align:left;
+}
+
+.Qheader th{
+    padding: 0px;
+    background:linear-gradient(to bottom , #f8f8f8 30%,  #f1f1f1);
+    box-shadow:0px 2px #FFF inset;
+    border-top:1px solid #dcdcde;
+    font-weight:400;
+    font-size:15px;
+    color:#1e1e1e;
+    letter-spacing:0.2px;
+}
+
+.Qheader p{
+    width:calc(100% - 70px);
+    display:inline-block;
+    margin-left:10px;
+    vertical-align:middle;
+}
+
+
+.Adetail{
+    margin-top:40px;
+}
+.Adetail table:before{
+    content:'';
+    display:inline-block;
+    width:34px;
+    height:50px;
+    background:url(/common/image/icon/cscenter/answerarrow.png);
+    position:absolute;
+    left:-60px;
+    top:8px;
+    
+    background-position-y:-20px;
+}
+.Adetail table{
+    width:94%;
+    font-family: 'NanumBarunGothic';
+    font-size:14px;
+    letter-spacing:0.3px;
+    border-left:1px solid #eaeaea;
+    border-right:1px solid #eaeaea;
+    border-bottom:1px solid #eaeaea;
+    margin-left:auto;
+    position:relative;
+}
+
+
+.Adetail table tr:not(.Qheader) td{
+    padding:13px 20px;
+    border-top:1px solid #eaeaea;
+}
+
+@media all and (max-width:767px) {
+    .Adetail table:before{
+        content:none;
+    }
+
+    .Adetail table{
+        width:100%;
+    }
+    .Qdetail table tr:not(.Qheader) td{
+        padding:10px 4%;
+    }
+
+    .qnadetail p{
+        line-height:1.6;
+    }
+}

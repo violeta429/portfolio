@@ -1,0 +1,111 @@
+﻿
+.chargeCashWrap{
+background: #f5f6f8     ;
+padding:40px 20px;
+border:1px solid #eaeaea;
+margin-top:30px;
+}
+
+.chargeCashWrap ul:after{
+    content:'';
+    display:block;
+    clear:both;
+}
+.chargeCashWrap ul li{
+    float:left;
+}
+.chargeCashWrap ul li:nth-of-type(1){
+    width:30%;
+    font-size:18px;
+    color:#666;
+    font-weight:600;
+       font-family: 'EliceDigitalBaeum_Regular';
+}
+
+
+.chargeCashWrap ul li:nth-of-type(2){
+    width:70%;
+}
+.selectbox2{
+    background:#FFF;
+    width:50%;
+    position:relative;
+    top:10px;
+}
+.selectbox2 b{
+    z-index:0;
+}
+
+
+.cashIcon{
+    display:inline-block;
+      width:48px;
+    height:48px;
+    background:url(/common/image/icon/mypage/point_img.png) no-repeat;
+    vertical-align:middle;
+    margin-right:10px;
+        background-size:cover;
+    animation: coin 2s steps(6) infinite ;
+    animation-fill-mode:forwards;
+    transform:scale(0.8)
+}
+
+@keyframes coin{
+    0%{}
+    100%{background-position-x:-288px}
+}
+.cashIcon +p{
+    display:inline-block;
+    
+    vertical-align:middle;
+}
+
+
+.selectbox2 select{
+    font-size:17px;
+      font-family: 'Lato';
+      color:#454545;
+      letter-spacing:1px;
+      text-align:center;
+}
+
+
+
+
+
+
+
+
+
+@media all and (max-width:767px){
+ .chargeCashWrap{
+     margin-top:10px;
+     padding:14px;
+ }
+
+ .chargeCashWrap ul li{
+     display:block;
+     width:100% !important;
+     float:none;
+ }
+
+
+ .selectbox2{
+     top:0;
+ }
+
+ .chargeCashWrap ul li:nth-of-type(2){
+     margin-top:20px;
+     margin-bottom:20px;
+     text-align:center;
+ }
+
+ .selectbox2{
+     margin:0 auto;
+     width:90%;
+ }
+
+ .btnwrap3{
+     margin-top:30px;
+ }
+}

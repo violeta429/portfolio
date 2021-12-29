@@ -1,0 +1,201 @@
+﻿body{
+    background:#f2f2f2;
+    padding:3% ;
+}
+.idpw_area{
+    width:500px;
+    margin:0 auto;
+    background:#FFF;
+    padding:20px;
+    position:absolute;
+    top:45%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    -moz-transform:translate(-50%,-50%);
+    -webkit-transform:translate(-50%,-50%);
+    border-radius:3%;
+    box-shadow:2px 2px 10px rgba(100,100,100,0.1);
+}
+
+.lg-tit{
+    font-size:24px;
+    margin-top:20px;
+}
+
+.idpw_wrap{
+    margin-top:40px;
+}
+.find-account-tab ul{
+    border-bottom:2px solid #F44336;
+}
+
+
+.find-account-tab ul li{
+    width:130px;
+   display:inline-block;
+   text-align:center;
+   font-weight:500;
+   float:left;
+   position:relative;
+   box-sizing:border-box;
+   top:2px;
+   
+}
+
+.find-account-tab ul li a{
+display:block;
+width:100%;  
+color:#aaa;
+    background:#f8f8f8;   
+   box-sizing:border-box;
+  height:42px;
+  line-height:42px;
+  font-size:14px;
+  border-bottom:2px solid #F44336 ;
+}
+                            
+.find-account-tab ul li.on a {
+background:#FFF;           
+color:#F44336;
+border:2px solid #F44336;
+border-bottom:none;
+position:relative;
+top:1px;
+}
+
+.findcont {
+    padding:20px;
+    margin-top:20px;
+}
+.find_info table{
+    width:100%;
+    border-top:1px solid #ccc   ;
+    border-left:1px solid #CCC;
+    border-right:1px solid #ccc;
+    margin:40px auto;
+}
+.find_info table td{
+    
+    padding:16px 20px;
+    border-bottom:1px solid #ccc;
+}     
+.find_info table td:nth-of-type(1){
+    width:120px;
+    font-size:15px;
+    color:#565656;
+}
+
+.find_info table td:nth-of-type(2) input{
+    width:100%;
+    height:36px;
+
+}
+
+.find-id{
+    border:1px solid #ccc;
+    margin:40px auto;
+    padding:20px;
+}
+
+.find-id p{
+    font-size:16px;
+    color:#787878;
+
+}
+
+.find-id >div{
+   margin-top:16px;
+   margin-bottom:28px;
+}
+
+.find-id >div .userid {
+    font-size:32px;
+    font-family:'Lato','Noto Sans KR', sans-seri;
+    margin-right:10px;
+}
+
+.find-none >div{
+    border:1px solid rgb(204, 204, 204);
+    padding:30px;
+    text-align:center;
+    margin:40px auto;
+
+}
+
+.non_id{
+    font-size:16px;
+
+}
+
+.find-none a{
+    text-align:center;
+    line-height:42px
+}
+
+.find-id + .abtn2 a{
+  display:inline-block;
+  width:150px!important;
+  height:42px;
+}
+
+.find-id + .abtn2 a:nth-of-type(1){
+    color:#F44336;
+    background:#FFF;
+    border:2px solid #F44336;
+}
+
+.find-id + .abtn2 a:nth-of-type(2){
+    background:#F44336;
+}
+
+
+@media all and (max-width:787px) {
+   
+   .idpw_area{
+       width:96%;
+   }
+    .find-account-tab ul li{
+        width:50%;
+    }
+
+    .findcont{
+        padding:0;
+    }
+
+    .find_info table{
+        margin:20px auto;
+        border:none;
+    }
+
+    .find_info table td{
+        padding:10px 3% ;
+        border-bottom:none;
+        }
+
+
+      .find_info table td:nth-of-type(1){
+          width:30%;
+      }
+        .find_info table td:nth-of-type(2) input[type=text] {
+            width:100%;
+
+        }
+
+
+        .abtn2{
+            display:flex;
+            display:-moz-box;
+            display:-ms-flexbox;
+            display:-webkit-box;
+            display:-webkit-flex;
+        }
+        .abtn2 a{
+            width:50%;
+        }
+
+        .non_id{
+            font-size:16px;
+            word-break:keep-all;
+            
+        }
+}

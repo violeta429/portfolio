@@ -1,0 +1,267 @@
+﻿.wishImg{
+    display:inline-block;
+    width:90px;
+    height:90px;
+    border: 1px solid #eaeaea;
+   margin-top: 14px;
+}
+
+.wishImg img{
+  width:100%;
+}
+
+.wish_tb{
+ width:100%;
+}
+
+.wish_tb tr{
+    border-bottom:1px solid #eaeaea;
+}
+
+.wish_tb thead th{
+    text-align:left;
+    padding:14px 10px;
+    font-weight:400;
+    border-top:1px solid #333;
+    border-bottom:1px solid #ccc
+
+}
+.wish_tb td:nth-of-type(1){
+    padding-left:6px;
+    vertical-align:top;
+    padding-top:14px;
+}
+
+
+.wish_tb td:nth-of-type(3),.wish_tb td:nth-of-type(4){
+    vertical-align:middle;
+}
+.wish_tb td:not(:nth-of-type(3)){
+    text-align:center;
+}
+
+.wish_tb td:not(:nth-of-type(1)){
+    padding:3px 10px 15px 10px;
+}
+
+
+.wish_tb td:nth-of-type(4){
+
+}
+
+.wish_tb thead th >span{
+    float:right;
+}
+
+
+.pd_price{
+    margin-top:8px;
+}
+.pd_price span{
+    font-size:18px;
+    margin-top: 10px;
+    font-weight:600;
+    margin-right:2px;
+    
+}
+
+.wishadd{
+    margin-right:20px;
+    height:32px;
+    font-size:14px;
+    background-image:url(/common/image/icon/sprite_img.png);
+    background-repeat:no-repeat;
+    background-size:400px;
+    background-position:-287px -147px;
+    padding-left:40px;
+    padding-right:20px;
+}
+
+
+.wishdel{
+    width:28px;
+    height:28px;
+    position:relative;
+    top:11px;
+    border: none;
+    background-image:url(/common/image/icon/sprite_img.png);
+    background-repeat:no-repeat;
+    background-size:149px;
+   background-position: 0px -34px;
+   background-color:#FFF;
+   border: 1px solid #ccc;
+   border-radius:3px;
+}
+
+.pd_name{
+    font-size:16px;
+    width:80%;
+}
+
+.info{
+   display:inline-block;
+   font-size: 12px;
+    color: #888;
+    font-family: Gulim;
+    vertical-align:baseline;
+    font-weight:500;
+    margin-left:10px;
+
+}
+
+.paging2{
+    text-align:center;
+    margin-top:40px;
+}
+
+
+.paging2 .pagination li a{
+    display:inline-block;
+    width:30px !important;
+    height:30px !important;
+    background-image:url(/common/image/icon/sprite_img.png);
+    background-repeat:no-repeat;
+    background-size:400px;
+    background-position:-124px -7px ;
+    
+}
+
+
+.wishpg .pagination li a {
+ background-position:-123px -6px;
+}
+
+.wishpg  .pagination li .next{
+  background-position:-163px -6px !important;
+}
+
+.paging2 .pagination li .prev{
+    margin-right:6px;
+}
+
+.paging2 .pagination li .next {
+     background-position:-164px -7px ;
+     margin-left:6px;
+}
+
+
+#tbNonlist{
+    border:1px solid #eaeaea;
+}
+#tbNonlist tr{
+    text-align:center;
+    position:relative;
+    height:200px;
+}
+
+#tbNonlist td{
+    
+position:absolute;
+left:50%;
+top:50%;
+transform:translate(-50%,-50%);
+-webkit-transform:translate(-50%,-50%);
+-ms-transform:translate(-50%,-50%);
+-moz-transform:translate(-50%,-50%);
+-o-transform:translate(-50%,-50%);
+
+}
+
+
+
+.nonlist{
+  text-align:center;
+}
+
+.nonlist p{
+    margin-top:6px;
+    font-size:15px;
+    margin-bottom:20px;
+    color:#787878;
+}
+
+@media all and (max-width:767px){
+    .wish_tb colgroup{
+        display:none;
+    }
+
+    .wish_tb thead th{
+        padding:10px;
+    }
+    .check-st-1 input[type=checkbox], .check-st-2 input[type=checkbox]{
+        width:0px;
+        height:0px;
+    }
+
+
+    .wishImg{
+        width:80px;
+        height:80px;
+        margin-top:0;
+    }
+
+    .wish_tb tbody tr{
+        display:flex;
+        display:-webkit-box;
+        display:-moz-box;
+        display:-ms-flexbox;
+        display:-ms-flexbox;
+        display:-webkit-flex;
+        flex-wrap:wrap;
+        padding:12px 0px;
+        justify-content:space-between;
+    }
+
+    .wish_tb td:not(:nth-of-type(1)){
+        padding:0;
+    }
+    .wish_tb td:nth-of-type(1){
+        padding:0;
+    }
+
+    .check-st-2 span:nth-of-type(1){
+        margin-right:0;
+    }
+
+    .wish_tb td:nth-of-type(3){
+        width:calc(100% - 120px)
+    }
+
+    .wishdel{
+        display:none;
+    }
+
+    .pd_name{
+        width:100%;
+        font-size:14px;
+        height:60px;
+        text-overflow:ellipsis;
+    overflow: hidden;
+    word-wrap: break-word;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+   
+
+
+    .pd_price{
+        margin-top:0px;
+        font-size:15px;
+    }
+
+    .pd_price span{
+        font-size:15px;
+    }
+
+
+    .wish_tb td:nth-of-type(4){
+        align-items:flex-end;
+        width:100%;
+         text-align:right;
+    }
+
+    .wishadd{
+        margin-right:0;
+       
+    }
+}

@@ -1,0 +1,417 @@
+﻿
+
+ .cart_header div{
+ 
+    width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;  
+    text-align:center;
+    color:#1e1e1e;
+    font-size:26px;
+    font-weight:600;
+
+ }
+
+
+  .cart_header span{
+      font-size:13px;
+      color:#787878;
+      display:block;
+      text-align:right;
+
+  }
+
+
+
+  .cart_tb table{
+      width:100%;
+  }
+
+
+    .cart_tb table td{
+        text-align:center;
+
+    }
+.imgtd{
+    padding:20px;
+}
+.cartimg{
+    display:inline-block;
+    width:80px;
+    height:80px;
+}
+.cartimg img{
+    max-width:100%;
+    height:100%;
+
+}
+
+
+.cart_inner_hd {
+    padding:20px 10px;
+
+}
+.cart_inner_hd h2{
+    float:left;
+    font-size:20px;
+    
+
+}
+
+.cart_inner_hd >div{
+    display:inline-block;
+    float:right;
+   
+}
+
+.delbtn{
+    padding:3px 8px;
+    font-size:13px;
+    background:#FFF;
+    border: 1px solid #ccc;
+    color:#565656;
+    border-radius:3px;
+    position:relative;
+    top:3px;
+    font-family:'NanumBarunGothic', sans-serif;
+}
+
+.quan input[type=button]  {
+  width:25px;
+  height:25px;
+  border: 1px solid #ddd;
+  background:#eaeaea;
+  float:left;
+  cursor:pointer;
+  font-size:20px;
+  font-weight:600;
+}
+
+.quan input[type=text]{
+  width:42px;
+  height:25px;
+  text-align:center;
+  border: 1px solid #ddd;
+    background:#FFF;
+     float:left;
+     margin-left:-1px;
+     margin-right:-1px;
+     padding:2px;
+}
+
+
+.cart_tb tbody tr td{
+    vertical-align:middle;
+}
+.cart_tb thead tr{background:#fdfdfd;
+border:1px solid #eaeaea;}
+ .cart_tb thead th{background:#fcfcfc; font-size:14px; 
+font-family: 'NanumBarunGothic', sans-serif;
+padding:8px 0px  ;
+color:#787878;
+
+ }
+.price{
+    margin-top:14px;
+  font-size:20px;
+  font-weight:600;
+  font-family: 'Josefin Sans', sans-serif;
+  margin-bottom:20px;
+}
+
+.quan{
+display:inline-block;
+
+}
+
+.cartbtn input[type=button]{
+    display:block;
+    width:100px;
+    height:28px;
+    border: none;
+    margin:0 auto;
+    border-radius:3px;
+}
+
+.cartbtn{
+    padding-top:20px;
+ 
+}
+
+.cartbtn input[type=button]:nth-of-type(1){
+    background:#F44336;
+    color:#FFF;
+    margin-bottom:10px;
+       font-family: 'NanumBarunGothic', sans-serif;
+}         
+
+.cartbtn input[type=button]:nth-of-type(2){
+    background:#FFF;
+    color:#666;
+    border:1px solid #666;
+    margin-bottom:10px;
+     font-family: 'NanumBarunGothic', sans-serif;
+}
+
+
+.cart_tb tbody{
+    border-bottom: 1px solid #eaeaea;
+}
+
+tfoot tr{
+    background:#fafafa;
+    border:1px solid #eaeaea;
+}
+tfoot .calcTotal{
+    padding:24px;
+}
+tfoot .calcTotal p{
+    display:inline-block;
+    font-size:15px;
+    color:rgb(51, 51, 51);
+}
+
+tfoot .calcTotal p span:not(.calctxt){
+    margin-left:13px;
+    margin-right:2px;
+    font-weight:600;
+    color:#333;
+}
+
+tfoot .calcTotal i {
+    margin:0px 8px;
+}
+
+.total{
+    font-size:18px;
+}
+
+.detail_info{
+    text-align:left !important;
+    padding-left:30px;
+}
+
+.detail_info p{
+    font-size:16px;
+    margin-bottom:8px;
+}
+
+.optionInfo{
+    font-size:13px;
+    color:#898989;
+         font-family: 'NanumBarunGothic', sans-serif;
+}
+
+.non_pd {
+    text-align:center;
+    padding:40px 0px 80px;
+    
+    border:1px solid #eaeaea;
+}
+
+
+.non_pd img{
+    width:70px;
+}
+.non_pd p{
+    font-size:15px;
+    color:#787878;
+    margin-top:16px;
+
+}
+
+.all_quan {
+    margin-left:2px ;
+    margin-right:2px;
+}
+
+
+/*미디어쿼리*/
+
+@media all and (max-width:767px) {
+    .cart_tb thead th{
+        background:unset;
+        text-align:left;
+    }
+
+    .cart_tb thead th:after{
+        content:'모두선택' ;
+        margin-left:4px;
+    }
+
+  .cart_header div{
+    width:100%;
+    text-align:left;
+  }
+  .cart_header{
+      border-bottom:none;
+
+  }
+
+  .cart_header span{
+      display:block;
+      text-align:left;
+      float:none;
+      margin-top:10px;
+  }
+ .cart_tb colgroup{
+     display:none;
+ }
+
+ .cart_tb thead tr{
+     padding:0;
+     background:none;
+     border:none;
+ }
+  .cart_tb thead tr th:not(:nth-of-type(1)){
+      display:none;
+  }
+
+  .cart_tb tbody tr{
+      display:flex;
+      flex-wrap:wrap;
+      justify-content: flex-end;
+  }
+
+
+  .check-st-1 input[type=checkbox], .check-st-2 input[type=checkbox]{
+      width:0;
+      height:0;
+  }
+
+  .check-st-2 span:nth-of-type(1){
+      margin-right:9px;
+  }
+
+  .cart_tb table td{
+      text-align:left;
+  }
+  .imgtd{
+      padding:0;
+  }
+
+  .detail_info{
+      padding-left:10px;
+      width:calc(100% - 110px) ;
+  }
+  .cartbtn{
+      display:none;
+  }
+  .price{
+      margin:0;
+  }
+  .pricetd{
+      width:calc(100% - 110px) ;
+      display:flex;
+      order:2;
+      justify-content:space-between;
+  }
+  .pricetd + td{
+     width:calc(100% - 110px) ;  
+     order:1;
+  }
+  .pricetd + td::before{
+      content:'배송비' ;
+  }
+
+
+  .detail_info p{
+      font-size:14px;
+       font-family: 'NanumBarunGothic';
+  }
+  .quan{
+      min-width:80px;
+  }
+  .price{
+      font-size:17px;
+  }
+
+  .cart_tb tbody tr:first-of-type{
+      border-top:1px solid #eaeaea;
+  }
+  .cart_tb tbody tr{
+      padding:14px 0px;
+
+  }
+  tfoot .calcTotal{
+      padding:3%;
+  }
+  .calctxt{
+      font-weight:400;
+  }
+
+   tfoot .calcTotal i{
+       display:none;
+   }
+
+  tfoot .calcTotal p:last-of-type {
+      margin-top:8px;
+  }
+
+  tfoot .calcTotal p{
+      display:table;
+      width:100%;
+  }
+  tfoot .calcTotal p span , tfoot .calcTotal p b{
+      display:table-cell;
+      padding:10px 0;
+  }
+   tfoot .calcTotal p .calctxt{
+       width:110px;
+   }
+
+    tfoot .calcTotal p span:not(.calctxt){
+        text-align:right;
+    }
+    tfoot .calcTotal p b{
+        width:24px;
+        text-align:right;
+    }
+
+    tfoot tr{
+        background:#FFF;
+    }
+
+    tfoot .calcTotal p:not(:last-of-type){
+        font-size:14px;
+    }
+
+    tfoot .calcTotal p:not(:last-of-type) span, tfoot .calcTotal p:not(:last-of-type) b{
+        font-weight:400 !important;
+    }
+
+
+     tfoot .calcTotal p:last-of-type{
+         background:#fafafa;
+     }
+    tfoot .calcTotal p:last-of-type span,  tfoot .calcTotal p:last-of-type b{
+        font-size:17px;
+        font-weight:600;
+    }
+
+    tfoot .calcTotal p:last-of-type .calctxt{
+     padding-left:3%;
+    }
+
+     tfoot .calcTotal p:last-of-type b{
+         padding-right:3%;
+         width:34px;
+     }
+
+     .btnwrap2{
+         margin-top:40px;
+     }
+
+}
+
+
+
+
+
+@media all and (max-width:440px) {
+    .cart_header div:before , .cart_header div:after{
+        content:none;
+    }
+
+}

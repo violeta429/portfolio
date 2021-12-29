@@ -1,0 +1,11 @@
+﻿
+
+.btn-white{
+background:linear-gradient(to top , #f3f3f3, #FFFFFF ) ;
+background:-webkit-linear-gradient(to top , #f3f3f3, #FFFFFF ) ;
+background:-moz-linear-gradient(to top , #f3f3f3, #FFFFFF ) ;
+background:-ms-linear-gradient(to top , #f3f3f3, #FFFFFF ) ;
+background:-o-linear-gradient(to top , #f3f3f3, #FFFFFF ) ;
+border: 1px solid #c9c9c9 !important;
+color:#787878;
+}

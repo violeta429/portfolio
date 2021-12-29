@@ -1,0 +1,11 @@
+﻿.cancel-return-exchange table td{
+    padding:12px;
+}
+.cancel-return-exchange table td:nth-of-type(1){
+    width:150px;
+
+}
+
+.cancel-return-exchange{
+    border-bottom:1px solid #eaeaea;
+}

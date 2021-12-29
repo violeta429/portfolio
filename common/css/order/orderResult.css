@@ -1,0 +1,55 @@
+﻿.orderResult{
+    text-align:center;
+    border: 1px solid #eaeaea;
+    width:90%;
+    margin:0 auto;
+    border-radius:20px;
+    padding:30px;
+}
+
+.orderResult >div h2{
+    font-size:22px;
+    color:#454545;
+    margin-bottom:10px;
+  
+}
+
+.orderResult >div:nth-of-type(1){
+    margin-bottom:20px;
+}
+
+.payResult{
+    width:500px;
+    margin:40px auto;
+    text-align:left;
+    border-top:2px solid #aaa;
+    border-bottom:1px solid #ddd;
+  
+}
+
+
+.payResult table td:nth-of-type(1){
+    width:130px;
+    height:50px;
+    vertical-align:middle;
+    padding-left:20px;
+    border-right:1px solid #eaeaea;
+}
+
+.payResult table td:nth-of-type(2){
+    padding-left:20px;
+    vertical-align:middle;
+}
+.payResult table{
+    width:100%;
+    font-size:16px;
+}
+
+.btnwrap2{
+    margin-top:30px;
+    margin-bottom:30px;
+}
+.btnwrap2 input{
+  
+    width:180px!important;
+}

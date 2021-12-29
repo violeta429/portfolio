@@ -1,0 +1,108 @@
+﻿ 
+
+/*_____회원정보 수정_____*/
+
+.userInfo table{
+    width:100%;
+    table-layout:fixed;
+    border-top:2px solid #aaa;
+    margin-top:20px;
+}
+
+
+.userInfo table th{
+    width:180px;
+    padding: 10px 20px;
+    vertical-align:middle;
+    background:#fafafa;
+    /*dbdada*/
+    font-weight:400;
+    font-size:14px;
+    text-align:left;
+}
+
+.userInfo table tr{
+ border-bottom:1px solid #eaeaea;
+}
+
+.userInfo table td{
+    padding:10px 20px;
+}
+
+
+.sub-info{
+    text-align:right;
+    font-size:13px;
+    color:#565656;
+}
+
+.sub-info span{
+    color:#DE2658
+}
+
+
+
+.must{
+     color:#DE2658;
+     margin-left:2px;
+     position:relative;
+     top:3px;
+}
+
+
+.telnumb input{
+    width:80px;
+
+
+}
+.telnumb span{
+    margin-left:2px;
+}
+
+
+
+.addresswrap > input {
+margin-top:10px;
+margin-right:4px;
+}
+
+@media all and (max-width:767px){
+  .userInfo table th{
+      width:33%;
+      padding:10px 2px 10px 8px;
+  }
+  .must{
+      margin-left:0;
+  }
+
+  .userInfo table td{
+      padding:10px 8px ;
+  }
+
+  .userInfo table td input[type=text],input[type=tel],input[type=password]{
+      width:100%;
+  }
+
+  .telnumb{
+      display:flex;
+      display:-webkit-box;
+      display:-moz-box;
+      display:-ms-flexbox;
+      display:-o-flexbox;
+      display:-webkit-flex;
+  }
+
+  .address input[type=text]{
+       width:60% !important;
+
+  }
+
+  .addressbtn{
+    width:36%;
+    height:36px;
+    margin-left:2%;
+  }
+  .telnumb span{
+      vertical-align:middle;
+  }
+}

@@ -1,0 +1,335 @@
+﻿
+.mycashpoint{
+border:1px solid #eaeaea;
+text-align:center;
+position:relative;
+background:#fdfdfd;  
+margin-top:20px;
+margin-bottom:50px;
+
+}
+
+
+
+.mycashpoint>span{
+    display:inline-block;
+    width:100px;
+    height:100px;
+    background:url(/common/image/icon/cashIncon.png);
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    background-size:100px;
+}
+
+.mycashpoint>div{
+    display:flex;
+    padding:20px 20px;
+    justify-content:space-around;
+}
+.mycashpoint>div >div{
+    flex:1;
+}
+.mycashpoint>div >div:nth-of-type(1){
+    border-right:1px dashed #eaeaea;
+  
+
+}
+
+
+.mycashpoint>div >div p{
+    font-size:18px;
+    color:#565656;
+}
+
+.mycashpoint>div >div b{
+    display:block;
+    font-size:26px;
+    margin-top:12px;
+    font-weight:600;
+
+}
+
+.cashpoint_history .tab-menu{
+    border-bottom:1px solid #eaeaea;
+}
+.cashpoint_history .tab-menu:after{
+    content:'';
+    display:block;
+    clear:both;
+}
+.cashpoint_history .tab-menu{
+    /*margin-left:auto;
+    margin-right:auto;
+    width:90%;*/
+    margin-bottom:40px;
+
+}
+
+.cashpoint_history .tab-menu li{
+    width:120px;
+    float:left;
+    display:inline-block;
+    text-align:center;
+    padding:12px;
+    cursor:pointer;
+    border: 1px solid #dfe2e6;
+    background-color: #f1f1f1;
+    color:#aaa;
+
+}
+
+.cashpoint_history .tab-menu li.active{
+    border:1px solid #F44336;
+    background:#F44336;
+    color:#FFFFFF;
+}
+
+
+
+
+.cashcont{
+    margin-top:20px;
+}
+.cashcont table{
+    table-layout:fixed;
+    width:100%;
+
+}
+
+.cashcont table th{
+   border-top: 2px solid #959da6;
+   height:45px;
+   font-size:14px;
+    border-bottom: 1px solid #dfe2e6;
+    vertical-align:middle;
+}
+
+.cashcont table td{
+    text-align:center;
+    padding:20px
+}
+
+.nonecont td{
+    
+    height:160px;
+     vertical-align:middle;
+}
+.cashcont tbody{
+    border-bottom:1px solid #eaeaea;;
+}
+
+
+@media all and (max-width:767px){
+
+    .mycashpoint>div{
+        padding:10px;
+    }
+
+
+    .mycashpoint>span{
+        display:none;
+    }
+    .mycashpoint>div >div p{
+        font-size:14px;
+    }
+
+    .mycashpoint>div >div b{
+        font-size:15px;
+    }
+
+    .filter{
+        flex-wrap:wrap;
+    }
+ 
+
+
+    .date_select{
+width:100%!important;
+height:auto;
+margin-right:0;
+margin-bottom:0;
+display:flex;
+display:-webkit-box;
+display:-moz-box;
+display:-ms-flexbox;
+display:-webkit-flex;
+    box-shadow:none;
+  }
+
+
+  .date_select >span{
+      width:calc(100% / 4);
+        box-sizing:border-box;
+        margin-left:0;
+       }
+  .date_select input{
+      display:inline-block;
+      width:100%;
+        box-sizing:border-box;
+        box-shadow:none;
+        height:36px;
+        background:none;
+        border-right:1px solid #eaeaea;
+
+  }
+
+
+  .date_select span:last-of-type input{
+      border-right:0;
+  }
+
+  .date_select{
+      margin-bottom:10px;
+  }
+  .date_select >span:before{
+      content:none;
+  }
+
+  .gap{
+      margin-left:2px;
+      margin-right:2px;
+      vertical-align:middle;
+      align-self: center;
+  }
+
+  .cbtnwrap{
+      display:flex;
+      width:100%;
+  }
+
+.calendarWrap{
+    width:74%;
+    display:inline-flex;
+   
+      margin-right:10px;
+}
+
+.calendar{
+    width:auto !important;
+
+}
+.calendar input{
+    height:36px;
+}
+
+.btn_src{
+ width:26%;
+ height:36px;
+}
+
+.filter{
+    float:none;
+}
+
+.cashcont table{
+display:block;
+width:auto;
+}
+.cashcont table td{
+padding:10px;
+}
+
+.cashcont table thead{
+display:none;
+}
+.cashcont table tbody{
+display:block;
+}
+.cashcont table tbody tr:not(.nonecont){
+display:flex;
+display:-webkit-box;
+display:-moz-box;
+display:-ms-flexbox;
+display:-webkit-flex;
+flex-wrap:wrap;
+margin-bottom:16px;
+border: 1px solid #eaeaea;
+padding-top:24px;
+padding-bottom:24px;
+}
+.cashcont table tr:not(.nonecont) td{
+display:block;
+padding:0;
+}
+
+.cashcont table tr:not(.nonecont) td:nth-of-type(1){
+order:3;
+width:30%;
+text-align:left;
+padding-left:3%;
+margin-top:6px;
+font-size:14px;
+color:#787878
+
+}
+.cashcont table tr:not(.nonecont) td:nth-of-type(2){
+order:-1;
+width:30%;
+text-align:left;
+ font-size:16px;     
+padding-left:3%;
+}
+.cashcont table tr:not(.nonecont) td:nth-of-type(3){
+order:2;
+width:70%;
+text-align:right;
+padding-right:3%;
+font-size:17px;
+}
+.cashcont table tr:not(.nonecont) td:nth-of-type(4){
+order:4;
+width:70%;
+text-align:right;
+padding-right:3%;
+margin-top:6px;
+font-size:14px;
+color:#787878;
+letter-spacing:-0.5px;
+
+}
+
+.cashcont table tr:not(.nonecont) td:nth-of-type(4):before{
+    content:'잔액 :  ';
+   font-size:13px;
+}
+
+
+
+.mycashpoint{
+margin-bottom:30px;
+margin-top:0px;
+}
+
+
+.nonecont{
+    width:100%;
+    display:block;
+}
+.nonecont td{
+ margin:0 auto;
+ display:block;
+ line-height:110px;
+ background:#fafafa;
+}
+}
+
+@media all and (max-width:375px){
+    .cashpoint_history .tab-menu li{
+        width:50%;
+    }
+    .cashpoint_history .tab-menu{
+        margin-bottom:14px;
+    }
+     .cbtnwrap{
+         flex-wrap:wrap;
+     }
+    .calendarWrap{
+        width:100%;
+        margin-right:0;
+    }
+    .btn_src{
+        width:100%;
+        margin-top:10px;
+    }
+}

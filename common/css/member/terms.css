@@ -1,0 +1,47 @@
+﻿.termstit{
+    font-size:30px;
+    margin-bottom:30px;
+    border-bottom:2px solid #aaa;
+    padding-bottom:20px;
+}
+
+.termsWrap{
+    border:1px solid #ddd;
+    padding:30px;
+    line-height:1.6;
+    white-space:pre-line;
+    border-top:none;
+    padding-top:60px;
+}
+.termsWrap h2{
+    font-size:24px;
+}
+
+.linkWrap{
+}
+.linkWrap a{
+    display:inline-block;
+    width:50%;
+    float:left;
+    font-size:18px;
+    text-align:center; 
+    height:46px;
+    background:#f5f5f5;
+    line-height:46px;
+    border-top:1px solid #ccc;
+    border-left:1px solid #ccc;
+    border-bottom:1px solid #ccc;
+    
+}
+
+.linkWrap a:last-of-type{
+    border-right:1px solid #ccc;
+}
+
+.linkWrap:after{
+    content:'';
+    display:block;
+    clear:both;
+}
+.linkWrap a.active{ background:#333; color:#FFF; border-bottom:none;}
+

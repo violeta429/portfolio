@@ -1,0 +1,634 @@
+﻿
+.innerwrap .content{
+    width:990px;
+}
+
+.cstitwrap{
+    margin-bottom:32px;
+    background:#fff8f2   ;
+    padding:8px;
+    padding-left:20px;
+    border:1px solid #ffe7cf      ;
+    box-shadow:1px 1px 1px  rgba(182, 182, 182, 0.2)
+}
+.cstitwrap:after{
+    content:'';
+    display:block;
+    clear:both;
+
+}
+
+.cstit{
+  display:inline-block;
+  font-size:24px;
+
+}
+
+.cstit span{
+    font-size:14px;
+    font-weight:400;
+    color:#888;
+    margin-left:13px;
+}
+
+
+
+.cstit:before{
+    content:'';
+    display:inline-block;
+    width:50px;
+    height:50px;
+    background:url(/common/image/icon/customer-service.png);
+    background-size:cover;
+    vertical-align:middle;
+    margin-right:20px;
+}
+
+
+
+
+
+
+
+.gstit{
+    display:inline-block;
+    font-size:24px;
+    font-family: 'GmarketSansBold';
+    letter-spacing:-1px;
+}
+
+.gstit>span:nth-of-type(1){
+    font-size:30px;
+    margin-right:10px;
+    color:#4285f4;
+}
+
+
+ .cslink_tab:after{
+     content:'';
+     display:block;
+     clear:both;
+ }
+
+
+
+.cslink_tab li{
+    float:left;
+    width:calc(100% / 4);
+    box-sizing:border-box;
+    border:1px solid #dadada;
+    font-size:14px;
+    border-right:none;
+}
+
+
+.cslink_tab li:last-of-type{
+    border-right:1px solid #dadada;
+}
+.cslink_tab li a{
+display:block;
+width:100%;
+text-align:center;
+line-height:32px;
+background:linear-gradient(to bottom, #fff, #f4f4f4);
+background:-webkit-linear-gradient(to bottom, #fff, #f4f4f4);
+background:-moz-linear-gradient(to bottom, #fff, #f4f4f4);
+color:#aaa;
+
+}
+
+
+.cslink_tab li.on{
+    border-bottom:none;
+}
+.cslink_tab li.on a{
+   color:#14A8A5;
+   background:#FFF;
+   
+
+}
+
+
+
+.csbox{
+    margin-top:60px;
+    min-height:300px;
+}
+
+.notice table{
+    width:100%;
+    table-layout:fixed;
+
+}
+.notice table th{
+    font-weight:400;
+      font-family: 'Nanum Gothic';
+      font-size:14px;
+      color:#1e1e1e;
+      height: 38px;
+      vertical-align:middle;
+      background:#fffdf1;
+
+      border-top:1px solid #ffe08c;
+      border-bottom:1px solid #ffe08c;
+}
+
+.notice table td{
+    text-align:center;
+      font-size:14px;
+         font-family: 'Nanum Gothic';
+    padding:10px;
+}
+
+
+
+.notice table td:nth-of-type(2){
+    text-align:left;
+    padding-left:40px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+}
+.notice table tbody tr{
+    border-bottom:1px solid #f3f3f3;
+    cursor:pointer;
+}
+
+.cs_subtit{
+    font-size:20px;
+    margin-bottom:22px;
+}
+
+.cs_subtit:before{
+    content:'';
+    display:inline-block;
+    width:15px;
+    height:19px;
+    background:url(/common/image/icon/sprite_img.png) no-repeat;
+    background-size:251px;
+    background-position:-94px -24px;
+    margin-right:10px;
+
+}
+
+
+	.acordianWrap {
+        width:95%; 
+        margin:0 auto; 
+        overflow:hidden;
+        border-top: 1px solid #333;
+        margin-top: 30px;
+	}
+
+	.acordian {
+        width:100%; 
+        margin-left:0%; 
+        overflow:hidden; 
+        display:none;
+	}
+
+    .acordian li {
+        width: 100%; 
+        font-size: 16px;
+    }
+
+    .acordian li p {
+        border-bottom: 1px solid #ccc;
+        cursor: pointer;
+        font-size: 15px;
+        font-weight:400;
+    }
+
+	.acordian li p a {
+        display: inline-block; 
+        vertical-align: middle;
+        width: 100%;
+        font-size:15px;
+        padding:14px;
+        padding-left: 30px;
+        box-sizing:border-box;
+	}
+
+
+
+    .acordian li p a:before{
+        content:'Q';
+        display:inline-block;
+        margin-right:20px;
+        font-size:13px;
+          color:#FFF;
+          background:#DE4D26;
+          text-align:center;
+          padding:4px 6px;
+          border-radius:50%;
+          text-shadow:2px 2px 5px rgba(155,155,155,0.2);
+
+    }
+
+	.acordian li div {
+        padding: 20px 30px 20px 60px;
+        display:none; 
+        background-color:#f6f6f6;
+        color:#565656;
+	}
+
+	.acordian li div a {
+        display:block; 
+        width:100%; 
+        line-height:40px; 
+        font-size: 16px; 
+        padding:0 5%; 
+        box-sizing:border-box; 
+        border-bottom:1px solid #ccc;
+	}
+
+    .qna table tr:nth-of-type(1){
+        border-top:1px solid #f3f3f3
+    }
+    .qna table td:nth-of-type(1){
+        width:100px;
+        vertical-align:middle;
+
+    }
+
+    .qna table td input{
+        width:300px;
+    }
+
+    .qna table td:nth-of-type(2){
+        padding-left :20px;
+    }
+
+    .qna table textarea{
+        border:1px solid #dadada;
+        width:99%;
+        height:210px;
+        resize:none;
+        padding:12px;
+    }
+
+
+
+    .cscenterInfo{
+        border-top:1px dashed #eaeaea;
+        border-bottom:1px dashed #eaeaea;
+        padding:12px 20px;
+        padding-left:30px;
+        margin-bottom:40px;
+        font-size:13px;
+         font-family: 'Nanum Gothic', sans-serif;
+         background:#fafafa;
+    }
+
+    .cscenterInfo p{
+        margin-bottom:5px;
+    }
+
+    .qnalist{
+        min-height:200px;
+    }
+
+
+     .qnalist table{
+         font-family: 'Nanum Gothic', sans-serif;
+        font-size:13px;
+         table-layout:fixed;
+         border-left:1px solid #eaeaea;
+         border-right:1px solid #eaeaea;
+         border-bottom:1px solid #eaeaea;
+         width:100%;
+     }
+
+    .qnalist table thead  td{
+        padding:8px 4px;
+        font-size:14px;
+        text-align:center;
+        color:#333;
+        text-shadow:1px 1px 2px rgba(0,0,0,0.1);
+        border-top:1px solid #eaeaea;
+        background:linear-gradient(to bottom,#fafafa 20%, #f9f9f9 50%, #f5f5f5) ;
+
+    }
+    .qnalist table thead td:nth-of-type(1){
+      width:50px;
+    }
+     .qnalist table thead td:nth-of-type(2){
+      width:auto;
+    }
+
+    .qnalist table thead td:nth-of-type(3){
+      width:16%
+    }
+     .qnalist table thead td:nth-of-type(4){
+      width:16%
+    }
+
+     .totallist{
+         margin:0  0 20px 0;
+         font-size:15px;
+         font-weight:400;
+         padding-left:20px;
+         color:#787878;
+     }
+
+
+     .qnalist table tbody tr{
+         border-top:1px solid #eaeaea;
+
+     }
+
+     .qnalist table tbody td{
+         padding:16px 4px;
+     }
+      .qnalist table tbody td:not(:nth-of-type(2)){
+          text-align:center;
+
+      }
+
+      .qnatitle{
+text-overflow:ellipsis;
+word-break:keep-all;
+word-wrap: break-word;
+display: -webkit-box;
+-webkit-box-orient: vertical;
+-webkit-line-clamp: 1;
+overflow: hidden;
+width:90%;
+margin:0 auto;
+
+      }
+
+      .nonlist{
+        background:#fafafa;
+        text-align:center;
+        padding:40px;
+        font-size:17px
+      }
+
+      .csdetail{
+          width:100%;
+          table-layout:fixed;
+      }
+      .csdetail thead{
+          border-top:1px solid #eaeaea;
+          border-bottom:1px solid #eaeaea;
+          border-left:1px solid #eaeaea;
+      }
+      .csdetail thead td{
+           background: linear-gradient(to bottom,#fafafa 20%, #f9f9f9 50%, #f5f5f5);
+           border-right:1px solid #eaeaea;
+           text-align:left;
+      }
+
+      .csdetail thead td:first-of-type{
+          font-weight:600;
+          text-align:center;
+      }
+
+        .csdetail thead td:last-of-type{
+            width:24%;
+        }
+
+        .csdetail tbody td{
+            border:1px solid #eaeaea;
+            vertical-align:middle;
+            padding: 30px 10px 20px ;
+        }
+
+
+
+        .textInfo{
+           line-height:2;
+           white-space:pre-line;
+           text-align:left;
+           min-height: 300px;
+        }
+
+    @media all and (max-width:767px){
+     .csbox{
+         margin-top:30px;
+         min-height:unset;
+     }
+     .noticeTable colgroup ,.noticeTable table thead {
+      display:none;
+     }
+
+
+     .noticeTable table{
+         display:block;
+
+     }
+
+     .noticeTable tbody{
+         width:100%;
+         display:block;
+     }
+     .noticeTable tbody tr{
+          width:100%;
+         display:flex;
+         display:-webkit-box;
+         display:-webkit-flex;
+         display:-moz-box;
+         display:-ms-flexbox;
+         flex-wrap:wrap;
+         border-bottom:none;
+         border:1px solid #ddd;
+         margin-bottom:10px;
+         box-shadow:1px 1px rgba(0,0,0,0.1);
+         position:relative;
+
+     }
+     .noticeTable table tr td{
+         display:block;
+         border-left:none;
+         padding:12px 3%;
+
+     }
+
+     .noticeTable table td:last-of-type{
+         border-right:none;
+     }
+      .noticeTable table td:nth-of-type(1){
+      display:none;
+      }
+
+     .noticeTable table td:nth-of-type(2){
+        width:90%;
+        padding-left:3%;
+        font-size:15px;
+        font-weight:600;
+         font-family: 'EliceDigitalBaeum_Regular';
+         color:#565656;
+         
+      overflow:hidden;
+      text-overflow:ellipsis;
+      white-space:nowrap;
+     }
+
+     .noticeTable table td:nth-of-type(3){
+         width:30%;
+         text-align:left;
+         order:2;
+          font-family: 'NanumBarunGothic';
+          font-size:12px;
+          color:#787878;
+          padding-top:0;
+     }
+
+     .noticeTable table td:nth-of-type(4){
+         width:40%;
+         text-align:left;
+         order:1;
+          font-family: 'NanumBarunGothic';
+          font-size:12px;
+           color:#787878;
+           padding-top:0;
+     }
+
+     .noticeTable table tbody tr:after{
+         content:'';
+         display:inline-block;
+         width:16px;
+         height:20px;
+         position:absolute;
+         right:3%;
+         top:50%;
+         transform:translateY(-50%);
+         -webkit-transform:translateY(-50%);
+        -moz-transform:translateY(-50%);
+       -o-transform:translateY(-50%);
+       z-index:-1;
+       background:url(/common/image/icon/gray_arrow.png) no-repeat;
+       background-size:contain;
+
+
+     }  
+
+     .qna table td input{
+         width:100%;
+     }
+     .qna table td:nth-of-type(1){
+         width:26%;
+         word-break:keep-all;
+     }
+
+     .qna table td:nth-of-type(2){
+         padding-left:3%;
+         padding-right:3%;
+     }
+
+
+
+
+     .acordian li div{
+         padding-left:30px;
+     }
+
+      .cslink_tab li{
+          width:50%;
+          border-right:none;
+      }
+
+        .cslink_tab{
+            margin-bottom:30px;
+        }
+
+
+
+      .qnatitle{
+          width:100%;
+      }
+
+      .qnalist thead tr td{
+          vertical-align:middle;
+          word-break:keep-all;
+          text-align:center;  
+          font-size:12px;
+
+      }
+
+    
+        .qnalist tr td {
+                 font-size:12px;
+        }
+
+        .qnalist table thead td:nth-of-type(1){
+            width:5%;
+        }
+
+        .qnalist table thead td:nth-of-type(3){
+            word-break:keep-all;
+            text-align:center;
+        }
+
+        .cslink_tab{
+            height:auto;
+        }
+         .cslink_tab:after{
+             content:'';
+             display:block;
+             clear:both;
+         }
+            
+        .cslink_tab li{
+            font-size:13px;
+            box-sizing:border-box;
+        }
+        .cslink_tab li a{
+            line-height:unset;
+            padding:6px 0px;
+        }
+       .cslink_tab li:nth-of-type(1),.cslink_tab li:nth-of-type(2){
+           border-bottom:none;
+
+
+       }
+
+       .cslink_tab li:nth-of-type(2){
+           border-right:1px solid #dadada;
+       }
+
+       .cslink_tab li:nth-of-type(3).on {
+           border-bottom:1px solid #dadada;
+       }
+       
+       .cslink_tab li:nth-of-type(4).on {
+           border-bottom:1px solid #dadada;
+       }
+
+       .acordianWrap{
+           width:100% !important;
+           margin-top:24px;
+       }
+
+       .acordian li p a{
+           padding:10px 6px;
+       }
+
+       .cs_subtit{
+           font-size:17px!important;
+       }
+
+       .cstitwrap{
+          padding-left:8px 
+       }
+       .cstit span{
+           display:block;
+           position:relative;
+           top:-10px;
+           margin-left:67px;
+       }
+
+       .cstit{
+           font-size:20px;
+           display:block;
+       }
+
+       
+    .qnalist{
+        min-height:unset;
+    }
+
+
+    }

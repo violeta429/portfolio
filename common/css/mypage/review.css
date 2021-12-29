@@ -1,0 +1,137 @@
+﻿
+ 
+
+/*별점*/
+
+ /* Rating Star Widgets Style */
+.rating-stars ul {
+  list-style-type:none;
+  padding:0;
+  
+  -moz-user-select:none;
+  -webkit-user-select:none;
+}
+.rating-stars ul > li.star {
+  display:inline-block;  
+  cursor:pointer;
+  
+}
+
+/* Idle State of the stars */
+.rating-stars ul > li.star > .svg-inline--fa.fa-fw {
+ /* Change the size of the stars */
+  color:#888; /* Color on idle state */
+}
+
+.svg-inline--fa.fa-fw{
+  font-size:1.7em;
+  transition:0.2s;
+}
+
+/* Hover state of the stars */
+.rating-stars ul > li.star.hover > .svg-inline--fa.fa-fw {
+  color:#F44336;
+
+}
+
+/* Selected state of the stars */
+.rating-stars ul > li.star.selected > .svg-inline--fa.fa-fw {
+  color:#F44336 !important;
+}
+
+
+.pdInfoarea tr .imgWrap{
+    display:inline-block;
+    width:90px;
+    height:90px;
+}
+
+
+.pdInfoarea table{
+    width:100%;
+    table-layout:fixed;
+}
+
+.pdInfoarea tr .imgWrap img{
+    width:100%;
+    height:auto
+}
+
+.pdInfoarea tr td:first-child{
+    width:120px;
+    vertical-align:middle;
+}
+
+.pdTxtarea p{
+    width:100%;
+    font-size:17px;
+    font-weight:600;
+      display: block;
+    display: -webkit-box;
+    overflow: hidden;
+    max-height: 44px;
+    line-height: 22px;
+    color: #16181a;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    -webkit-line-clamp: 2;
+    word-break:keep-all;
+
+}
+
+.pd_tit{
+    margin-bottom:12px;
+}
+.opt_tit{
+    display:block;
+    font-size:13px;
+    color:#565656;
+     font-family: 'NanumBarunGothic';
+     margin-bottom:4px;
+}
+
+.pdInfoarea{
+    padding:14px 10px;           
+    border-top:1px solid #ccc;
+    border-bottom:1px solid #eaeaea;
+    margin-bottom:30px;
+}
+
+.reviewarea{
+    width:100%;
+
+    height:200px;
+    margin-top:40px;
+}
+
+.reviewarea textarea{
+    border:1px solid #dadada;
+    resize:none;
+    width:100%;
+    height:200px;
+    padding:20px;
+    line-height:1.5;
+    font-family:Gulim;
+}
+
+
+
+.ratearea .rating-stars{
+    padding:20px 14px;
+    background:#fafafa;
+    text-align:center;
+}
+
+.my_tit{
+    position:relative;
+}
+
+.txtLength{
+    font-size:13px;
+    font-weight:400;
+    color:#787878 ;
+    letter-spacing:-1px;
+    position:absolute;
+    right:10px;
+    bottom:0;
+}

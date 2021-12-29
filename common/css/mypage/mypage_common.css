@@ -1,0 +1,290 @@
+﻿.innerwrap{
+    min-height:unset;
+}
+
+#mainContent{
+    display:flex;
+    display:-webkit-box;
+    display:-moz-box;
+    display:-ms-flexbox;
+    display:-webkit-flex;
+}
+
+/*서브타이틀*/
+.mysubtit{
+    font-size:18px;
+    font-weight:400;
+    color:#454545;
+    margin-top:60px;
+    padding-bottom:16px;
+    border-bottom:1px solid #ccc;
+    
+}
+
+.mypage_nav{
+    vertical-align:top;
+}
+
+.mypage_nav>div:not(.csWrap){
+    width:200px;
+    border: 2px solid #F44336;
+}
+
+.my_main_content{
+ width:calc(100% - 220px);
+ margin-left:40px;
+}
+
+.mypage_nav ul:first-child li:nth-of-type(1){
+    border-top:none;
+}
+
+.mypage_nav li{
+  
+    padding:12px 15px 0px ;
+}
+.mypage_nav ul:not(:nth-of-type(1)) li:nth-of-type(1){
+    padding-left:15px;
+    font-weight:600;
+    padding-top:20px;
+    font-size:14px;
+}
+
+.mypage_nav li a{
+    display:block;
+    font-size:13px;
+     color:#565656;
+}
+
+
+.mypage_nav ul:not(.user_wrap) li a{
+    border-bottom :1px dashed #ccc;
+    padding-bottom:12px;
+}
+
+.mypage_nav ul:not(.user_wrap) li:last-of-type a{
+    border-bottom:none;
+}
+
+.user_wrap{
+background:#F44336;
+box-shadow: 0px 2px rgba(255,255,255,0.3) inset;
+}
+
+.user_wrap li a{
+    padding:14px 0;
+}
+
+.username{
+    display:inline-block;
+    position:relative;
+    font-size:16px;
+    font-weight:600;
+    letter-spacing:1.8px;
+    color:#FFFFFF;
+    
+    font-family: 'Lato';
+
+}
+
+
+.user_wrap li{
+    padding:0 !important;
+    text-align:center;
+}
+
+/*마이페이지 타이틀*/
+
+.my_tit{
+    font-size:18px;
+    padding-bottom:8px;
+    margin-bottom:10px;
+    color:#565656;
+}
+
+
+.filterWrap{
+margin-bottom:30px;
+}
+
+
+
+.filter{
+display:flex;
+display:-webkit-box;
+display:-moz-box;
+display:-ms-flexbox;
+display:-webkit-flex;
+}
+
+
+.filter p{
+    color:#686868;
+    font-weight: 500;
+    display:inline-block;
+    margin:4px 22px 0px 5px;
+    text-align:center
+}
+
+
+.date_select{
+display:inline-block;
+background:#FFF;
+border:1px solid #dadada;
+margin-right:20px;
+height:30px;
+position:relative;
+}
+.date_select input{
+    display:inline-block;
+width:100%;
+margin:0;
+border:none;
+background:#FFF;
+color:#565656  ;
+height:100%;
+}
+
+.date_select >span{
+display:inline-block;    
+width:70px;
+height:100%;
+border-right:1px solid #eaeaea;
+}
+
+
+.date_select >span:last-of-type{
+    border:none;
+}
+
+
+.calendarWrap{
+    display:inline-block;
+    margin-right:20px;
+    vertical-align:top;
+}
+
+.btn_src{
+    height:31px;
+    border: 1px solid #ccc  ;
+    width:80px;
+}
+
+
+
+
+.date_select span.active > input{
+    background:#666;
+    color:#FFF;
+    box-shadow:2px 2px 2px rgb(0 0 0 / 10%) inset;  
+    box-sizing:border-box;
+}
+
+.date_select span:not(:nth-of-type(1)).active:before{
+    content:'';
+    visibility:hidden;
+}
+
+
+.date_select input{
+/*border: 1px solid #ddd;
+color:#4d4d4d;
+background: linear-gradient(to top, #f3f3f3 0%, white 100%);
+background: -webkit-linear-gradient(to top, #f3f3f3 0%, white 100%);
+background: -moz-linear-gradient(to top, #f3f3f3 0%, white 100%); 
+background: -o-linear-gradient(to top, #f3f3f3 0%, white 100%);
+background: -ms-linear-gradient(to top, #f3f3f3 0%, white 100%);  
+padding:1px 6px;
+font-size:13px; 
+box-shadow:0 1px 1px #dcdbdc;
+margin-right:2px;*/
+}
+
+
+
+.csWrap{
+    width:200px;
+    margin-top:10px;
+    border:1px solid #ccc;
+}
+
+.csWrap p{
+   
+    font-size:15px;
+    font-weight:400;
+    padding:6px 14px;
+    background:#f8f8f8;
+    border-bottom:1px solid #ccc;
+    word-break:keep-all;
+    
+}
+
+.callnum{
+    display:block;
+    font-size:16px;
+    margin:6px auto;
+    font-weight:600;
+    padding:0px 14px;
+    
+}
+
+.callinfo{
+    font-size:13px;
+    display:block;
+    color:#787878;
+    margin-bottom:4px;
+    padding:0px 14px;
+}
+
+
+
+.mypage_nav >div li.is-current a{
+    font-weight:bold;
+    color:#222;
+}
+
+
+
+
+
+
+
+
+
+
+/*미디어쿼리*/
+@media all and (max-width: 767px) {
+
+ .mypage_nav{
+     display:none;
+ }
+
+
+
+#mainContent{
+    display:block;
+}
+.my_main_content{
+    width:100%;
+    margin-left:0;
+}
+.mypage_nav>div{
+    width:100%;
+}
+.user_wrap{
+    display:none;
+}
+.csWrap{
+    display:none;
+}
+
+ 
+.my_tit{
+    padding-right:3% !important;
+    font-size:18px;
+}
+
+
+
+
+}

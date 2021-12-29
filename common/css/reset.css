@@ -1,0 +1,107 @@
+﻿@charset "utf-8";
+
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:400,500,700,900&display=swap&subset=korean');
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+
+
+
+* { margin: 0; padding: 0; box-sizing: border-box; -webkit-font-smoothing: antialiased; }
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, enter, dl, dt, dd, ol, ul, li,fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+	margin: 0; padding: 0; border: 0; font-size: 100%; vertical-align: baseline; background: transparent; font-style: normal;
+-webkit-font-smoothing:antialiased;
+}
+
+html, body { width: 100%; height: 100%;    font-family: 'GmarketSansMedium', 'NanumBarunGothic', sans-serif ; font-weight:400; letter-spacing: -0.02em; color: #1e1e1e; font-size:14.4px; }
+
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section { 
+	display:block;
+}
+
+
+
+/*a:focus, button:focus, input[type=checkbox]:focus, input[type=radio]:focus {
+    outline: 1px dotted #333;
+}*/
+
+ul, li { list-style: none; }
+
+a { text-decoration: none; color: #333; }
+
+table { border-collapse: collapse; border-spacing: 0; }
+
+input:focus { outline: none; }
+
+input {
+    /*ios대응*/
+    -webkit-appearance: none;
+    -webkit-border-radius: 0;
+    -moz-appearance: none;
+    -moz-border-radius: 0;
+    cursor:pointer;
+}
+
+input[type="radio"] {
+  -webkit-appearance: checkbox; /* Chrome, Safari, Opera */
+  -moz-appearance: checkbox;    /* Firefox */
+  cursor:pointer;
+}
+
+input[type="checkbox"] {
+  -webkit-appearance: checkbox; /* Chrome, Safari, Opera */
+  -moz-appearance: checkbox;    /* Firefox */
+   cursor:pointer;
+}
+
+/* input 클릭시 placeholder 지우기 */
+input:focus::-webkit-input-placeholder {
+  color: transparent;
+}
+input:focus::-moz-placeholder {
+  color: transparent;
+}
+input:focus:-ms-input-placeholder {
+  color: transparent;
+}
+input:focus::-ms-input-placeholder {
+  color: transparent;
+}
+
+input:focus { outline: none; }
+
+select{
+    background: #fff;
+
+    /*ios대응*/
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+select::-ms-expand{ 
+    display:none; /* 화살표 없애기 for IE10, 11*/
+}
+
+/* clears the 'X' from Internet Explorer */
+input[type=search]::-ms-clear { display: none; width : 0; height: 0; }
+input[type=search]::-ms-reveal { display: none; width : 0; height: 0; }
+
+/* clears the 'X' from Chrome */
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration { display: none; }
+
+.clearfix:after { content: ""; display: block; clear: both; }
+
+/* +++ Use Only this project +++ */
+.dp_none { display: none; }
+
+
+
+/*텍스트박스 readonly일때 focuse되지않게*/
+input:focus:read-only{
+    box-shadow:unset!important;
+}
+
+
