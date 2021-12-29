@@ -77,7 +77,7 @@
            
                  <div class="clearfix">
                      <ul class="cateOuter clearfix"  id="ulMasterCategory" runat="server">
-                         <%--<li class="cate_wrap">
+                         <li class="cate_wrap">
                              <a class="cate_tit" href="#">대분류</a>
                              <div class="sub-category2">
                                       <ul class="child_ul">
@@ -271,5 +271,115 @@
 
 
   </div>
+
+
+
  
 </header>
+
+<!-- 모바일 헤더 -->
+<div class="m_navheader mob">
+    <div>
+        <div class="back_btn" onclick="goBack();">
+            <img src="/common/image/icon/mobileicon/ico-mob-back.png" style="width:32px;" alt="뒤로가기" />
+        </div>
+        <div class="mob_logoWrap">
+            <a href="/view/main.aspx">
+                <img src="/common/image/masterpage/logo_2.png"  alt="로고" />
+            </a>
+        </div>
+
+        <div class="navcartbtn">
+            <a href="/view/shop/cart.aspx">
+                <img src="/common/image/icon/mobileicon/ico-mob-cart.png"  style="width:32px;" alt="장바구니 아이콘" />
+                <span  id="spCartCnt_1" runat="server">0</span>
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- 모바일 검색 -->
+
+<div class="mob_search">
+    <div>
+        <input type="text" id="txtSearchMasterM"  placeholder="검색어를 입력해주세요" name="name" value="" />
+        <input type="button" class="searchbtn" name="name" value="" onclick="fnSearchMasterM('K')"  />
+    </div>
+</div>   
+
+
+<!-- 모바일 사이드 네비게이션 -->
+<div class="mobile_nav">
+    <div class="mb_navTop">
+        <span class="nav_close"></span>
+    </div>
+
+   <div class="mb_navMd">
+       <a href="/view/mypage/wish.aspx">
+           <div></div>
+           <p>관심상품 (<span>0</span>)</p>
+       </a>
+       <a  class="bt-recentpd">
+           <div></div>
+           <p>오늘 본 상품</p>
+       </a>
+       <a href="/view/shop/cart.aspx">
+           <div></div>
+           <p>장바구니(<span id="spCartCnt_2" runat="server">0</span>)</p>
+       </a>
+     <a href="#">
+           <div></div>
+           <p>주문조회</p>
+       </a>
+   </div>
+
+
+    <div class="tab-wrapper " id="cateTab">
+       <ul class="tab-menu clearfix">
+           <li class="active">CATEGORY</li>
+           <li>MYPAGE</li>
+       </ul>
+
+       <div class="tab-content ">
+           <div class="tabInner">
+                   <!-- slide_menu -->
+                   <nav class="cate_menu">
+                         <ul   id="ulMasterCategory_M" runat="server">
+                  
+                      
+                           </ul>
+                   </nav>
+           </div>
+
+          
+          
+           <div class="tabInner">
+                   <!-- slide_menu -->
+                   <nav class="cate_menu2">
+                         <ul class="accordion">
+                           <li><a href="/view/mypage/mypage.aspx">마이페이지</a></li>
+                           <li><a href="/view/order/orderInfo.aspx">상품주문 / 배송조회</a></li>
+                           <li><a href="/view/mypage/cancelList.aspx">취소/ 교환/ 반품내역</a></li>
+                           <li><a href="/view/mypage/wish.aspx">관심상품</a></li>
+                           <li><a href="/view/mypage/mypage_re.aspx">개인정보 수정</a></li>
+                           <li><a href="/view/mypage/cashpoint.aspx">관심상품</a></li>
+                           <li><a href="/view/delivery/deliveryinfo.aspx">배송지 등록 / 변경</a></li>
+                        
+                           <li><a href="#">고객센터</a>
+                               <ul>
+                                   <li><a href="/view/cscenter/cscenter.aspx">공지사항</a> </li>
+                                   <li><a href="/view/cscenter/faq.aspx.aspx">자주묻는 질문</a> </li>
+                                   <li><a href="/view/cscenter/qna.aspx.aspx">문의하기</a> </li>
+                               </ul>
+                           </li>
+
+
+                         </ul>                  
+                   </nav>
+                   
+           </div>
+                    
+       </div><!-- tab-content -->
+   </div><!-- //tab-wrapper -->
+
+</div>
