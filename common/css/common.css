@@ -7,24 +7,24 @@
  font-family: 'NanumBarunGothic';
  font-style: normal;
  font-weight: 400;
- src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot');
- src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot?#iefix') format('embedded-opentype'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.woff') format('woff'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.ttf') format('truetype');
+ src: url('https://cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot');
+ src: url('https://cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot?#iefix') format('embedded-opentype'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.woff') format('woff'), url('https://cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.ttf') format('truetype');
 }
 
 @font-face {
  font-family: 'NanumBarunGothic';
  font-style: normal;
  font-weight: 700;
- src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.eot');
- src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.eot?#iefix') format('embedded-opentype'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.woff') format('woff'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.ttf') format('truetype')
+ src: url('https://cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.eot');
+ src: url('https://cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.eot?#iefix') format('embedded-opentype'), url('https://cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.woff') format('woff'), url('https://cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.ttf') format('truetype')
 }
 
 @font-face {
  font-family: 'NanumBarunGothic';
  font-style: normal;
  font-weight: 300;
- src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.eot');
- src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.eot?#iefix') format('embedded-opentype'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.woff') format('woff'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.ttf') format('truetype');
+ src: url('https://cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.eot');
+ src: url('https://cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.eot?#iefix') format('embedded-opentype'), url('https://cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.woff') format('woff'), url('https://cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.ttf') format('truetype');
 }
 
 
@@ -65,7 +65,6 @@ textarea{
 .content{
   width:1100px;
   margin:0 auto;
-
 }
 
 .innerwrap{
@@ -340,7 +339,7 @@ input[type=text]:focus,input[type=password]:focus,input[type=tel]:focus{
 }
 
 .searchbtn{
-    background:url(/common/image/icon/search.png) no-repeat;
+    background:url(https://violeta429.github.io/portfolio/common/image/icon/search.png) no-repeat;
     width:40px;
     height:40px;
     border:none;
@@ -515,7 +514,7 @@ top:-12px;
     color:#333;
 }
 .allCategory.on > a:before {
-    background:url(/common/image/masterpage/category.png) no-repeat;
+    background:url(https://violeta429.github.io/portfolio/common/image/masterpage/category.png) no-repeat;
 
 }
 
@@ -524,7 +523,7 @@ top:-12px;
     display:inline-block;
     width:21px;
     height:18px;
-    background:url(/common/image/masterpage/categoryOn.png) no-repeat;
+    background:url(https://violeta429.github.io/portfolio/common/image/masterpage/categoryOn.png) no-repeat;
     position:absolute;
     left:15px;
     top:14px;
@@ -611,7 +610,7 @@ font-size:16px;
     display:inline-block;
     width:22px;
     height:22px;
-    background:url(/common/image/masterpage/close_btn.png) no-repeat;
+    background:url(https://violeta429.github.io/portfolio/common/image/masterpage/close_btn.png) no-repeat;
     background-size:14px 14px;
     position:absolute;
     right:20px;
@@ -674,7 +673,7 @@ color:#666;
     content:'';
     display:block;
     
-    background-image:url(/common/image/icon/uparrow.png) ;
+    background-image:url(https://violeta429.github.io/portfolio/common/image/icon/uparrow.png) ;
     width:100%;
     height:100%;
     position:absolute;
@@ -750,7 +749,7 @@ address>div{
 }
 
 .snsWrap li span{
-  background:url(/common/image/icon/snsIcon.png) no-repeat;
+  background:url(https://violeta429.github.io/portfolio/common/image/icon/snsIcon.png) no-repeat;
   background-position:3px 5px; 
 }
 .snsWrap li:nth-of-type(2) span{
@@ -921,14 +920,14 @@ section{
 
 .prev_btn  {
   left:4px;
-  background-image:url(/common/image/icon/arrow.png);
+  background-image:url(https://violeta429.github.io/portfolio/common/image/icon/arrow.png);
   background-repeat:no-repeat;
   background-position:12px -63px;
 }
 
 .next_btn {
    right:4px;
-     background-image:url(/common/image/icon/arrow.png);
+     background-image:url(https://violeta429.github.io/portfolio/common/image/icon/arrow.png);
   background-repeat:no-repeat;
   background-position:12px -62px;
   transform:rotate(180deg)
@@ -1016,7 +1015,7 @@ section{
  }
 
 .close_box input[type=checkbox]:checked ~ .check{
-    background-image:url(/common/image/masterpage/banner/check_btn.png) ;
+    background-image:url(https://violeta429.github.io/portfolio/common/image/masterpage/banner/check_btn.png) ;
     background-position:3px 5px;
     background-repeat:no-repeat;
     
@@ -1026,7 +1025,7 @@ section{
     display:inline-block;
     width:28px;
     height:28px;
-    background:url(/common/image/masterpage/close_btn.png) no-repeat;
+    background:url(https://violeta429.github.io/portfolio/common/image/masterpage/close_btn.png) no-repeat;
     float:left;
     margin-left:10px;
     background-position: 3px 3px;
@@ -1196,7 +1195,7 @@ section{
 
 .check-st-1 input[type=checkbox]:checked +span{
 background-color:#10a4e8;
-background-image:url(/common/image/masterpage/banner/check_btn_M.png);
+background-image:url(https://violeta429.github.io/portfolio/common/image/masterpage/banner/check_btn_M.png);
 background-repeat:no-repeat;
 background-size:12px;
 background-position:2px 4px; 
@@ -1221,7 +1220,7 @@ border-color:#10a4e8;
 
  .check-st-2 input[type=checkbox]:checked +span{
 background-color:#F44336;
-background-image:url(/common/image/masterpage/banner/check_btn_M.png);
+background-image:url(https://violeta429.github.io/portfolio/common/image/masterpage/banner/check_btn_M.png);
 background-repeat:no-repeat;
 background-size:12px;
 background-position:2px 4px; 
@@ -1418,14 +1417,14 @@ text-align:center;
 }
 
 .rctbtn .rct_del {
-    background:url(/common/image/icon/sprite_img.png) no-repeat;
+    background:url(https://violeta429.github.io/portfolio/common/image/icon/sprite_img.png) no-repeat;
     background-size:200px auto;
     background-position:-2px -21px;   
     border:1px solid #eaeaea;
 }
 
 .rctbtn .rct_addcart{
-     background-image:url(/common/image/icon/sprite_img.png);
+     background-image:url(https://violeta429.github.io/portfolio/common/image/icon/sprite_img.png);
      background-repeat:no-repeat;
     background-size:200px auto;
     background-position:-37px -19px;
@@ -1446,7 +1445,7 @@ position:absolute;
 top:24px;
 right:30px;
 border: none;
-background-image:url(/common/image/icon/sprite_img.png);
+background-image:url(https://violeta429.github.io/portfolio/common/image/icon/sprite_img.png);
 background-repeat:no-repeat;
 background-size:180px auto;
 background-position:-1px -42px;
@@ -1499,7 +1498,7 @@ height:30px;
 border: none; 
 position:absolute;
 right:0;
-background:url(/common/image/icon/sprite_img.png) no-repeat;
+background:url(https://violeta429.github.io/portfolio/common/image/icon/sprite_img.png) no-repeat;
 background-size:200px;
 background-position:-1px -86px;
 cursor:pointer;
@@ -1577,7 +1576,7 @@ border-bottom:1px solid #dadada;
 .ui-datepicker-prev span , .ui-datepicker-next span{
   width:20px;
   height:20px;
-  background-image:url(/common/image/icon/sprite_img.png) ;
+  background-image:url(https://violeta429.github.io/portfolio/common/image/icon/sprite_img.png) ;
 
   background-repeat:no-repeat;
   background-size:200px;
@@ -1646,7 +1645,7 @@ border-bottom:1px solid #dadada;
 .pagination .prev, .pagination .next{
     width: 32px;
     height:32px;
-    background:url(/common/image/icon/sprite_img.png) no-repeat;
+    background:url(https://violeta429.github.io/portfolio/common/image/icon/sprite_img.png) no-repeat;
     background-size:400px;
     background-position:-123px -5px
 }
@@ -1728,7 +1727,7 @@ border-bottom:1px solid #dadada;
 .selectbox b{
     width:32px;
     height:100%;
-    background:url(/common/image/icon/sprite_img.png) no-repeat;
+    background:url(https://violeta429.github.io/portfolio/common/image/icon/sprite_img.png) no-repeat;
     display:inline-block;
     position:absolute;
     right:0;
@@ -1766,7 +1765,7 @@ border-bottom:1px solid #dadada;
 .selectbox2 b{
     width:32px;
     height:100%;
-    background:url(/common/image/icon/sprite_img.png) no-repeat;
+    background:url(https://violeta429.github.io/portfolio/common/image/icon/sprite_img.png) no-repeat;
     display:inline-block;
     position:absolute;
     right:0;
@@ -1970,7 +1969,7 @@ opacity:0.6;
     width: 25.6%;
     display: block;
     padding: 10px 3%;
-    background: url("/common/image/shop/nav_arrowOff.png") no-repeat 98% 5px;
+    background: url("https://violeta429.github.io/portfolio/common/image/shop/nav_arrowOff.png") no-repeat 98% 5px;
     background-size: 17px 8.5px;
     font-weight: bold;
 }
@@ -2023,7 +2022,7 @@ color: inherit; font-size: 14px;
         content: '';
         width: 14px;
         height: 14px;
-        background: url(/common/image/icon/plus.png);
+        background: url(https://violeta429.github.io/portfolio/common/image/icon/plus.png);
         position: absolute;
         top: 7px;
         right:0;
