@@ -1,4 +1,4 @@
-﻿var targetUrl = "/common/component/main/AjaxMain.aspx";
+﻿// var targetUrl = "/common/component/main/AjaxMain.aspx";
 
 
 $(document).ready(function () {
@@ -81,14 +81,34 @@ $(document).ready(function () {
 
     //section 1에 캐로셀 이미지 옵션 
 
-    $('.sec1_cont').slick({
-        slide: 'div',
-        autoplay: true,
-        autoplaySpeed: 6000,
-        dots: true,
-        dotsClass: "slick-dots",
-        slidesToShow: 1,
+    // $('.sec1_cont').slick({
+    //     slide: 'div',
+    //     autoplay: true,
+    //     autoplaySpeed: 6000,
+    //     dots: true,
+    //     dotsClass: "slick-dots",
+    //     slidesToShow: 1,
+    // });
+
+    var swiper2 = new Swiper('.sec1_cont', {
+        spaceBetween: 6,
+        centeredSlides: true,
+        autoHeight: true,
+        autoplay: {
+            delay: 8000,
+            disableOnInteraction: false,
+        },
+        loop: true,
+        pagination: false,
+        resistance: false,
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+
+        watchOverflow: true,  //슬라이드가 한개일때 page ,button숨김 여부 
     });
+
 
 
     //썸네일 이미지 자동 재생

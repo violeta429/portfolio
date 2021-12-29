@@ -12,12 +12,439 @@
     <link rel="stylesheet" href="./common/css/asset/style.css">
     <link rel="stylesheet" href="./common/css/asset/plugin/jquery-modal.css"> 
     <link rel="stylesheet" href="./common/css/main/main.css">
+    <link href="./common/css/asset/plugin/swiper.css" rel="stylesheet" />
+
+
     <script src = "common/js/jquery-1.10.2.js"></script>
+    
+    <script src="./common/js/plugin/swiper.min.js" ></script>
+    <script  src="./common/js/main/main.js"></script>       
+
     <script src="https://violeta429.github.io/portfolio/common/js/nav.js"></script>
+
+
+
 
 </head>
 <body>
-    <div id='header' data-include-path="https://violeta429.github.io/portfolio/common/master/header.html"></div>
+    <!-- <div id='header' data-include-path="https://violeta429.github.io/portfolio/common/master/header.html"></div> -->
+
+    <div class='innerwrap'>
+
+         <article class="mainBanner pc" id="articleBanner_P" runat="server">                    
+                 <div class="banner">
+                     <div  class="swiper-container banner" >
+                       <div class="swiper-wrapper" id="divMAinBanner_P" runat="server">  
+                           <div class="swiper-slide">
+                                <a href="#">
+                                    <img src="https://violeta429.github.io/portfolio/common/image/main/main_banner.jpg"/>
+                                </a>
+                            </div>                            
+                        </div>
+           
+               
+                       <div class="content slide_btnwrap ">
+                           <div class="banner_btn">
+                                 <span class="swiper-button-prev" tabindex="0"></span>
+                                 <span class="swiper-button-next" tabindex="0"></span>
+                           </div> 
+                            
+                               <span class="stop_btn" ></span>
+                               <span class="play_btn"></span>
+                       </div> 
+                    </div>
+                  </div>
+
+         </article>
+       
+         <article class="mainBanner mob "  id="articleBanner_M" runat="server">
+               <div class="banner">
+                   <div  class="swiper-container banner" >
+                       <div class="swiper-wrapper"  id="divMAinBanner_M" runat="server">
+                           <div class="swiper-slide">
+                                <a href="#">
+                                    <img src="https://violeta429.github.io/portfolio/common/image/main/main_banner_M.jpg " alt="Alternate Text" />
+                                </a>
+                            </div>   
+                           <div class="swiper-slide">
+                                <a href="#" >
+                                     <img src="https://violeta429.github.io/portfolio/common/image/main/main_banner_M.jpg " alt="Alternate Text" />
+                                </a>
+                            </div>   
+                        </div>
+                    </div>
+                  
+                       <div class="content ">
+                           <div class="banner_btn">
+                                 <span class="swiper-button-prev"></span>
+                                 <span class="swiper-button-next"></span>
+                           </div> 
+
+                        
+                               <span class="stop_btn"></span>
+                               <span class="play_btn"></span>
+                       </div>
+                  </div>
+         </article>   
+
+
+         <section class="content sec1_Wrap">
+            <h2 class="title txtct">BEST SELLER</h2>
+            <p class="s_title txtct">실시간 가장 인기많은 상품들을 모아보세요!</p>
+
+       <div class="sec1_cont" id="divBestSeller" >     
+
+            <div class="pd_carousel">
+               <div class="c_area">
+                   <a href="#">
+                   <div class="pd_img">
+                       <img src="https://violeta429.github.io/portfolio/common/image/main/product/001.jpg"/>
+                   </div>
+                   <div class="pd_txt">
+                      <h4 class="pd_tit">샘플상품</h4>
+                      <p class="pd_info">상품에대한 설명을 입력해주세요<br />
+                          상품에대한 설명을 입력해주세요.
+                      </p>
+
+                      <div class="price">
+                         <span class="price_n">2342354</span>
+                      </div>
+                      <div class="icon_area">
+                          <span class="best">BEST</span>
+                          <span class="new">NEW</span>
+                      </div>
+                   </div>
+                   </a>
+               </div>
+
+
+            </div>
+
+     
+       </div>      
+     
+
+  </section>
+         
+ <div class="sec2_Wrap">   
+    <section class="content">
+        <h2 class="title txtct">MD’S PICK</h2>
+        <p class="s_title txtct">엠디들이 직접 추천하는 잇템을 소개합니다.</p>
+
+        <div class="" >
+               <div class="gallery clearfix " >
+                    <div class="pics clearfix">
+
+                        
+                        <div class="ImgWrap">
+                            <span class="triarrow"></span>
+                            <div class="full clearfix"> 
+                                <img  id="imgMdPick"/> 
+                                <div class="explan" id="divMdPick_content">
+                                    
+                                   <div class="on cont_area">
+                                        <div >
+                                           <h2 class="pd_sub_tit">내구성이 뛰어난 스테인리스 스틸1</h2>
+                                           <h2 class="pd_tit">무선주전자 (1.7L)</h2>
+                                           <p class="pd_info">상품에 대한 설명을 입력하는 공간입니다. 상품설명을 입력해주세요.
+                                            상품에 대한 설명을 입력하는 공간입니다. </p>
+                                            <span class="shop_btn"><a href="#">SHOP NOW</a></span>
+                                        </div>
+                                    </div>
+
+                                    <div class="cont_area">
+                                        <div >
+                                           <h2 class="pd_sub_tit">내구성이 뛰어난 스테인리스 스틸2</h2>
+                                           <h2 class="pd_tit">무선주전자 (1.7L)</h2>
+                                           <p class="pd_info">상품에 대한 설명을 입력하는 공간입니다. 상품설명을 입력해주세요.
+                                            상품에 대한 설명을 입력하는 공간입니다. </p>
+                                            <span class="shop_btn"><a href="#">SHOP NOW</a></span>
+                                        </div>
+                                    </div>
+
+                                    <div class="cont_area" >
+                                        <div >
+                                           <h2 class="pd_sub_tit">내구성이 뛰어난 스테인리스 스틸3</h2>
+                                           <h2 class="pd_tit">무선주전자 (1.7L)</h2>
+                                           <p class="pd_info">상품에 대한 설명을 입력하는 공간입니다. 상품설명을 입력해주세요.
+                                            상품에 대한 설명을 입력하는 공간입니다. </p>
+                                            <span class="shop_btn"><a href="#">SHOP NOW</a></span>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+                       
+                    </div>
+                        <div class="thumbs"  id="divMdPick_list">
+                          <div class="preview"> <a href="#" class="selected"  data-full="https://violeta429.github.io/portfolio/common/image/main/product/001.jpg"> <img src="https://violeta429.github.io/portfolio/common/image/main/product/001.jpg"/> </a> </div>
+                            <div class="preview"> <a href="#" data-full="https://violeta429.github.io/portfolio/common/image/main/product/002.jpg"> <img src="https://violeta429.github.io/portfolio/common/image/main/product/002.jpg"/> </a> </div>
+                            <div class="preview"> <a href="#" data-full="https://violeta429.github.io/portfolio/common/image/main/product/003.jpg"> <img src="https://violeta429.github.io/portfolio/common/image/main/product/003.jpg"/> </a> </div>
+                           
+                        </div>
+                </div>
+
+
+        </div>
+    </section>
+ </div>
+
+    <section class="content sec3_Wrap">
+        <h2 class="title txtct">NEW ARRIVALS</h2>
+        <p class="s_title txtct">매일매일의 GS PAYMENT몰 신상품을 한눈에 보세요!</p>
+
+        <div class="line">
+            <div class="sec3_cont"  id="divNew"> 
+               <div>
+                    <img src="https://violeta429.github.io/portfolio/common/image/main/product/001.jpg"/>
+                    <div >
+                        <h4 class="tit_deco pd_tit">상품이름</h4>
+                          <p class="pd_info">상품에대한 설명을 입력해주세요<br />
+                              상품에대한 설명을 입력해주세요.
+                          </p>
+                         <div class="price">
+                             <span class="price_del">567</span>
+                             <span class="price_n">435345</span>
+                         </div>
+                         <div class="icon_area">
+                              <span class="best">BEST</span>
+                              <span class="new">NEW</span>
+                         </div>
+                    </div>
+                </div>
+
+                <div>
+                    <img src="https://violeta429.github.io/portfolio/common/image/main/product/002.jpg"/>
+                    <div>
+                        <h4 class="tit_deco pd_tit">상품이름</h4>
+                          <p class="pd_info">상품에대한 설명을 입력해주세요<br />
+                              상품에대한 설명을 입력해주세요.
+                          </p>
+                         <div class="price">
+                             <span class="price_del">567</span>
+                             <span class="price_n">435345</span>
+                         </div>
+                         <div class="icon_area">
+                              <span class="best">BEST</span>
+                              <span class="new">NEW</span>
+                         </div>
+                    </div>
+                </div>
+
+                  <div>
+                    <img src="https://violeta429.github.io/portfolio/common/image/main/product/003.jpg"/>
+                    <div>
+                        <h4 class="tit_deco pd_tit">상품이름</h4>
+                          <p class="pd_info">상품에대한 설명을 입력해주세요<br />
+                              상품에대한 설명을 입력해주세요.
+                          </p>
+                         <div class="price">
+                             <span class="price_del">567</span>
+                             <span class="price_n">435345</span>
+                         </div>
+                         <div class="icon_area">
+                              <span class="best">BEST</span>
+                              <span class="new">NEW</span>
+                         </div>
+                    </div>
+                </div>
+
+                  <div>
+                    <img src="https://violeta429.github.io/portfolio/common/image/main/product/004.jpg"/>
+                    <div>
+                        <h4 class="tit_deco pd_tit">상품이름</h4>
+                          <p class="pd_info">상품에대한 설명을 입력해주세요<br />
+                              상품에대한 설명을 입력해주세요.
+                          </p>
+                         <div class="price">
+                             <span class="price_del">567</span>
+                             <span class="price_n">435345</span>
+                         </div>
+                         <div class="icon_area">
+                              <span class="best">BEST</span>
+                              <span class="new">NEW</span>
+                         </div>
+                    </div>
+                </div>
+                  <div>
+                    <img src="https://violeta429.github.io/portfolio/common/image/main/product/001.jpg"/>
+                    <div>
+                        <h4 class="tit_deco pd_tit">상품이름</h4>
+                          <p class="pd_info">상품에대한 설명을 입력해주세요<br />
+                              상품에대한 설명을 입력해주세요.
+                          </p>
+                         <div class="price">
+                             <span class="price_del">567</span>
+                             <span class="price_n">435345</span>
+                         </div>
+                         <div class="icon_area">
+                              <span class="best">BEST</span>
+                              <span class="new">NEW</span>
+                         </div>
+                    </div>
+                </div>
+
+                  <div>
+                    <img src="https://violeta429.github.io/portfolio/common/image/main/product/002.jpg"/>
+                    <div>
+                        <h4 class="tit_deco pd_tit">상품이름</h4>
+                          <p class="pd_info">상품에대한 설명을 입력해주세요<br />
+                              상품에대한 설명을 입력해주세요.
+                          </p>
+                         <div class="price">
+                             <span class="price_del">567</span>
+                             <span class="price_n">435345</span>
+                         </div>
+                         <div class="icon_area">
+                              <span class="best">BEST</span>
+                              <span class="new">NEW</span>
+                         </div>
+                    </div>
+                </div>
+
+
+            </div>
+            
+            <div class="sec3_cont_btn">
+                <span class="prev2">1</span>
+                <span class="next2">2</span>
+            </div>
+        </div>
+
+
+        
+
+    </section>
+     
+    <section class="sec4Wrap content">
+         <h2 class="title txtct" >TREND PICK</h2>
+         <p class="s_title txtct">요즘 유행하는 잇템들만 모아모아!</p>
+        <div class="sec4_cont ">
+            <div class="sec4_inner ">
+       
+                <div class="swiper-wrapper " id="divTrend">
+                 
+                     <div class="swiper-slide">
+                            <div class="sec4_slide"> 
+                                  <div class="imgarea" style="background:url(https://violeta429.github.io/portfolio/common/image/main/product/005.jpg) no-repeat center center; background-size:cover;"></div>
+                                  <div class="txt">
+                                      <div >
+                                            
+                                            <p class="pd_tit">갤럭시 워치3 41mm (LTE)</p>
+                                            <p class="pd_info">
+                                                Beyond Watch <br />
+                                                보다 완벽해진 디자인의 스마트 헬스케어 워치
+                                            </p>
+                                      </div>
+                                  </div>
+                            </div>
+                     </div>
+                     <div class="swiper-slide">
+                            <div class="sec4_slide"> 
+                                  <div class="imgarea" style="background:url(https://violeta429.github.io/portfolio/common/image/main/product/002.jpg) no-repeat center center; background-size:cover;"></div>
+                                  <div class="txt">
+                                      <div >
+                                            <p class="pd_tit">갤럭시 워치3 41mm (LTE)</p>
+                                            <p class="pd_info">
+                                                Beyond Watch <br />
+                                                보다 완벽해진 디자인의 스마트 헬스케어 워치
+                                            </p>
+                                      </div>
+                                  </div>
+                            </div>
+                     </div>
+
+                </div>
+
+            </div>
+
+
+            <span class="slide_btn">
+                <input type="button" class='prev' name="name" value="" />
+                <input type="button" class='next' name="name" value="" />
+            </span>
+        </div>
+
+    </section> 
+
+    <section class="sec5Wrap content">
+        <h2 class="title txtct">ISSUE PICK</h2>
+        <p class="s_title txtct">매일매일의 GS PAYMENT몰 신상품을 한눈에 보세요!</p>
+    
+        <div class="sec5_cont">
+            <div id="mainTab">
+                    <ul  class="tab-menu" id="ulIssue">
+                    <li class="active">스마트한 헬스케어의 시작!</li>
+                        <li>내 눈앞에 펼쳐진 100인치 스크린</li>
+                    </ul>
+  
+                    <div class="tab-content"  id="divIssue">
+                      
+                            <div class="tabInner">
+                                <div class="pdarea fl">
+                                    <span> <img src="https://violeta429.github.io/portfolio/common/image/main/product/006.jpg"/></span>
+                                    <div class="txtWrap">
+                                        <p>스마트한 헬스케어의 시작!</p>
+                                        <p>손목 위의 주치의 스마트워치! 손목위에서 당신의 혈압, 심전도와 심박수,  혈중 산소 농도를
+측정하고 관리해보세요. 뿐만 아니라 수면 관리 기능이 렘주기, 깊은 수면, 얕은 수면 등 수면
+상태를 정밀하게 측정해 당신에게 올바른 수면방법을 제시합니다.</p>
+                                    </div>
+                                </div>
+                                <div class="pdarea pdWrap2">
+                                    <div>
+                                        <img src="https://violeta429.github.io/portfolio/common/image/main/product/007.jpg"/>
+                                        <div >
+                                            <h4 class="tit_deco pd_tit">상품이름</h4>
+                                              <p class="pd_info">상품에대한 설명을 입력해주세요<br />
+                                                  상품에대한 설명을 입력해주세요.
+                                              </p>
+                                             <div class="price">
+                                                 <span class="price_n">567</span>
+                                                 <span class="price_n">435345</span>
+                                             </div>
+                                             <div class="icon_area">
+                                                  <span class="best">BEST</span>
+                                                  <span class="new">NEW</span>
+                                             </div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <img src="https://violeta429.github.io/portfolio/common/image/main/product/008.jpg"/>
+                                        <div>
+                                            <h4 class="tit_deco pd_tit">상품이름</h4>
+                                              <p class="pd_info">상품에대한 설명을 입력해주세요<br />
+                                                  상품에대한 설명을 입력해주세요.
+                                              </p>
+                                             <div class="price">
+                                                 <span class="price_n">567</span>
+                                                 <span class="price_n">435345</span>
+                                             </div>
+                                             <div class="icon_area">
+                                                  <span class="best">BEST</span>
+                                                  <span class="new">NEW</span>
+                                             </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+            </div>
+
+        </div>
+    
+    
+    </section>
+
+
+
+
+
+
+    </div>
+
+    <!-- <div id='footer' data-include-path="https://violeta429.github.io/portfolio/common/master/footer.html"></div> -->
 </body>
 
 
