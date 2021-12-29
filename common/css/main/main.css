@@ -1,6 +1,8 @@
 ﻿
+
+
 .innerwrap .content{
-    width:1100px;
+  
     margin-bottom:80px!important
 }
 .innerwrap{
@@ -51,7 +53,6 @@
     position:relative;
     margin:0 auto;
     min-height:310px;   
-    width:1100px
 }
 /*.swiper-slide{
     height:504px !important;
@@ -118,95 +119,67 @@ display:none;
    .sec1_cont {
        margin-left:auto;
        margin-right:auto;
+       width: 92%;
+
+       position: relative;
+       
    }
+   .sec1_cont .pd_carousel {
+       margin-top: 30px;
+       overflow: hidden;
+   }
+.pd_img {
 
-
-
-
-/*캐로셀 간격*/
-.pd_carousel{
-    width:1000px;
-    margin:0 auto;
-    margin-top:20px;
+    overflow: hidden;
+}
+   .pd_img img{
+    width: 100%;
+    object-fit: cover;
+    image-rendering: -webkit-optimize-contrast;
+    transition:all 0.2s;
 }
 
-.pd_carousel >div{
-    box-sizing:border-box;
-    flex:1;
-}
-
-.pd_carousel:after{
-     content:'';
-    clear:both;
-    display:block;
-}
-
-.pd_carousel >div:nth-of-type(2n) {
-    /*float:right;*/
- 
+.pd_img img:hover{
+    transform: scale(1.1);
 }
 
 .c_area{
-    margin-bottom:20px;
+    display: table-cell
 }
-
-
-.c_area:after{
-    content:'';
-    clear:both;
-    display:block;
-}
-
 .c_area a{
-    display:block;
-    width:100%;
-    height:100%;
+    display: block;
+    width:92%;
+    margin: 0 auto;
 }
 
-.pd_img{
-    width:230px;
-    height:230px;
-    overflow:hidden;
-    border-radius:18px;
+/*캐로셀 간격*/
+.sec1_cont .slick-arrow {
+    width:20px;
+    height: 32px;
+    display: inline-block;
+    text-indent: -999999px;
+    background-image: url(https://violeta429.github.io/portfolio/common/image/icon/gray_arrow.png);
+    background-repeat: no-repeat;
+    background-size: 18px;
+    cursor: pointer;
+    position: absolute;
+    top:50%;
+    margin-top: -32px;
+    z-index: 999;
 }
-.pd_txt{
-    width:230px;
+.sec1_cont .slick-arrow.left_prev {
+transform: rotate(-180deg);
+left:-30px;
+
 }
 
-.pd_img >img{
-    width:100%;
-    height:100%;
-    box-sizing:border-box;
+.sec1_cont .slick-arrow.right_next {
+    right:-30px
     
-}
+    }
 
-
-
-.pd_tit{
-    font-size:16px;
-    font-weight:300;
-    margin-top:10px;
-
-}
-
-.pd_info{
-width:100%;
-text-overflow:ellipsis;
-word-break:keep-all;
-font-size:14px;
-margin-top:10px;
-word-wrap: break-word;
-display: -webkit-box;
--webkit-box-orient: vertical;
--webkit-line-clamp: 2;
-overflow: hidden;
-line-height:1.4;
-min-height:38px;
-
-}
-
-.price >span{
-    display:block;
+.price_n{
+   
     font-size:18px;
     margin-bottom:2px;
     letter-spacing:-1px;
@@ -214,15 +187,25 @@ min-height:38px;
     color:#F55B7F;
     font-weight: 600;
  }
+ .delprice{
+     font-size: 10px;
+     color: #777;
+     font-weight: 300;
+     vertical-align: middle;
+     text-decoration-line: line-through;
+ }
 
-
+ .sec1_cont .pd_tit{
+     margin-top: 10px;
+     margin-bottom: 4px;
+ }
 
 .icon_area{
     margin-bottom: 6px;
 }
 
 .icon_area >span{
-    padding:0px 2px;
+    padding:1px 2px;
     margin-right:4px;
     font-size: 10px;
     font-family: 'gulim',serif;
@@ -238,16 +221,16 @@ min-height:38px;
     animation-timing-function:ease-in-out;*/
 }
 
-@keyframes icoAni{
-    0%{}
-    100%{background:#3FA685 ; color:#FFF}
-}
 
 
 .new{border: 1px solid #688AF2; color:#688AF2 ;
 }
 
-
+.icon_area >.popularity{
+    background: #ff00f2;
+    color: #FFF;
+    padding: 2px 2px;
+}
 
 .sec1_Wrap{
  margin-top:0 !important;
@@ -873,9 +856,7 @@ font-size:1em;
      padding-bottom:20px;
  }
 
-.pd_carousel{
-           width:100%;
-             }
+
 .c_area{
 height:auto;
 }

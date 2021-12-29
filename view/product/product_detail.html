@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../common/css/reset.css">
+    <link rel="stylesheet" href="../../common/css/common.css">
+    <link rel="stylesheet" href="../../common/css/asset/mobile/m_common.css">
+    <link rel="stylesheet" href="../../common/css/responsive.css">
+    <link rel="stylesheet" href="../../common/css/asset/style.css">
+
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="content">
+
+        <!---------------- 상품 이미지영역 s-------------->
+        <div class="pd_info_area">
+            <div class="left">
+                <div class="img_detail">
+                    <div class="fotorama" data-nav="thumbs" id="fotorama">
+                        <!----                      <a href="/common/image/main/product/001.jpg"><img src="/common/image/main/product/001.jpg"/></a>
+                          <a href="/common/image/main/product/002.jpg"><img src="/common/image/main/product/002.jpg"/></a>
+                          <a href="/common/image/main/product/001.jpg"><img src="/common/image/main/product/001.jpg"/></a>
+                          <a href="/common/image/main/product/002.jpg"><img src="/common/image/main/product/002.jpg"/></a>---->
+                    </div>
+                </div>
+            </div>
+            <div class="right">
+                <div class="pd_info">
+                    <h2 class="pd-tit" id="hPnm">-</h2>
+                    <table class="pd_if_tb">
+                        <tr>
+                            <td>상품명</td>
+                            <td id="tdPnm">-</td>
+                        </tr>
+                        <tr>
+                            <td>판매가</td>
+                            <td id="tdAmt">-원</td>
+                        </tr>
+                        <tr>
+                            <td>배송비</td>
+                            <td id="tdDlvfee">-원
+                            </td>
+                        </tr>
+                        <tr style="display: none">
+                            <td>HIDDEN</td>
+                            <td>
+                                <input type="hidden" id="hidAmt_Total_N" readonly />
+                            </td>
+                        </tr>
+                        <tr class="dpOptionN">
+                            <td>수량</td>
+                            <td>
+                                <div class="quan">
+                                    <input type="button" value="-" onclick="fnChgCnt('N', '-')" />
+                                    <input type="text" value="1" id="txtCnt_N" readonly />
+                                    <input type="button" value="+" onclick="fnChgCnt('N', '+')" />
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="pdOp dpOptionY">
+                            <td colspan="2">상품옵션</td>
+                        </tr>
+                        <tr class="pdOpselect dpOptionY">
+                            <td colspan="2">
+                                <table id="tbOption">
+                                    <tr>
+                                        <td>색상</td>
+                                        <td>
+                                            <select>
+                                                <option>선택</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>사이즈</td>
+                                        <td>
+                                            <select>
+                                                <option>선택</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <!----옵션 선택한 상품이 여러개일경우 addoption tr추가 ---->
+                    <div class="select_pd">
+                        <table>
+                            <tbody id="tbOptionList">
+                                <!----<tr class="addoption">
+                                        <td >
+                                            <p class="selctit">스테인리스 스틸 무전주전자</p>
+                                        </td>
+                                        <td>                                           
+                                              <div class="quan">
+                                                <input type="button" value="-" " />
+                                                <input type="text" value="1"  readonly />
+                                                <input type="button" value="+" />
+                                            </div>
+                                        </td>
+                                        <td >
+                                            <p class="op_price"><span>39,000</span>원</p>
+                                            <span class="xbtn"></span>
+                                        </td>
+                                    </tr>
+                                    <tr class="addoption">
+                                        <td >
+                                            <p class="selctit">스테인리스 스틸 무전주전자</p>
+                                        </td>
+                                        <td>                                           
+                                              <div class="quan">
+                                                <input type="button" value="-" " />
+                                                <input type="text" value="1"  readonly />
+                                                <input type="button" value="+" />
+                                            </div>
+                                        </td>
+                                        <td >
+                                            <p class="op_price"><span>39,000</span>원</p>
+                                            <span class="xbtn"></span>
+                                        </td>
+                                    </tr>---->
+                            </tbody>
+                        </table>
+                    </div>
+
+
+                    <!----총 주문 합계---->
+
+                    <div class="allprice">
+                        <span>Total</span>
+                        <p class="total"><span id="spAmt_Total">0</span>원</p>
+                    </div>
+
+
+                    <!----구매하기 버튼---->
+                    <div class="addCart">
+                        <div>
+                            <input type="button" name="paynow" value="BUY NOW" onclick="fnMove()" />
+                            <input type="button" name="addcart" value="ADD CART" onclick="fnInstCart()" />
+                        </div>
+                        <!----  <input type="button" name="addheart" class="addheart" value="WISH" />---->
+                        <label class="addwish" onclick="fnWish()" id="lbWish">
+                            <span class="wishIcon ">
+                                <svg version="1.1"
+                                    id="&#xB808;&#xC774;&#xC5B4;_1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:svg="http://www.w3.org/2000/svg"
+                                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100"
+                                    style="enable-background: new 0 0 100 100;" xml:space="preserve">
+                                    <g transform="translate(0,-952.36218)">
+                                        <path class="path" style="fill: #aaaaaa;" d="M35.783,977.567c-10.283,0-17.259,9.258-17.259,19.462c0,17.492,13.836,24.702,31.516,35.93
+		                                    c17.68-11.228,31.516-18.438,31.516-35.93c0-10.204-6.976-19.462-17.259-19.462c-6.618,0-12.058,3.644-14.257,5.831
+		                                    C47.841,981.211,42.401,977.567,35.783,977.567z" />
+                                    </g>
+                                </svg>
+                            </span>
+                            <!----<input type="button" name="name" onclick="" />---->
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!---------------- 상품 이미지영역 e-------------->
+
+
+
+        <!---------------- 상품 상세영역 s-------------->
+
+
+        <div class="pd_detail_area">
+
+
+            <!----상품 상세 메뉴---->
+
+
+            <div class="tab-wrapper">
+                <ul class="tab-menu">
+                    <li class="active">상품상세</li>
+                    <li>리뷰</li>
+                </ul>
+
+                <div class="tab-content">
+
+
+                    <!---- 상품상세 페이지 (이미지)---->
+
+
+                    <div>
+                        <div class="pd_detail_info" id="divDetail">
+                        </div>
+                    </div>
+
+                    <!---- 리뷰---->
+                    <div>
+                        <h2 class="pddetail_tit">리뷰 <span class="cnt" id="spReviewCnt">0</span><span>건</span> </h2>
+
+                        <div class="pd_detail_info review" id="divIsList" style="display:none">
+
+                            <div class="review_list">
+
+                                <div class="fl-view">
+                                    <div class="point-type">
+                                        <span class="pointspan"></span>
+                                        <span></span>
+                                    </div>
+                                    <p class="review_txt">
+                                     </p>
+                                </div>
+                                <div class="fr-view">
+                                    <p class="userName"></p>
+                                    <p class="buypd"></p>
+                                </div>
+                            </div>
+
+                            <div class="review_list">
+
+                                <div class="fl-view">
+                                    <div class="point-type">
+                                        <span class="pointspan"> </span>
+                                        <span></span>
+                                    </div>
+                                    <p class="review_txt">
+                                               
+                                    </p>
+                                </div>
+                                <div class="fr-view">
+                                    <p class="userName"></p>
+                                    <p class="buypd"></p>
+                                </div>
+                            </div>
+
+                            <div class="review_list">
+
+                                <div class="fl-view">
+                                    <div class="point-type">
+                                        <span class="point"></span>
+                                        <span></span>
+                                    </div>
+                                    <p class="review_txt"> </p>
+                                </div>
+                                <div class="fr-view">
+                                    <p class="userName"></p>
+                                    <p class="buypd"></p>
+                                </div>
+                            </div>
+
+
+                        </div>
+
+                        <div class="pd_detail_info review" id="divNonList">
+                            <p>등록된 리뷰가 없습니다.</p>
+                        </div>
+
+                        <div class="paging">
+                            <ul class="pagination modal-1"  id="paging">
+                                <li><a href="#" class="prev"></a></li>
+                                <li><a href="#" class="active">1</a></li>
+                                <li><a href="#">2</a></li>
+                                <li><a href="#">3</a></li>
+                                <li><a href="#" class="next"></a></li>
+                            </ul>
+                        </div>
+
+                    </div>
+
+                </div>
+                <!-- tab-content -->
+            </div>
+
+
+
+            <!----리뷰 영역s---->
+        </div>
+
+
+        <!---------------- 상품 상세영역 e-------------->
+    </div>
+ 
+</body>
+</html>

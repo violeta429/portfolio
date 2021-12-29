@@ -70,36 +70,12 @@ $(document).ready(function () {
     });
 
 
-    //section 1에 캐로셀 이미지 옵션 
-
-    // $('.pd_carousel').slick({
-    //     slide: 'div',
-    //     autoplay: true,
-    //     autoplaySpeed: 6000,
-    //     arrows: true,
-    //     prevArrow: $('.left_prev'),
-    //     nextArrow: $('.right_next'),
-    //     slidesToShow: 4,
-    //     responsive: [ // 반응형 웹 구현 옵션
-
-    //         {
-    //             breakpoint: 768, //화면 사이즈 768px
-    //             settings: {
-    //                 slidesToShow: 3
-    //             },
-    //             draggable: true,
-    //         },
+   
 
 
-    //         {
-    //             breakpoint: 580, //화면 사이즈 768px
-    //             settings: {
-    //                 slidesToShow: 2
-    //             },
-    //             draggable: true,
-    //         }
-    //     ]
-    // });
+
+
+
 
     // $('.sec2_Wrap .sec2cont').bxSlider();
 
@@ -201,99 +177,112 @@ function imgresize(targetpa) {
 }
 
 
-// //BEST SELLER
-// function fnBestseller() {
-//     try {
 
-//         var hArr = new Array();
-//         var hObj = new Object();
-//         hObj.type = "01";
-//         hArr.push(hObj);
+var url = "https://violeta429.github.io/portfolio/common/data/mainproduct.json"
+var xmlhttp = new XMLHttpRequest();
+xmlhttp.onreadystatechange = function(){
+    if(this.readyState == 4 && this.status == 200)
+    {
+       try{
+        fnBestseller(xmlhttp.responseText);
+       }
+       catch(e){
+        console.log('error')
 
-//         var bArr = new Array();
-//         var bObj = new Object();
-//         bArr.push(bObj);
-
-//         var totObj = new Object();
-//         totObj.header = hArr;
-//         totObj.body = bArr;
-//         $.ajax({
-//             method: "post",
-//             url: targetUrl,
-//             data: JSON.stringify(totObj),
-//             dataType: "json",
-//             beforeSend: function () {
-//                 //로딩 창 출력X
-
-//             },
-//             success: function (data) {
-//                 var result = data.RESULT; //통신결과
-
-//                 if (data == null || data.RESULT == "N" || data.DATA.length == 0) { //에러 또는 데이터 없을때 아무 처리안함
-//                     return;
-//                 }
+       }
+    }
+};
+xmlhttp.open("GET", url, true);
+xmlhttp.send();
 
 
-//                 var allData = data.DATA;
+// BEST SELLER
 
-//                 var sHtml = "";
-//                 for (var i = 0; i < allData.length; i++) {
+function fnBestseller(data) {
+    var arr = JSON.parse(data);
 
-//                     if (i % 4 == 0) { //섹션시작
-//                         sHtml += "<div class='pd_carousel'>";
-//                     }
-
-//                     sHtml += "<div class='c_area'>";
-//                     sHtml += "   <a href='/view/product/product_detail.aspx?pid=" + allData[i]["PID"] + "'>";
-//                     sHtml += "   <div class='pd_img'>";
-//                     sHtml += "      <img src='" + allData[i]["FILEURL"] + "'/>";
-//                     sHtml += "   </div>";
-//                     sHtml += "   <div class='pd_txt'>";
-//                     sHtml += "      <h4 class='pd_tit'>" + allData[i]["PNM"] + "</h4>";
-//                     sHtml += "      <p class='pd_info'>" + allData[i]["SUMMARY"] + "</p>";
-//                     sHtml += "      <div class='price'>";
-//                     sHtml += "         <span class='price_n'>" + allData[i]["AMT"] + "</span>";
-//                     sHtml += "      </div>";
-//                     sHtml += "      <div class='icon_area'>";
-//                     sHtml += "          <span class='best'>BEST</span>";
-//                     sHtml += "          <span class='new'>NEW</span>";
-//                     sHtml += "      </div>";
-//                     sHtml += "   </div>";
-//                     sHtml += "   </a>";
-//                     sHtml += " </div>";
-
-//                     if (i % 4 == 3) { //섹션끝
-//                         sHtml += " </div>";
-//                     }
-//                 }
-
-//                 if (sHtml != "" && allData.length % 4 != 0) {
-//                     sHtml += " </div>";
-//                 }
-
-//                 $("#divBestSeller").html(sHtml);
+    var sHtml = "";
+    for (var i = 0 ; i < arr.length;  i++){
+       sHtml += '<div class="c_area">' ;
+       sHtml +=     '<a href="#">';
+       sHtml +=         '<div class="pd_img">';
+       sHtml +=           '<img src="https://violeta429.github.io/portfolio/common/image/main/product/00' + arr[i].img + '.jpg">'  ;
+       sHtml +=         '</div>';
+       sHtml +=         '<div class="pd_txt">';
+       sHtml +=           '<h4 class="pd_tit">'+ arr[i].name +'</h4>';
+       sHtml +=           '<div class="icon_area">';
+       if (arr[i].new=="Y"){
+       sHtml +=              '<span class="new">NEW</span>';
+       }
+      if (arr[i].best=="Y"){
+        sHtml +=              '<span class="best">BEST</span>';
+      }
+      if (arr[i].popularity=="Y"){
+        sHtml +=              '<span class="popularity">인기</span>';   
+      }
 
 
+       sHtml +=           '</div>';
+       sHtml +=          '<div class="price">';
+       sHtml +=              ' <span class="price_n">'+ arr[i].price+ '원</span>';
+       if (arr[i].delprice==null ){
+       }else{
+
+       sHtml +=              ' <span class="delprice">'+ arr[i].delprice+ '원</span>';
+
+       }
+       sHtml +=          '</div>';
+       sHtml +=         '</div>';
+       sHtml +=      '</a>';
+       sHtml += ' </div>';
+
+    }
+
+   
+     $("#divBestSeller").html(sHtml);
+     slickBestseller();
+}
+
+
+function slickBestseller(){
+  //  section 1에 캐로셀 이미지 옵션 
+
+    $('#divBestSeller').slick({
+        slide: 'div',
+        autoplay: true,
+        autoplaySpeed: 6000,
+        arrows: true,
+        prevArrow: $('.left_prev'),
+       nextArrow: $('.right_next'),
+        slidesToShow: 3,
+        responsive: [ // 반응형 웹 구현 옵션
+   
+            {
+                breakpoint: 768, //화면 사이즈 768px
+                settings: {
+                    slidesToShow: 3
+                },
+                draggable: true,
+            },
+   
+   
+            {
+                breakpoint: 580,// 화면 사이즈 768px
+                settings: {
+                    slidesToShow: 2
+                },
+                draggable: true,
+            }
+        ]
+    });
+
+}
 
 
 
-//             },
-//             error: function (data, status, err) {
-
-//                 return;
-//             }
-//         });
-
-
-//     }
-//     catch (e) {
-
-//     }
 
 
 
-
-// }
 
 // //MD'S PICK
 // function fnMdPick() {
