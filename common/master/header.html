@@ -59,7 +59,7 @@
   <div class="category-wrap clearfix">
      <div class="content clearfix">
          <ul class="cate_inner">
-                <li><a href="#">인기상품</a></li>
+             <li><a href="#">인기상품</a></li>
              <li><a href="#">신상품</a></li>
              <li><a href="#">상품</a></li>
              <li><a href="#">이벤트상품</a></li>
@@ -381,4 +381,67 @@
 </div>
 
 
-<script src="https://violeta429.github.io/portfolio/common/js/nav.js"></script>
+<!-- pc 사이드 메뉴 -->
+
+<aside >
+    <div id="slidemenu">
+        <ul class="slide_ul">
+             <li><a href="/view/shop/cart.aspx">장바구니</a></li>
+             <li><a href="/view/mypage/wish.aspx">관심상품</a></li>
+             <li><a href="#" class="rcntLayer">최근에 본 상품</a></li>
+             <li class="gotop">상단으로</li>
+        </ul>
+    </div>
+</aside>
+
+
+
+<!-- 최근본 상품 -->
+<div id="rcntLayer" class="pop-wrap" >
+    <div class="popupbg"></div>
+    <div class="rcnt-product">
+       <div class="rct-header">
+        <h1>고객님의 최근 본 상품입니다.</h1>
+           <input class="rcnt-md-close" type="button" />
+       </div>
+        <div class="rcnt-content" id="divMaster_isRecent">
+        
+            <div class="rcnt-pd-inner">
+                <div>
+                    <span class="rctimg">
+                        <img src="/common/image/main/product/001.jpg" />
+                    </span>
+                    <div>
+                        <p class="rc_pdname">레드와인 비프찹스테이크 </p>
+                        <p class="rc_pdprice"><span>19,900</span>원</p>
+                    </div>
+                </div>
+                <div class="rctbtn">
+                    <input class="rct_addcart" type="button" name="name" value="" />
+                    <input class="rct_del" type="button" name="name" value="" />
+                </div>
+            </div>
+      
+        </div>
+        <div id="divMaster_nonRecent">
+            <p class="non_product"> 
+                최근 본 상품이 존재하지 않습니다.
+            </p>
+        </div>
+    </div>
+</div>
+
+
+<div id="mob_go_top" class="mob mob_go_top"><span></span></div>
+     
+<!-- 모바일 하단 메뉴 -->
+<div id="mob_bt_nav" class="mob mob_bt_nav">
+    <nav>
+        <ul>
+            <li class="bt-menu menu_btn"><span><figure></figure></span></li>
+            <li class="bt-search"><a href="#"><figure></figure></a></li>
+            <li class="bt-mypage"><a href="/view/mypage/mypage.aspx"><figure></figure></a></li>
+            <li class="bt-recentpd"><a href="#"><figure></figure></a></li>
+        </ul>
+    </nav>
+</div>
