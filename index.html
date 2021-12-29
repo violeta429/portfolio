@@ -4,9 +4,37 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>sh portfolio</title>
+
+    <script src = "common/js/jquery-1.10.2.js"></script>
+    <script src = "common/js/nav.js"></script>
+    <!-- <script src="common/js/mastercommon.js"></script> -->
+
+
 </head>
 <body>
-    존나 빡도는 꼴 보고싶냐
+    <div id='header' data-include-path="https://violeta429.github.io/portfolio/common/master/header.html"></div>
 </body>
+
+
+<script>
+
+window.addEventListener('load', function() {
+            var allElements = document.getElementsByTagName('*');
+            Array.prototype.forEach.call(allElements, function(el) {
+                var includePath = el.dataset.includePath;
+                if (includePath) {
+                    var xhttp = new XMLHttpRequest();
+                    xhttp.onreadystatechange = function () {
+                        if (this.readyState == 4 && this.status == 200) {
+                            el.outerHTML = this.responseText;
+                        }
+                    };
+                    xhttp.open('GET', includePath, true);
+                    xhttp.send();
+                }
+            });
+        });
+ 
+</script>
 </html>
