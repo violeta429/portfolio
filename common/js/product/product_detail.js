@@ -1,4 +1,4 @@
-﻿var targetUrl = "/common/component/product/AjaxProduct_detail.aspx";
+﻿
 var fotorama;
 var optionSeq = 0;
 var optionYn = "N";
@@ -15,19 +15,20 @@ var pageCount = 5; //한 화면에 나타낼 페이지 수
 
 //페이지로드시
 $(document).ready(function () {
+    console.log(window.location.search)
 
-
-    fnUpdateView();
-    fnSearch();
-    fnSearchReview();
+ 
+    // fnUpdateView();
+    // fnSearch();
+    // fnSearchReview();
 });
 
-$(function () {
-    // 1. Initialize fotorama manually.
-    var $fotoramaDiv = $('#fotorama').fotorama();
-    // 2. Get the API object.
-    fotorama = $fotoramaDiv.data('fotorama');
-});
+// $(function () {
+//     // 1. Initialize fotorama manually.
+//     var $fotoramaDiv = $('#fotorama').fotorama();
+//     // 2. Get the API object.
+//     fotorama = $fotoramaDiv.data('fotorama');
+// });
 
 /*최근본상품*/
 function fnUpdateView() {

@@ -204,7 +204,7 @@ function fnBestseller(data) {
     var sHtml = "";
     for (var i = 0 ; i < arr.length;  i++){
        sHtml += '<div class="c_area">' ;
-       sHtml +=     '<a href="#">';
+       sHtml +=     '<a href="https://violeta429.github.io/portfolio/view/product/product_detail.html?pid='+ arr[i].page   +'">';
        sHtml +=         '<div class="pd_img">';
        sHtml +=           '<img src="https://violeta429.github.io/portfolio/common/image/main/product/00' + arr[i].img + '.jpg">'  ;
        sHtml +=         '</div>';
