@@ -251,7 +251,7 @@ function fnNewarrivals(data,numb){
     var sHtml = "";
      for (var i = 0 ; i < arr[numb].length;  i++){
      sHtml += '<div class="sec3_inner">';
-     sHtml +=     '<a href="file:///C:/Users/myproject/portfolio/view/product/product_detail.html?pid='+ arr[numb][i].page   +'">';
+     sHtml +=     '<a href="https://violeta429.github.io/portfolio/view/product/product_detail.html?pid='+ arr[numb][i].page   +'">';
      sHtml +=       '<div>';
      sHtml +=           '<div class="imgWrap">';
      if (arr[numb][i].img<10){
