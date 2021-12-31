@@ -1,5 +1,25 @@
-[{"name":"에리카블룸","price":13500,"delprice":12000,"new":"N","best":"Y","popularity":"N","cupon":"N","img":1,"page":1},
+
+{
+   "1": [    {"name":"에리카블룸","price":13500,"delprice":12000,"new":"N","best":"Y","popularity":"N","cupon":"N","img":1,"page":1},
     {"name":"로제까사","price":23000,"delprice":null,"new":"Y","best":"Y","popularity":"N","cupon":"Y","img":2,"page":2},
     {"name":"이너니티","price":18000,"delprice":null,"new":"N","best":"Y","popularity":"Y","cupon":"N","img":3,"page":3},
     {"name":"애프리콧","price":56000,"delprice":67000,"new":"Y","best":"N","popularity":"N","cupon":"Y","img":4,"page":4},
-    {"name":"핑크판타지","price":21000,"delprice":25900,"new":"N","best":"N","popularity":"Y","cupon":"N","img":5,"page":5}]
+    {"name":"핑크판타지","price":21000,"delprice":25900,"new":"N","best":"N","popularity":"Y","cupon":"N","img":5,"page":5}
+    ],
+    "2":
+    [{"name":"블루에어","price":66.000,"delprice":null,"new":null,"best":null,"popularity":null,"cupon":null,"img":6,"page":6},
+        {"name":"레드누아","price":45200,"delprice":58000,"new":null,"best":null,"popularity":null,"cupon":null,"img":7,"page":7},
+        {"name":"디어먼트","price":57800,"delprice":67400,"new":null,"best":null,"popularity":null,"cupon":null,"img":8,"page":8},
+        {"name":"플레인러브","price":25000,"delprice":null,"new":null,"best":null,"popularity":null,"cupon":null,"img":9,"page":9},
+        {"name":"러브어페어","price":130000,"delprice":null,"new":null,"best":null,"popularity":null,"cupon":null,"img":10,"page":10},
+        {"name":"원더랜드","price":45000,"delprice":56000,"new":null,"best":null,"popularity":null,"cupon":null,"img":11,"page":11},
+        {"name":"플로렌스","price":45600,"delprice":null,"new":null,"best":null,"popularity":null,"cupon":null,"img":12,"page":12},
+        {"name":"프렌치아","price":22000,"delprice":null,"new":null,"best":null,"popularity":null,"cupon":null,"img":13,"page":13}
+    ]
+
+}
+
+
+
+
+    
