@@ -14,16 +14,14 @@ color:#aaa;
     width:100% !important;
     min-width:100%;
 }
-
 .fotorama {
-
+    width:80%;
 }
 
 
 
 .pd_info_area>div{
     display:table-cell;
-    width:50%;
     overflow:hidden;
     vertical-align:top;
 }

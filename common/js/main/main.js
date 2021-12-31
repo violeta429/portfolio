@@ -170,11 +170,11 @@ window.onresize = function (event) {
 
 
 
-function imgresize(targetpa) {
-    var imgWrap = $(targetpa).find('.imgWrap');
-    imgWid = imgWrap.width();
-    imgWrap.height(imgWid);
-}
+// function imgresize(targetpa) {
+//     var imgWrap = $(targetpa).find('.imgWrap');
+//     imgWid = imgWrap.width();
+//     imgWrap.height(imgWid);
+// }
 
 
 
@@ -185,9 +185,10 @@ xmlhttp.onreadystatechange = function(){
     {
        try{
         fnBestseller(xmlhttp.responseText);
+        fnNewarrivals(xmlhttp.responseText,"2");
        }
        catch(e){
-        console.log('error')
+        console.log(e)
 
        }
     }
@@ -200,35 +201,36 @@ xmlhttp.send();
 
 function fnBestseller(data) {
     var arr = JSON.parse(data);
+    console.log(arr["1"].length);
 
     var sHtml = "";
-    for (var i = 0 ; i < arr.length;  i++){
+    for (var i = 0 ; i < arr["1"].length;  i++){
        sHtml += '<div class="c_area">' ;
-       sHtml +=     '<a href="https://violeta429.github.io/portfolio/view/product/product_detail.html?pid='+ arr[i].page   +'">';
+       sHtml +=     '<a href="https://violeta429.github.io/portfolio/view/product/product_detail.html?pid='+ arr["1"][i].page   +'">';
        sHtml +=         '<div class="pd_img">';
-       sHtml +=           '<img src="https://violeta429.github.io/portfolio/common/image/main/product/00' + arr[i].img + '.jpg">'  ;
+       sHtml +=           '<img src="https://violeta429.github.io/portfolio/common/image/main/product/00' + arr["1"][i].img + '.jpg">'  ;
        sHtml +=         '</div>';
        sHtml +=         '<div class="pd_txt">';
-       sHtml +=           '<h4 class="pd_tit">'+ arr[i].name +'</h4>';
+       sHtml +=           '<h4 class="pd_tit">'+ arr["1"][i].name +'</h4>';
        sHtml +=           '<div class="icon_area">';
-       if (arr[i].new=="Y"){
+       if (arr["1"][i].new=="Y"){
        sHtml +=              '<span class="new">NEW</span>';
        }
-      if (arr[i].best=="Y"){
+      if (arr["1"][i].best=="Y"){
         sHtml +=              '<span class="best">BEST</span>';
       }
-      if (arr[i].popularity=="Y"){
+      if (arr["1"][i].popularity=="Y"){
         sHtml +=              '<span class="popularity">인기</span>';   
       }
 
 
        sHtml +=           '</div>';
        sHtml +=          '<div class="price">';
-       sHtml +=              ' <span class="price_n">'+ arr[i].price+ '원</span>';
-       if (arr[i].delprice==null ){
+       sHtml +=              ' <span class="price_n">'+ arr["1"][i].price+ '원</span>';
+       if (arr["1"][i].delprice==null ){
        }else{
 
-       sHtml +=              ' <span class="delprice">'+ arr[i].delprice+ '원</span>';
+       sHtml +=              ' <span class="delprice">'+ arr["1"][i].delprice+ '원</span>';
 
        }
        sHtml +=          '</div>';
@@ -242,6 +244,43 @@ function fnBestseller(data) {
      $("#divBestSeller").html(sHtml);
      slickBestseller();
 }
+
+function fnNewarrivals(data,numb){
+    var arr = JSON.parse(data);
+    console.log(arr[numb].length);
+    var sHtml = "";
+     for (var i = 0 ; i < arr[numb].length;  i++){
+     sHtml += '<div class="sec3_inner">';
+     sHtml +=     '<a href="file:///C:/Users/myproject/portfolio/view/product/product_detail.html?pid='+ arr[numb][i].page   +'">';
+     sHtml +=       '<div>';
+     sHtml +=           '<div class="imgWrap">';
+     if (arr[numb][i].img<10){
+        sHtml +=            '<img src="https://violeta429.github.io/portfolio/common/image/main/product/00' + arr[numb][i].img + '.jpg">'  ;
+     }  
+     else {
+        sHtml +=            '<img src="https://violeta429.github.io/portfolio/common/image/main/product/0' + arr[numb][i].img + '.jpg">'  ;   
+     }
+     sHtml +=           '</div>';
+     sHtml +=           '<div>';
+     sHtml +=            '<h4 class="pd_tit tit_deco">'+ arr[numb][i].name +'</h4>';
+     sHtml +=            '<div class="price">';
+     sHtml +=              ' <span class="price_n">'+ arr[numb][i].price+ '원</span>';
+     if (arr[numb][i].delprice==null ){
+     }else{
+
+     sHtml +=              ' <span class="delprice">'+ arr[numb][i].delprice+ '원</span>';
+
+     }
+     sHtml +=             '</div>';
+     sHtml +=           '</div>';
+     sHtml +=        '</div>';
+     sHtml +=      '</a>';
+     sHtml += '</div>';
+
+     }
+     $("#divNew").html(sHtml);
+}
+
 
 
 function slickBestseller(){

@@ -15,7 +15,7 @@ var pageCount = 5; //한 화면에 나타낼 페이지 수
 
 //페이지로드시
 $(document).ready(function () {
-    console.log(window.location.search)
+    
 
  
     // fnUpdateView();
@@ -29,6 +29,8 @@ $(document).ready(function () {
 //     // 2. Get the API object.
 //     fotorama = $fotoramaDiv.data('fotorama');
 // });
+
+
 
 /*최근본상품*/
 function fnUpdateView() {
@@ -92,135 +94,172 @@ function fnUpdateView() {
 
 
 }
-
+var url = "https://violeta429.github.io/portfolio/common/data/mainproduct.json"
+var xmlhttp = new XMLHttpRequest();
+xmlhttp.onreadystatechange = function(){
+    if(this.readyState == 4 && this.status == 200)
+    {
+       try{
+        fnSearch(xmlhttp.responseText);
+       }
+       catch(e){
+        console.log(e)
+       }
+    }
+};
+xmlhttp.open("GET", url, true);
+xmlhttp.send();
 /*상품상세조회*/
-function fnSearch() {
-
-    var pid = $("#ContentPlaceHolder1_hidPid").val()
-
-    var hArr = new Array();
-    var hObj = new Object();
-    hObj.type = "02";
-    hArr.push(hObj);
-
-    var bArr = new Array();
-    var bObj = new Object();
-    bObj.pid = pid;
-    bArr.push(bObj);
-
-    var totObj = new Object();
-    totObj.header = hArr;
-    totObj.body = bArr;
-
-    console.log(JSON.stringify(totObj));
-    $.ajax({
-        method: "post",
-        url: targetUrl,
-        data: JSON.stringify(totObj),
-        dataType: "json",
-        beforeSend: function () {
-            $("#loading_0").show();
-        },
-        success: function (data) {
-            $("#loading_0").hide();
-
-            console.log(data);
-
-            if (data["RESULT"] == "N") {
-                alert("잘못된 접근입니다.");
-                //history.back();
-                return;
-            }
-            else if (data.RESULT == "ERR") {
-                alert('장시간 미사용으로 로그인 만료되었습니다.');
-                location.href = '/view/member/login.aspx';
-                return;
-            }
-
-
-            var allData = data["DATA"];
-
-            // 조회된게없음
-            if (allData["PNM"] == "") { history.back(); return; }
-
-            var imgArr = allData["IMG"];
-
-            for (var i = 0; i < imgArr.length; i++) {
-                var fileType = imgArr[i]["FILETYPE"];
-                var fileUrl = imgArr[i]["URL"];
-                if (fileType == "M") { //사진이미지슬라이드
-                    fotorama.push({ img: fileUrl, thumb: fileUrl });
-                }
-                else if (fileType == "D") {
-                    var sHtml = "<img src='" + fileUrl + "'>";
-                    $("#divDetail").append(sHtml);
-                }
-                else if (fileType == "L") {
-                    img_list = fileUrl;
-                }
-                else if (fileType == "G") {
-                    var sHtml = "<img src='" + fileUrl + "'>";
-                    $("#divDetail").append(sHtml);
-                }
-            }
+function fnSearch(data) {
+    var arr = JSON.parse(data);
+    var arr =Object.values(arr);
+    var Allarr =[];
+    for (i = 0 ; i<arr.length ;i++){
+    Allarr.push(...arr[i]);
+    }
+   const url = new URL(window.location.href); 
+   console.log(url);
+   var urlParams = url.searchParams;
+   var pid =urlParams.getAll('pid');
+   var numb  = pid -1 ;
+   $('#tdPnm').text(Allarr[numb].name);
+   $('#tdAmt').text(Allarr[numb].price);
+   if (numb<10){
+    $('#fotorama').html('<img src="https://violeta429.github.io/portfolio/common/image/main/product/00' + Allarr[numb].img + '.jpg">');
+   }
+   else{
+    $('#fotorama').html('<img src="https://violeta429.github.io/portfolio/common/image/main/product/0' + Allarr[numb].img + '.jpg">');
+   }
+   
 
 
 
-            //관심상품여부
-            if (allData["WISHYN"] == "Y") {
-                $("#lbWish").addClass("is-active");
-            }
+
+    // var pid = $("#ContentPlaceHolder1_hidPid").val()
+
+    // var hArr = new Array();
+    // var hObj = new Object();
+    // hObj.type = "02";
+    // hArr.push(hObj);
+
+    // var bArr = new Array();
+    // var bObj = new Object();
+    // bObj.pid = pid;
+    // bArr.push(bObj);
+
+    // var totObj = new Object();
+    // totObj.header = hArr;
+    // totObj.body = bArr;
+
+    // console.log(JSON.stringify(totObj));
+    // $.ajax({
+    //     method: "post",
+    //     url: targetUrl,
+    //     data: JSON.stringify(totObj),
+    //     dataType: "json",
+    //     beforeSend: function () {
+    //         $("#loading_0").show();
+    //     },
+    //     success: function (data) {
+    //         $("#loading_0").hide();
+
+    //         console.log(data);
+
+    //         if (data["RESULT"] == "N") {
+    //             alert("잘못된 접근입니다.");
+    //             //history.back();
+    //             return;
+    //         }
+    //         else if (data.RESULT == "ERR") {
+    //             alert('장시간 미사용으로 로그인 만료되었습니다.');
+    //             location.href = '/view/member/login.aspx';
+    //             return;
+    //         }
+
+
+    //         var allData = data["DATA"];
+
+    //         // 조회된게없음
+    //         if (allData["PNM"] == "") { history.back(); return; }
+
+    //         var imgArr = allData["IMG"];
+
+    //         for (var i = 0; i < imgArr.length; i++) {
+    //             var fileType = imgArr[i]["FILETYPE"];
+    //             var fileUrl = imgArr[i]["URL"];
+    //             if (fileType == "M") { //사진이미지슬라이드
+    //                 fotorama.push({ img: fileUrl, thumb: fileUrl });
+    //             }
+    //             else if (fileType == "D") {
+    //                 var sHtml = "<img src='" + fileUrl + "'>";
+    //                 $("#divDetail").append(sHtml);
+    //             }
+    //             else if (fileType == "L") {
+    //                 img_list = fileUrl;
+    //             }
+    //             else if (fileType == "G") {
+    //                 var sHtml = "<img src='" + fileUrl + "'>";
+    //                 $("#divDetail").append(sHtml);
+    //             }
+    //         }
+
+
+
+    //         //관심상품여부
+    //         if (allData["WISHYN"] == "Y") {
+    //             $("#lbWish").addClass("is-active");
+    //         }
             
-            //원금액 저장
-            amt_original = allData["AMT_SALE"] * 1;
-            optionYn = allData["OPTYN"];
+    //         //원금액 저장
+    //         amt_original = allData["AMT_SALE"] * 1;
+    //         optionYn = allData["OPTYN"];
             
-            var dlvfee = allData["DLVFEE"]*1;
+    //         var dlvfee = allData["DLVFEE"]*1;
 
-            $("#hPnm").text(allData["PNM"]);
-            $("#tdPnm").text(allData["PNM"]);
+    //         $("#hPnm").text(allData["PNM"]);
+    //         $("#tdPnm").text(allData["PNM"]);
 
-            if (allData["AMT_CUST"] != allData["AMT_SALE"]) {
-                $("#tdAmt_cust").text((allData["AMT_CUST"] * 1).toLocaleString() + "원");
-                $("#trAmt_cust").show();
-            }
+    //         if (allData["AMT_CUST"] != allData["AMT_SALE"]) {
+    //             $("#tdAmt_cust").text((allData["AMT_CUST"] * 1).toLocaleString() + "원");
+    //             $("#trAmt_cust").show();
+    //         }
 
-            $("#tdAmt").text(amt_original.toLocaleString() + "원");
-            $("#tdDlvfee").text(dlvfee.toLocaleString() + "원");
-
-
-            if (optionYn == "Y") {
-                $(".dpOptionN").hide();
-                $(".dpOptionY").show();
-
-                if (allData["OPTION_YN"] == "Y") {
-                    optionYn = "Y";
-                    optionCnt = allData["OPTION_CNT"] * 1;
-                    //fnWhenSelectOption('1');
-                }
-            }
-            else {
-                $(".dpOptionY").hide();
-                $(".dpOptionN").show();
-                $("#hidAmt_Total_N").val(amt_original);
-                $("#spAmt_Total").text((amt_original + dlvfee).toLocaleString());
-                max_cnt2 = allData["MAX_CNT"] * 1;
-            }
-
-            $("#tbOption").html(allData["OPTION"]);
+    //         $("#tdAmt").text(amt_original.toLocaleString() + "원");
+    //         $("#tdDlvfee").text(dlvfee.toLocaleString() + "원");
 
 
-        },
-        error: function (data, status, err) {
-            $("#loading_0").hide();
-            alert("서버와의 통신에 실패하였습니다.");
-            console.log(data);
-            console.log(status);
-            console.log(err);
-            return;
-        }
+    //         if (optionYn == "Y") {
+    //             $(".dpOptionN").hide();
+    //             $(".dpOptionY").show();
 
-    });
+    //             if (allData["OPTION_YN"] == "Y") {
+    //                 optionYn = "Y";
+    //                 optionCnt = allData["OPTION_CNT"] * 1;
+    //                 //fnWhenSelectOption('1');
+    //             }
+    //         }
+    //         else {
+    //             $(".dpOptionY").hide();
+    //             $(".dpOptionN").show();
+    //             $("#hidAmt_Total_N").val(amt_original);
+    //             $("#spAmt_Total").text((amt_original + dlvfee).toLocaleString());
+    //             max_cnt2 = allData["MAX_CNT"] * 1;
+    //         }
+
+    //         $("#tbOption").html(allData["OPTION"]);
+
+
+    //     },
+    //     error: function (data, status, err) {
+    //         $("#loading_0").hide();
+    //         alert("서버와의 통신에 실패하였습니다.");
+    //         console.log(data);
+    //         console.log(status);
+    //         console.log(err);
+    //         return;
+    //     }
+
+    // });
 
 }
 
@@ -741,85 +780,86 @@ function fnInitSelect(seq) {
 
 /*위시리스트(찜) 추가*/
 function fnWish() {
-    try {
-        var pid = $("#ContentPlaceHolder1_hidPid").val();
-        var id = $("#ContentPlaceHolder1_hidId").val(); //ID
+    $("#lbWish").toggleClass('is-active');
+    // try {
+    //     var pid = $("#ContentPlaceHolder1_hidPid").val();
+    //     var id = $("#ContentPlaceHolder1_hidId").val(); //ID
 
-        if (id == "") {
+    //     if (id == "") {
 
-            alert("로그인 후 이용가능합니다.");
-            return;
-        }
+    //         alert("로그인 후 이용가능합니다.");
+    //         return;
+    //     }
 
-        if (pid != "" && pid != null) {
+    //     if (pid != "" && pid != null) {
 
-            var type = "";
+    //         var type = "";
 
-            if ($("#lbWish").hasClass("is-active")) {
-                type = "D";
-            }
-            else {
-                type = "I";
-            }
+    //         if ($("#lbWish").hasClass("is-active")) {
+    //             type = "D";
+    //         }
+    //         else {
+    //             type = "I";
+    //         }
             
 
 
-            var hArr = new Array();
-            var hObj = new Object();
-            hObj.type = "07";
-            hArr.push(hObj);
+    //         var hArr = new Array();
+    //         var hObj = new Object();
+    //         hObj.type = "07";
+    //         hArr.push(hObj);
 
-            var bArr = new Array();
-            var bObj = new Object();
-            bObj.pid = pid;
-            bObj.id = id;
-            bObj.type = type;
+    //         var bArr = new Array();
+    //         var bObj = new Object();
+    //         bObj.pid = pid;
+    //         bObj.id = id;
+    //         bObj.type = type;
 
-            bArr.push(bObj);
+    //         bArr.push(bObj);
 
-            var totObj = new Object();
-            totObj.header = hArr;
-            totObj.body = bArr;
+    //         var totObj = new Object();
+    //         totObj.header = hArr;
+    //         totObj.body = bArr;
 
-            console.log(totObj)
-            $.ajax({
-                method: "post",
-                url: targetUrl,
-                data: JSON.stringify(totObj),
-                dataType: "json",
-                beforeSend: function () {
-                    //로딩 창 출력
+    //         console.log(totObj)
+    //         $.ajax({
+    //             method: "post",
+    //             url: targetUrl,
+    //             data: JSON.stringify(totObj),
+    //             dataType: "json",
+    //             beforeSend: function () {
+    //                 //로딩 창 출력
 
-                },
-                success: function (data) {
+    //             },
+    //             success: function (data) {
 
-                    var result = data.RESULT; //통신결과
+    //                 var result = data.RESULT; //통신결과
                     
-                if (data.RESULT == "ERR") {
-                        alert('장시간 미사용으로 로그인 만료되었습니다.');
-                        location.href = '/view/member/login.aspx';
-                        return;
-                    }
+    //             if (data.RESULT == "ERR") {
+    //                     alert('장시간 미사용으로 로그인 만료되었습니다.');
+    //                     location.href = '/view/member/login.aspx';
+    //                     return;
+    //                 }
             
-                    if (result == "Y") {
-                        $("#lbWish").toggleClass('is-active');
-                    }
-                    else {
-                        alert(data.MSG);
-                    }
+    //                 if (result == "Y") {
+    //                     $("#lbWish").toggleClass('is-active');
+    //                 }
+    //                 else {
+    //                     alert(data.MSG);
+    //                 }
 
-                },
-                error: function (data, status, err) {
+    //             },
+    //             error: function (data, status, err) {
 
-                    return;
-                }
-            });
-        }
+    //                 return;
+    //             }
+    //         });
+    //     }
 
-    }
-    catch (e) {
+    // }
+    // catch (e) {
 
-    }
+    // }
 
 
 }
